@@ -33,9 +33,11 @@
 InsightJournalRedux::Application.routes.draw do
 
   devise_for :users
+  devise_scope :user do
+    post '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   root :to => "welcome#index"
-
 
   resources :users do
     resources :entries
