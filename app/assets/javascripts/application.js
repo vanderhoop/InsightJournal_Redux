@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+@import twitter/bootstrap
 
 //= require json2
 //= require handlebars

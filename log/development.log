@@ -5605,3 +5605,4 @@ Processing by WelcomeController#index as HTML
   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
   Rendered welcome/index.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.8ms)
+Connecting to database specified by database.yml
