@@ -5,21 +5,23 @@ class EntriesController < ApplicationController
   end
 
   def show
-    # @entry = Entry.find(params[])
+    @entry = Entry.find(params[:id])
   end
 
   def create
-    binding.pry
     @entry = Entry.new(params[:entry])
+    @entry.user_id = current_user.id
     if @entry.save
-      redirect_to @entry
+      # because entries are a nested resource, need to pass the
+      # parent resource, otherwise you will get 'undefined method entry_url
+      redirect_to [@user, @entry]
     else
 
     end
   end
 
   def new
-    @entry = Entry.new
+    # @entry = Entry.new
   end
 
   def edit

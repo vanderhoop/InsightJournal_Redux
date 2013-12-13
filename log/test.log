@@ -1174,3 +1174,144 @@ Connecting to database specified by database.yml
   [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
   [1m[35m (8.4ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
   [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'InsightJournal_Redux_test'
+  [1m[36m (205.3ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (100.2ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "dob", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sex", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["created_at", Fri, 13 Dec 2013 21:25:02 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["dob", nil], ["email", "arbitrary_string"], ["encrypted_password", ""], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sex", nil], ["sign_in_count", 0], ["updated_at", Fri, 13 Dec 2013 21:25:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'arbitrary_string' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'arbitrary_string' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (25.2ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (8.7ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (8.7ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.1ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (14.2ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'joe@joes.com' LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "dob", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sex", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["created_at", Fri, 13 Dec 2013 21:25:02 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["dob", nil], ["email", "joe@joes.com"], ["encrypted_password", "$2a$04$ELhHZZaVxw9S9VeHALUb5.7qrg/VAFGImDcUpRPVxB7tvk.XZc0zC"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Joe"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sex", nil], ["sign_in_count", 0], ["updated_at", Fri, 13 Dec 2013 21:25:02 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["text", "Everything about the Minnesota Vikings is rotten."], ["updated_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00], ["user_id", 1], ["user_mood_input", 4], ["word_count", nil]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (23.1ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'joe@joes.com' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "dob", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sex", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["created_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["dob", nil], ["email", "joe@joes.com"], ["encrypted_password", "$2a$04$LQFoFzLcWWO/HVbcFLNaLexZXSBOre.hLw.bQ3UTwBQ.CCYwlm006"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Joe"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sex", nil], ["sign_in_count", 0], ["updated_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (21.9ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'joe@joes.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "dob", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sex", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["created_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["dob", nil], ["email", "joe@joes.com"], ["encrypted_password", "$2a$04$MV7DLE3BncvOFbsl4ytthOWotEXY3wc8npGnhren9Q5L3IK6XhAk6"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Joe"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sex", nil], ["sign_in_count", 0], ["updated_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (21.7ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'joe@joes.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "dob", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sex", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["created_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["dob", nil], ["email", "joe@joes.com"], ["encrypted_password", "$2a$04$LmfPV79olYx7WKhVB65ohOqjBSi3Byo7fql3n3QlV5lo.iiozzO.K"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Joe"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sex", nil], ["sign_in_count", 0], ["updated_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (31.7ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'joe@joes.com' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "dob", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sex", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["created_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["dob", nil], ["email", "joe@joes.com"], ["encrypted_password", "$2a$04$Qsud3At/z/Jw1ynH0Zi/uepVPQApw/pWjqN9U01NadWeDjB5F4IU2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Joe"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sex", nil], ["sign_in_count", 0], ["updated_at", Fri, 13 Dec 2013 21:25:03 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (18.1ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (16.9ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (10.2ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.5ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (9.6ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.4ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (9.4ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.2ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (9.4ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.6ms)[0m  TRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entries" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "entities" DISABLE TRIGGER ALL
+  [1m[36m (9.2ms)[0m  [1mTRUNCATE TABLE "entries", "users", "entities" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL

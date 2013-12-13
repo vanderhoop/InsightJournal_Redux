@@ -1,4 +1,4 @@
-# == Route Map (Updated 2013-12-12 15:46)
+# == Route Map (Updated 2013-12-13 16:54)
 #
 #         new_user_session GET    /users/sign_in(.:format)                   devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)                   devise/sessions#create
@@ -13,6 +13,7 @@
 #   edit_user_registration GET    /users/edit(.:format)                      devise/registrations#edit
 #                          PUT    /users(.:format)                           devise/registrations#update
 #                          DELETE /users(.:format)                           devise/registrations#destroy
+#           users_sign_out POST   /users/sign_out(.:format)                  devise/sessions#destroy
 #                     root        /                                          welcome#index
 #             user_entries GET    /users/:user_id/entries(.:format)          entries#index
 #                          POST   /users/:user_id/entries(.:format)          entries#create
