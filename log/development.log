@@ -5760,3 +5760,24 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-12 20:07:00 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 66ms (Views: 11.3ms | ActiveRecord: 2.5ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20131212202416)
+Migrating to CreateEntriesTable (20131213004949)
+Migrating to CreateEntitiesTable (20131213010606)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "entities" ("id" serial primary key, "entry_id" integer, "string_representation" character varying(255), "count" integer, "type" character varying(255), "sentiment_type" character varying(255), "sentiment_score" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131213010606')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
