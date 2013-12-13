@@ -16,6 +16,7 @@
 class Entity < ActiveRecord::Base
   attr_accessible :entry_id, :string_representation, :count, :type, :sentiment_type, :sentiment_score
   validates :entry_id, :string_representation, :presence => true
+  validates_numericality_of :entry_id
 
   belongs_to :entry
 end

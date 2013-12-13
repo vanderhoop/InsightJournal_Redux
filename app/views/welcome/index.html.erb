@@ -7,6 +7,8 @@
    <li>Entry</li>
    <li>Entry</li>
  </ul>
+ <% url = "users/#{@current_user.id}/entries/new" %>
+ <%= link_to "Create an entry", url %>
 <% else %>
  <h2>Sign in</h2>
 

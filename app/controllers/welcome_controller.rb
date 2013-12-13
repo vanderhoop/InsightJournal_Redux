@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   respond_to :json #sets all actions to respond to .json requests
 
   def index
-    @user = User.new
+    @entries = current_user.entries
   end
 
 end

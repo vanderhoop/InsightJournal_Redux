@@ -35,6 +35,7 @@ describe Entry do
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:text)}
   it { should validate_presence_of(:user_mood_input)}
+  it { should validate_numericality_of(:user_id) }
 
   it 'can be created with a valid user_id, text, and user_mood_input' do
     new_entry = entry
