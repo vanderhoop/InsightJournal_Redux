@@ -23,8 +23,11 @@ require 'spec_helper'
 describe Entry do
   before(:each) do
     @user = User.new
-    @user.name = "Travis"
-    @user.name = ""
+    @user.name = "Joe"
+    @user.email = "joe@joes.com"
+    @user.password = "batman21"
+    @user.password_confirmation = "batman21"
+    @user.save
   end
 
   let(:entry) { Entry.new }
@@ -32,6 +35,14 @@ describe Entry do
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:text)}
   it { should validate_presence_of(:user_mood_input)}
+
+  it 'can be created with a valid user_id, text, and user_mood_input' do
+    new_entry = entry
+    new_entry.user_id = 1
+    new_entry.text = "Everything about the Minnesota Vikings is rotten."
+    new_entry.user_mood_input = 4
+    expect(new_entry.save).to be_true
+  end
 
 end
 

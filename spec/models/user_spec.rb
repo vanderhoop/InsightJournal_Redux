@@ -23,5 +23,23 @@
 require 'spec_helper'
 
 describe User do
-  it { should validate_presence_of(:encrypted_password)}
+  let(:user){User.new}
+
+  # Active Record Methods ================================
+  it "has a method to retrieve its entries in an array" do
+    expect(user.entries.class).to eq(Array)
+  end
+
+  it "has a method to retrieve its entities in an array" do
+    expect(user.entities.class).to eq(Array)
+  end
+
+  it { should allow_mass_assignment_of(:name) }
+  it { should allow_mass_assignment_of(:email) }
+  it { should allow_mass_assignment_of(:password) }
+  it { should allow_mass_assignment_of(:password_confirmation) }
+  # TODO devise created an additional attr_accessible, :remember_me,
+  # to populate the sign in fields on an established user's computer.
+  # Look up exactly what it's doing.
+
 end

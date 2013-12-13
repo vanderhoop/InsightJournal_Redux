@@ -1,6 +1,12 @@
  <h1>Insight Journal</h1>
 <% if user_signed_in? %>
  <%= button_to "Log out", destroy_user_session_path %>
+ <h3>Your Entries:</h3>
+ <ul>
+   <li>Entry</li>
+   <li>Entry</li>
+   <li>Entry</li>
+ </ul>
 <% else %>
  <h2>Sign in</h2>
 
