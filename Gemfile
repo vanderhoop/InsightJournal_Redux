@@ -66,3 +66,4 @@ group :assets do
 end
 
 gem "simplecov", :require => false, :group => :test
+gem 'shoulda-matchers', :group => :test
