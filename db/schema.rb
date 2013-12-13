@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212202416) do
+ActiveRecord::Schema.define(:version => 20131213004949) do
+
+  create_table "entries", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "text"
+    t.integer  "user_mood_input"
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "temperature"
+    t.float    "humidity"
+    t.integer  "word_count"
+    t.string   "most_common_adjective"
+    t.string   "most_common_adverb"
+    t.string   "subject"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

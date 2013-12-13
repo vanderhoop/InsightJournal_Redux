@@ -5712,3 +5712,51 @@ Started GET "/" for 127.0.0.1 at 2013-12-12 18:41:54 -0500
 Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/application (2.4ms)
 Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-12-12 19:47:50 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aYsKGRf6GKWkkQ8brBrXAPgAP7zAqkwh71JKo9qRzi8=", "user"=>{"email"=>"vanderhoop@me.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'vanderhoop@me.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-12-12 23:28:36.355772', "current_sign_in_at" = '2013-12-13 00:47:50.456854', "sign_in_count" = 9, "updated_at" = '2013-12-13 00:47:50.458342' WHERE "users"."id" = 1[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-12 19:47:50 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2013-12-12 19:47:56 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Qn/zkw8DGyJaNx0ozH3fEVFbcv/9MNDwkocmBjmbT2w="}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-12 19:47:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20131212202416)
+Migrating to CreateEntriesTable (20131213004949)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "entries" ("id" serial primary key, "user_id" integer, "text" text, "user_mood_input" integer, "lat" float, "long" float, "temperature" integer, "humidity" float, "word_count" integer, "most_common_adjective" character varying(255), "most_common_adverb" character varying(255), "subject" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131213004949')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
