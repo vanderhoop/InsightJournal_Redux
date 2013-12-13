@@ -6,6 +6,8 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    @day_created = @entry.created_at.strftime("%B %d, %Y")
+    # binding.pry
   end
 
   def create
