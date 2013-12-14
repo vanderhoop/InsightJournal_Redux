@@ -3,18 +3,50 @@ require 'spec_helper'
 describe "The Home Page" do
   before(:each) do
     visit "/"
+    @user = User.new
+    @user.name = Faker::Name.name
+    @user.email = Faker::Internet.email
+    @user.password = "batman11"
+    @user.password_confirmation = "batman11"
+    @user.save
   end
 
-  describe Session do
-    context "when users aren't signed in" do
-        it "displays the landing page" do
-          fill_in
+  context "when users aren't signed in" do
+    it "displays the sign in form" do
+      expect(page).to have_css("form[action='/users/sign_in']")
+    end
 
+    it "won't display the logout button" do
+      expect(page).to_not have_css("input[value='Log out']")
+    end
+
+    describe "the signing in process" do
+      context "with the correct user name/pw" do
+        it "takes you to the user's dashboard" do
+          # binding.pry
+          fill_in "Email", with: @user.email
+          fill_in "Password", with: @user.password
+          click_on "input[value='Sign in']"
+          expect(page).to have_content("Entries")
         end
+      end # with correct credentials
+    end #signing in
+  end # when users aren't signed in
 
-    end # describe "The Home Page"
-  end #describe Session
+  context "when users are signed in" do
+    before(:each) do
+      user = User.new
+      user.name = Faker::Name.name
+      user.email = Faker::Internet.email
+      user.password = "batman11"
+      user.password_confirmation = "batman11"
+      user.save
+    end
 
+    it "displays the user's most recent entries" do
+      expect(page).to have_content("Entries")
+    end
+  end # context - when users are signed in
 end # describe "The Home Page"
 
 # require 'spec_helper'

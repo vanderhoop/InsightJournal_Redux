@@ -53,9 +53,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.1.0)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     celluloid (0.15.2)
       timers (~> 1.1.0)
     childprocess (0.3.9)
@@ -81,6 +78,8 @@ GEM
     docile (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.2.0)
+      i18n (~> 0.5)
     ffi (1.9.3)
     formatador (0.2.4)
     guard (2.2.4)
@@ -252,10 +251,10 @@ DEPENDENCIES
   binding_of_caller
   bootstrap_helper (= 3.2.2.0)
   capybara
-  capybara-webkit
   coffee-rails (~> 3.2.1)
   database_cleaner
   devise
+  faker
   guard-rspec
   handlebars_assets
   jasmine

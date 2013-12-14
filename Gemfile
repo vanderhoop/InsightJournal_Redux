@@ -45,11 +45,12 @@ group :development, :test do
   gem "guard-rspec", :require => false
   gem "capybara"
   gem "database_cleaner"
-  gem "capybara-webkit"
+  # gem "capybara-webkit"
   gem "selenium-webdriver"
   gem "jasmine"
   gem "pry-rails"
   gem "awesome_print"
+  gem "faker"
 end
 
 group :development do
