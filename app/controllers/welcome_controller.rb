@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   respond_to :json #sets all actions to respond to .json requests
 
   def index
-    @entries = current_user.entries
+    @entries = user_signed_in? ?  current_user.entries : nil
   end
 
 end
