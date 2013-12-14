@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
-    @entry.word_count = params[:entry][:text].split(' ').size.to_i
+    @entry.word_count = params[:entry][:text].split(' ').length
     char_count =
 
 
