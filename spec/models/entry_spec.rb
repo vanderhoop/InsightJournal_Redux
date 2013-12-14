@@ -37,6 +37,7 @@ describe Entry do
   it { should validate_presence_of(:user_mood_input) }
   it { should validate_presence_of(:word_count) }
   it { should validate_numericality_of(:user_id) }
+  it { should validate_numericality_of(:word_count) }
   it { should ensure_length_of(:text).is_at_least(10) }
 
   it 'can be created with a valid user_id, text, user_mood_input, and word count' do
