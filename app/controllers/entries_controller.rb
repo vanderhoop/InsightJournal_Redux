@@ -1,5 +1,4 @@
 class EntriesController < ApplicationController
-
   def index
     @entries = Entry.all
   end
@@ -13,12 +12,17 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
+    @entry.word_count = params[:entry][:text].split(' ').size.to_i
+    char_count =
+
+
     if @entry.save
       # because entries are a nested resource, need to pass the
       # parent resource, otherwise you will get 'undefined method entry_url
       redirect_to [@user, @entry]
     else
-
+      flash[:notice] = "Your entry was only #{@entry.word_count} word(s) long. Viable entries must be at least ____ words/characters."
+      render :action => :new
     end
   end
 

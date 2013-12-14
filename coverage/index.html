@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.8.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.8.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_green.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.8.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-13T16:25:03-05:00">2013-12-13T16:25:03-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-13T19:40:37-05:00">2013-12-13T19:40:37-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">90.4%</span></span>
+    (<span class="covered_percent"><span class="yellow">90.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.71
+         1.82
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>19</b> files in total.
-    <b>125</b> relevant lines. 
-    <span class="green"><b>113</b> lines covered</span> and
-    <span class="red"><b>12</b> lines missed </span>
+    <b>130</b> relevant lines. 
+    <span class="green"><b>117</b> lines covered</span> and
+    <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#48816e026a1a59314fd1bf7725706843a4e8dad1" class="src_link" title="app/controllers/entries_controller.rb">app/controllers/entries_controller.rb</a></td>
-        <td class="red strong">57.14 %</td>
-        <td>35</td>
-        <td>14</td>
+        <td class="red strong">53.33 %</td>
+        <td>40</td>
+        <td>15</td>
         <td>8</td>
-        <td>6</td>
-        <td>0.6</td>
+        <td>7</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -103,9 +103,9 @@
       <tr>
         <td class="strong"><a href="#6a851a48384a8afb808e8c488f77d4819b355754" class="src_link" title="app/models/entry.rb">app/models/entry.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>27</td>
-        <td>5</td>
-        <td>5</td>
+        <td>28</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -203,7 +203,7 @@
       <tr>
         <td class="strong"><a href="#384b47eb037f36e0082d4d8eb1609bd0eb0a8319" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>46</td>
+        <td>47</td>
         <td>7</td>
         <td>7</td>
         <td>0</td>
@@ -213,11 +213,11 @@
       <tr>
         <td class="strong"><a href="#e7d66794f338577f2d273fd295a7da1b91517900" class="src_link" title="spec/models/entry_spec.rb">spec/models/entry_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>74</td>
-        <td>20</td>
-        <td>20</td>
+        <td>51</td>
+        <td>23</td>
+        <td>23</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.9</td>
       </tr>
       
       <tr>
@@ -237,7 +237,7 @@
         <td>11</td>
         <td>10</td>
         <td>1</td>
-        <td>6.6</td>
+        <td>7.2</td>
       </tr>
       
     </tbody>
@@ -325,11 +325,11 @@
         <div class="source_table" id="48816e026a1a59314fd1bf7725706843a4e8dad1">
   <div class="header">
     <h3>app/controllers/entries_controller.rb</h3>
-    <h4><span class="red">57.14 %</span> covered</h4>
+    <h4><span class="red">53.33 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
+      <b>15</b> relevant lines. 
       <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="red"><b>7</b> lines missed.</span>
     </div>
   </div>
   
@@ -342,70 +342,70 @@
           <code class="ruby">class EntriesController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="4">
+        <li class="missed" data-hits="0" data-linenumber="3">
           
           
           <code class="ruby">    @entries = Entry.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">    # @entry = Entry.find(params[])</code>
+          <code class="ruby">    @entry = Entry.find(params[:id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
+          <code class="ruby">    @day_created = @entry.created_at.strftime(&quot;%B %d, %Y&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    # binding.pry</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">    binding.pry</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
@@ -417,115 +417,115 @@
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">    if @entry.save</code>
+          <code class="ruby">    @entry.user_id = current_user.id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">      redirect_to @entry</code>
+          <code class="ruby">    # @entry.word_count = params[:entry][:text].split(' ').size.to_i</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    if @entry.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      # because entries are a nested resource, need to pass the</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      # parent resource, otherwise you will get 'undefined method entry_url</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
+          
+          <code class="ruby">      redirect_to [@user, @entry]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def new</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">    @entry = Entry.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">  def edit</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  def new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    # @entry = Entry.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  def edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="32">
           
-          <code class="ruby">  def destroy</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
@@ -534,13 +534,43 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def destroy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>
@@ -867,8 +897,8 @@
     <h3>app/models/entry.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1005,13 +1035,13 @@
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation</code>
+          <code class="ruby">  attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :user_id, :text, :user_mood_input, :presence =&gt; true</code>
+          <code class="ruby">  validates :user_id, :text, :user_mood_input, :word_count, :presence =&gt; true</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
@@ -1020,19 +1050,25 @@
           <code class="ruby">  validates_numericality_of :user_id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :text, length: { minimum: 10, too_short: &quot;is too short (minimum is 10 characters)&quot; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  has_many :entities</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">end</code>
@@ -3513,7 +3549,7 @@
         <li class="never" data-hits="" data-linenumber="1">
           
           
-          <code class="ruby"># == Route Map (Updated 2013-12-12 15:46)</code>
+          <code class="ruby"># == Route Map (Updated 2013-12-13 16:54)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -3603,184 +3639,190 @@
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">#                     root        /                                          welcome#index</code>
+          <code class="ruby">#           users_sign_out POST   /users/sign_out(.:format)                  devise/sessions#destroy</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">#             user_entries GET    /users/:user_id/entries(.:format)          entries#index</code>
+          <code class="ruby">#                     root        /                                          welcome#index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">#                          POST   /users/:user_id/entries(.:format)          entries#create</code>
+          <code class="ruby">#             user_entries GET    /users/:user_id/entries(.:format)          entries#index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">#           new_user_entry GET    /users/:user_id/entries/new(.:format)      entries#new</code>
+          <code class="ruby">#                          POST   /users/:user_id/entries(.:format)          entries#create</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">#          edit_user_entry GET    /users/:user_id/entries/:id/edit(.:format) entries#edit</code>
+          <code class="ruby">#           new_user_entry GET    /users/:user_id/entries/new(.:format)      entries#new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">#               user_entry GET    /users/:user_id/entries/:id(.:format)      entries#show</code>
+          <code class="ruby">#          edit_user_entry GET    /users/:user_id/entries/:id/edit(.:format) entries#edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">#                          PUT    /users/:user_id/entries/:id(.:format)      entries#update</code>
+          <code class="ruby">#               user_entry GET    /users/:user_id/entries/:id(.:format)      entries#show</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">#                          DELETE /users/:user_id/entries/:id(.:format)      entries#destroy</code>
+          <code class="ruby">#                          PUT    /users/:user_id/entries/:id(.:format)      entries#update</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">#                    users GET    /users(.:format)                           users#index</code>
+          <code class="ruby">#                          DELETE /users/:user_id/entries/:id(.:format)      entries#destroy</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">#                          POST   /users(.:format)                           users#create</code>
+          <code class="ruby">#                    users GET    /users(.:format)                           users#index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">#                 new_user GET    /users/new(.:format)                       users#new</code>
+          <code class="ruby">#                          POST   /users(.:format)                           users#create</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">#                edit_user GET    /users/:id/edit(.:format)                  users#edit</code>
+          <code class="ruby">#                 new_user GET    /users/new(.:format)                       users#new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">#                     user GET    /users/:id(.:format)                       users#show</code>
+          <code class="ruby">#                edit_user GET    /users/:id/edit(.:format)                  users#edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">#                          PUT    /users/:id(.:format)                       users#update</code>
+          <code class="ruby">#                     user GET    /users/:id(.:format)                       users#show</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">#                          DELETE /users/:id(.:format)                       users#destroy</code>
+          <code class="ruby">#                          PUT    /users/:id(.:format)                       users#update</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">#                          DELETE /users/:id(.:format)                       users#destroy</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">InsightJournalRedux::Application.routes.draw do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  devise_for :users</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">  devise_scope :user do</code>
+          <code class="ruby">  devise_for :users</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    post '/users/sign_out' =&gt; 'devise/sessions#destroy'</code>
+          <code class="ruby">  devise_scope :user do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    post '/users/sign_out' =&gt; 'devise/sessions#destroy'</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">  root :to =&gt; &quot;welcome#index&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="42">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  resources :users do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    resources :entries</code>
+          <code class="ruby">  resources :users do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    resources :entries</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>
@@ -3795,8 +3837,8 @@
     <h3>spec/models/entry_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3948,38 +3990,38 @@
           <code class="ruby">  before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="25">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="25">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user = User.new</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="26">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="26">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user.name = &quot;Joe&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="27">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="27">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user.email = &quot;joe@joes.com&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="28">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="28">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user.password = &quot;batman21&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="29">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="29">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user.password_confirmation = &quot;batman21&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="30">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="30">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user.save</code>
         </li>
@@ -4017,85 +4059,85 @@
         <li class="covered" data-hits="2" data-linenumber="36">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should validate_presence_of(:text)}</code>
+          <code class="ruby">  it { should validate_presence_of(:text) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="37">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { should validate_presence_of(:user_mood_input)}</code>
+          <code class="ruby">  it { should validate_presence_of(:user_mood_input) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="38">
           <span class="hits">2</span>
           
+          <code class="ruby">  it { should validate_presence_of(:word_count) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
+          
           <code class="ruby">  it { should validate_numericality_of(:user_id) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="covered" data-hits="2" data-linenumber="40">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  it { should ensure_length_of(:text).is_at_least(10) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it 'can be created with a valid user_id, text, and user_mood_input' do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    new_entry = entry</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    new_entry.user_id = 1</code>
+          <code class="ruby">  it 'can be created with a valid user_id, text, user_mood_input, and word count' do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    new_entry.text = &quot;Everything about the Minnesota Vikings is rotten.&quot;</code>
+          <code class="ruby">    new_entry = entry</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">    new_entry.user_mood_input = 4</code>
+          <code class="ruby">    new_entry.user_id = 1</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
+          <code class="ruby">    new_entry.text = &quot;Everything about the Minnesota Vikings is rotten.&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    new_entry.user_mood_input = 4</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    new_entry.word_count = 10</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
           <code class="ruby">    expect(new_entry.save).to be_true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
@@ -4107,145 +4149,7 @@
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby"># describe Trainer do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">#   let(:trainer) { Trainer.new }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">#   # relying on rspec helpers</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">#   it &quot;is invalid without a password idgest v2&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby">#     expect(trainer).to have(1).error_on(:password_digest) # rspec helper</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby">#   # cleanest, most readible and the most direct</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">#   it { should validate_presence_of(:password_digest) } # shoulda-matchers</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">#                                                        # https://github.com/thoughtbot/shoulda-matchers</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">#   it { should validate_presence_of(:email) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">#   it &quot;can be created with a password, password_confirmation, and email set&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby">#     trainer.password = &quot;kickhash&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby">#     trainer.password_confirmation = &quot;kickhash&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">#     trainer.email = &quot;kick@hash.com&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">#     expect(trainer.save).to be_true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
-          
-          
-          <code class="ruby"># end # describe Trainer</code>
+          <code class="ruby">end</code>
         </li>
       
     </ol>
@@ -4608,8 +4512,8 @@
           <code class="ruby">  config.before :each do</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="8">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="24" data-linenumber="8">
+          <span class="hits">24</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :truncation</code>
         </li>
@@ -4662,8 +4566,8 @@
           <code class="ruby">  config.before :each do</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="17">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="24" data-linenumber="17">
+          <span class="hits">24</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -4686,8 +4590,8 @@
           <code class="ruby">  config.after :each do</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="21">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="24" data-linenumber="21">
+          <span class="hits">24</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>
