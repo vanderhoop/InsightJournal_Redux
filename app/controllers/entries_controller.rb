@@ -6,7 +6,6 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
     @day_created = @entry.created_at.strftime("%B %d, %Y")
-    # binding.pry
   end
 
   def create
@@ -27,10 +26,11 @@ class EntriesController < ApplicationController
   end
 
   def new
-    # @entry = Entry.new
+    @entry = Entry.new
   end
 
   def edit
+    @entry = Entry.find(params[:id])
   end
 
 

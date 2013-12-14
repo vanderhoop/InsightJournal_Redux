@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
   def user_instance
     @user = current_user
   end
+
 end
