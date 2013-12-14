@@ -33,8 +33,18 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
   end
 
-
   def update
+    @entry = Entry.find(params[:id])
+    @entry.word_count = @entry.text.split(' ').length
+    # binding.pry
+    if @entry.update_attributes(params[:entry])
+      flash[:notice] = "Entry successfully updated!"
+      redirect_to [@user, @entry]
+    else
+      flash[:error] = "Entry couldn't be updated"
+      render :action => :edit
+    end
+    # binding.pry
   end
 
   def destroy
