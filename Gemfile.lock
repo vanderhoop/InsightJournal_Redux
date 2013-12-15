@@ -266,6 +266,7 @@ DEPENDENCIES
   handlebars_assets
   jasmine
   jquery-rails
+  json
   launchy
   meta_request
   pg

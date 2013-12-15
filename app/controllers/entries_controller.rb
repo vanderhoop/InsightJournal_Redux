@@ -1,4 +1,7 @@
+require 'alchemy'
+
 class EntriesController < ApplicationController
+
   def index
     @entries = Entry.all
     # TODO add link to user dashboard that takes users to a view of all of their entries.
@@ -13,6 +16,8 @@ class EntriesController < ApplicationController
   end
 
   def create
+    alchemy_api = Alchemy.new()
+    binding.pry
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length

@@ -72,7 +72,9 @@
         </div><!--/span-->
         <div class="span9">
           <%= bootstrap_flash %>
-          <%= button_to "Log out", destroy_user_session_path %>
+          <% if user_signed_in? %>
+            <%= button_to "Log out", destroy_user_session_path %>
+          <% end %>
           <%= yield %>
         </div>
       </div><!--/row-->
