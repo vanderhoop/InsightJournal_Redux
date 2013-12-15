@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
 
     if @entry.save
       # because entries are a nested resource, need to pass the
-      # parent resource, otherwise you will get 'undefined method entry_url
+      # parent resource on redirect, otherwise you will get 'undefined method entry_url'
       redirect_to [@user, @entry]
     else
       flash[:notice] = "Your entry was only #{@entry.word_count} word(s) long. Viable entries must be at least ____ words/characters."
