@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131213010606) do
+ActiveRecord::Schema.define(:version => 20131215032006) do
 
   create_table "entities", :force => true do |t|
     t.integer  "entry_id"
     t.string   "string_representation"
     t.integer  "count"
-    t.string   "type"
+    t.string   "e_type"
     t.string   "sentiment_type"
     t.float    "sentiment_score"
     t.datetime "created_at",            :null => false

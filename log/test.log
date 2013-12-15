@@ -12530,3 +12530,14 @@ PG::ObjectNotInPrerequisiteState: ERROR:  currval of sequence "entities_id_seq" 
 : SELECT currval('entities_id_seq');
   [1m[35m (5.6ms)[0m  TRUNCATE TABLE "entries", "users" RESTART IDENTITY CASCADE;
   [1m[36m (0.4ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entries" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "entities" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20131212202416)
+Migrating to CreateEntriesTable (20131213004949)
+Migrating to CreateEntitiesTable (20131213010606)
+Migrating to ChangeTypeColumn (20131215032006)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "entities" RENAME COLUMN "type" TO "e_type"[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131215032006')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
