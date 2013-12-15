@@ -28,7 +28,7 @@ class Entry < ActiveRecord::Base
   validates_numericality_of :user_id, :word_count
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
   has_many :entities
-  after_initialize :get_entities_and_relations
+  before_save :get_entities, :get_relations
   after_update :update_entities
   before_destroy :destroy_entities
 
@@ -40,9 +40,15 @@ class Entry < ActiveRecord::Base
     end
   end
 
-  def get_entities_and_relations
+  # sets instance_entities
+  def get_entities
     alchemy_api = Alchemy.new()
     @instance_entities = alchemy_api.entities('text', self.text, { sentiment: 1 })["entities"]
+  end
+
+  # sets tense_orientation
+  def get_relations
+    alchemy_api = Alchemy.new()
     @instance_relations = alchemy_api.relations('text', self.text)["relations"]
     @tenses = []
     @instance_relations.each do |relation|
@@ -50,6 +56,7 @@ class Entry < ActiveRecord::Base
     end
     @most_used_tense = @tenses.mode
     self.tense_orientation = @most_used_tense
+    binding.pry
     # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.
   end
 
@@ -69,7 +76,7 @@ class Entry < ActiveRecord::Base
 
   def update_entities
     self.destroy_entities
-    self.get_entities_and relations
+    self.get_entities
     self.create_entities(self.instance_entities)
   end # update_entities
 

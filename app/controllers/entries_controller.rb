@@ -12,14 +12,14 @@ class EntriesController < ApplicationController
     @day_created = @entry.created_at.strftime("%B %d, %Y")
     # binding.pry
     @url = "users/#{params[:user_id]}/entries/#{params[:id]}"
-
   end
 
   def create
-    # on instantiation of new Entry, a combined entity+relations call will be made to the API
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
+    # before .save is called, both an 'entity' and a 'relations' call
+    # are made to the API. Both save set instance variables of the Entry
     if @entry.save
       @entry.create_entities(@entry.instance_entities)
       flash[:notice] = "Entry successfully created."
@@ -30,7 +30,7 @@ class EntriesController < ApplicationController
       flash[:notice] = "Your entry was only #{@entry.word_count} word(s) long. Viable entries must be at least ____ words/characters."
       render :action => :new
     end
-  end
+  end # create
 
   def new
   end
@@ -40,7 +40,12 @@ class EntriesController < ApplicationController
   end
 
   def update
+    # retrieves entry with old information
     @entry = Entry.find(params[:id])
+    binding.pry
+    # updates only the attributes available in params
+      # I want to update the word count
+      # I want to call save
     if @entry.update_attributes(params[:entry])
       # TODO are word counts updated? I'm too tired to figure out where to persist this data
       @entry.word_count = @entry.text.split(' ').length
@@ -50,7 +55,7 @@ class EntriesController < ApplicationController
       flash[:error] = "Entry couldn't be updated"
       render :action => :edit
     end
-  end
+  end #update
 
   def destroy
     @entry = Entry.find(params[:id])
@@ -61,5 +66,5 @@ class EntriesController < ApplicationController
       flash[:error] = "Couldn't destroy your entry. It's protected by the many pecking hens of Endor."
       render :action => :show
     end
-  end
+  end # destroy
 end
