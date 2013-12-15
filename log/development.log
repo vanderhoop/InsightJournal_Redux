@@ -27634,3 +27634,326 @@ Processing by EntriesController#show as HTML
   [1m[36mEntry Load (1.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "15"]]
   Rendered entries/show.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 263ms (Views: 10.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/15/entries/15/edit" for 127.0.0.1 at 2013-12-15 08:41:54 -0500
+Processing by EntriesController#edit as HTML
+  Parameters: {"user_id"=>"15", "id"=>"15"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "15"]]
+  [1m[35mEXPLAIN (1.9ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "15"]]
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."id" = $1 LIMIT 1 [["id", "15"]]
+                                     QUERY PLAN
+-------------------------------------------------------------------------------------
+ Limit  (cost=0.14..8.15 rows=1 width=2156)
+   ->  Index Scan using entries_pkey on entries  (cost=0.14..8.15 rows=1 width=2156)
+         Index Cond: (id = 15)
+(3 rows)
+
+  Rendered entries/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 688ms (Views: 13.0ms | ActiveRecord: 7.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/15/entries/15/edit" for 127.0.0.1 at 2013-12-15 08:42:13 -0500
+Processing by EntriesController#edit as HTML
+  Parameters: {"user_id"=>"15", "id"=>"15"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (1.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "15"]]
+  Rendered entries/edit.html.erb within layouts/application (545.0ms)
+Completed 200 OK in 947ms (Views: 627.4ms | ActiveRecord: 13.4ms)
+
+
+Started PUT "/users/15/entries/15" for 127.0.0.1 at 2013-12-15 08:42:27 -0500
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"I have just implemented the 'after_initialize' active_record callback, which should populate the Entry instance with an instance variable '@instance_entities'. I gave the property an attr_reader, so I should be able to use it. New York City is a great place.", "user_mood_input"=>"7"}, "commit"=>"Update Entry", "user_id"=>"15", "id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "15"]]
+  [1m[36mEXPLAIN (0.8ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "15"]]
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."id" = $1 LIMIT 1 [["id", "15"]]
+                                     QUERY PLAN
+-------------------------------------------------------------------------------------
+ Limit  (cost=0.14..8.15 rows=1 width=2156)
+   ->  Index Scan using entries_pkey on entries  (cost=0.14..8.15 rows=1 width=2156)
+         Index Cond: (id = 15)
+(3 rows)
+
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mUPDATE "entries" SET "text" = 'I have just implemented the ''after_initialize'' active_record callback, which should populate the Entry instance with an instance variable ''@instance_entities''. I gave the property an attr_reader, so I should be able to use it. New York City is a great place.', "user_mood_input" = 7, "updated_at" = '2013-12-15 13:42:30.773382' WHERE "entries"."id" = 15[0m
+  [1m[35m (133.0ms)[0m  COMMIT
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 15[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["count", 2], ["created_at", Sun, 15 Dec 2013 13:42:30 UTC +00:00], ["e_type", "StateOrCounty"], ["entry_id", 15], ["sentiment_score", 0.301679], ["sentiment_type", "positive"], ["string_representation", "Wisconsin"], ["updated_at", Sun, 15 Dec 2013 13:42:30 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/15
+Completed 302 Found in 3618ms (ActiveRecord: 144.7ms)
+
+
+Started GET "/users/1/entries/15" for 127.0.0.1 at 2013-12-15 08:42:31 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"15"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "15"]]
+  Rendered entries/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 272ms (Views: 12.1ms | ActiveRecord: 1.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 08:49:30 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (1.2ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 4034ms (Views: 83.6ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/users/1/entries/new" for 127.0.0.1 at 2013-12-15 08:49:39 -0500
+Processing by EntriesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered entries/_entry_form.html.erb (600.0ms)
+  Rendered entries/new.html.erb within layouts/application (604.7ms)
+Completed 200 OK in 617ms (Views: 614.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-15 08:50:06 -0500
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"Minnesota is a beautiful state with great people. That said, I don't know that I could live there.", "user_mood_input"=>"6"}, "commit"=>"Save Entry", "user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (42.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "tense_orientation", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["created_at", Sun, 15 Dec 2013 13:50:06 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["tense_orientation", nil], ["text", "Minnesota is a beautiful state with great people. That said, I don't know that I could live there."], ["updated_at", Sun, 15 Dec 2013 13:50:06 UTC +00:00], ["user_id", 1], ["user_mood_input", 6], ["word_count", 18]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["count", 2], ["created_at", Sun, 15 Dec 2013 13:50:07 UTC +00:00], ["e_type", "StateOrCounty"], ["entry_id", 16], ["sentiment_score", 0.48], ["sentiment_type", "positive"], ["string_representation", "Minnesota"], ["updated_at", Sun, 15 Dec 2013 13:50:07 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/16
+Completed 302 Found in 323ms (ActiveRecord: 49.1ms)
+
+
+Started GET "/users/1/entries/16" for 127.0.0.1 at 2013-12-15 08:50:07 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"16"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "16"]]
+  Rendered entries/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 258ms (Views: 13.1ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/1/entries/16" for 127.0.0.1 at 2013-12-15 08:50:22 -0500
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "user_id"=>"1", "id"=>"16"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "16"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = $1[0m  [["id", 16]]
+  [1m[35mEntity Load (0.6ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 16
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 288ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 08:50:22 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.6ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 3221ms (Views: 11.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/entries/12" for 127.0.0.1 at 2013-12-15 08:51:36 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"12"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (1.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  Rendered entries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 357ms (Views: 43.6ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/users/12/entries/12/edit" for 127.0.0.1 at 2013-12-15 08:51:39 -0500
+Processing by EntriesController#edit as HTML
+  Parameters: {"user_id"=>"12", "id"=>"12"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  Rendered entries/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 273ms (Views: 13.4ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/users/12/entries/12" for 127.0.0.1 at 2013-12-15 08:51:54 -0500
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"Madonna is an another example of a national treasure. Edward Norton is my favorite actor. He's was so talented. His movies make me immensely happy.", "user_mood_input"=>"7"}, "commit"=>"Update Entry", "user_id"=>"12", "id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mUPDATE "entries" SET "text" = 'Madonna is an another example of a national treasure. Edward Norton is my favorite actor. He''s was so talented. His movies make me immensely happy.', "user_mood_input" = 7, "updated_at" = '2013-12-15 13:51:55.117838' WHERE "entries"."id" = 12[0m
+  [1m[35mEntity Load (0.6ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 12
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = $1[0m  [["id", 5]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entities" WHERE "entities"."id" = $1  [["id", 6]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["count", 4], ["created_at", Sun, 15 Dec 2013 13:51:55 UTC +00:00], ["e_type", "Person"], ["entry_id", 12], ["sentiment_score", 0.599178], ["sentiment_type", "positive"], ["string_representation", "Marlon Brando"], ["updated_at", Sun, 15 Dec 2013 13:51:55 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["count", 2], ["created_at", Sun, 15 Dec 2013 13:51:55 UTC +00:00], ["e_type", "Person"], ["entry_id", 12], ["sentiment_score", 0.251934], ["sentiment_type", "positive"], ["string_representation", "Madonna"], ["updated_at", Sun, 15 Dec 2013 13:51:55 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/12
+Completed 302 Found in 569ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/users/1/entries/12" for 127.0.0.1 at 2013-12-15 08:51:55 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  Rendered entries/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 249ms (Views: 13.6ms | ActiveRecord: 1.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/12/entries/12/edit" for 127.0.0.1 at 2013-12-15 08:58:37 -0500
+Processing by EntriesController#edit as HTML
+  Parameters: {"user_id"=>"12", "id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (1.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "12"]]
+  [1m[36mEXPLAIN (2.0ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."id" = $1 LIMIT 1 [["id", "12"]]
+                                     QUERY PLAN
+-------------------------------------------------------------------------------------
+ Limit  (cost=0.14..8.15 rows=1 width=2156)
+   ->  Index Scan using entries_pkey on entries  (cost=0.14..8.15 rows=1 width=2156)
+         Index Cond: (id = 12)
+(3 rows)
+
+  Rendered entries/edit.html.erb within layouts/application (547.8ms)
+Completed 200 OK in 1343ms (Views: 618.8ms | ActiveRecord: 16.0ms)
+
+
+Started PUT "/users/12/entries/12" for 127.0.0.1 at 2013-12-15 08:59:03 -0500
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"Madonna is an another example of a national treasure. Christian Bale is my favorite actor. He's was so talented. His movies make me immensely happy.", "user_mood_input"=>"6"}, "commit"=>"Update Entry", "user_id"=>"12", "id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mUPDATE "entries" SET "text" = 'Madonna is an another example of a national treasure. Christian Bale is my favorite actor. He''s was so talented. His movies make me immensely happy.', "user_mood_input" = 6, "updated_at" = '2013-12-15 13:59:03.491668' WHERE "entries"."id" = 12[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 12
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = $1[0m  [["id", 10]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "entities" WHERE "entities"."id" = $1  [["id", 11]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["count", 4], ["created_at", Sun, 15 Dec 2013 13:59:03 UTC +00:00], ["e_type", "Person"], ["entry_id", 12], ["sentiment_score", 0.599178], ["sentiment_type", "positive"], ["string_representation", "Edward Norton"], ["updated_at", Sun, 15 Dec 2013 13:59:03 UTC +00:00]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["count", 2], ["created_at", Sun, 15 Dec 2013 13:59:03 UTC +00:00], ["e_type", "Person"], ["entry_id", 12], ["sentiment_score", 0.251934], ["sentiment_type", "positive"], ["string_representation", "Madonna"], ["updated_at", Sun, 15 Dec 2013 13:59:03 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/12
+Completed 302 Found in 349ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/users/1/entries/12" for 127.0.0.1 at 2013-12-15 08:59:03 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  Rendered entries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 254ms (Views: 11.3ms | ActiveRecord: 1.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/12/entries/12/edit" for 127.0.0.1 at 2013-12-15 09:08:39 -0500
+Processing by EntriesController#edit as HTML
+  Parameters: {"user_id"=>"12", "id"=>"12"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (1.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "12"]]
+  [1m[36mEXPLAIN (1.7ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."id" = $1 LIMIT 1 [["id", "12"]]
+                                     QUERY PLAN
+-------------------------------------------------------------------------------------
+ Limit  (cost=0.14..8.15 rows=1 width=2156)
+   ->  Index Scan using entries_pkey on entries  (cost=0.14..8.15 rows=1 width=2156)
+         Index Cond: (id = 12)
+(3 rows)
+
+  Rendered entries/edit.html.erb within layouts/application (557.6ms)
+Completed 200 OK in 1362ms (Views: 629.5ms | ActiveRecord: 15.4ms)
+
+
+Started PUT "/users/12/entries/12" for 127.0.0.1 at 2013-12-15 09:09:13 -0500
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"Madonna is an another example of a national treasure. Harrison Ford is my favorite actor. He is so talented. His movies make me immensely happy.", "user_mood_input"=>"7"}, "commit"=>"Update Entry", "user_id"=>"12", "id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mUPDATE "entries" SET "text" = 'Madonna is an another example of a national treasure. Harrison Ford is my favorite actor. He is so talented. His movies make me immensely happy.', "user_mood_input" = 7, "updated_at" = '2013-12-15 14:09:13.995574' WHERE "entries"."id" = 12[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 12
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = $1[0m  [["id", 12]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "entities" WHERE "entities"."id" = $1  [["id", 13]]
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["count", 4], ["created_at", Sun, 15 Dec 2013 14:09:14 UTC +00:00], ["e_type", "Person"], ["entry_id", 12], ["sentiment_score", 0.599178], ["sentiment_type", "positive"], ["string_representation", "Harrison Ford"], ["updated_at", Sun, 15 Dec 2013 14:09:14 UTC +00:00]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["count", 2], ["created_at", Sun, 15 Dec 2013 14:09:14 UTC +00:00], ["e_type", "Person"], ["entry_id", 12], ["sentiment_score", 0.251934], ["sentiment_type", "positive"], ["string_representation", "Madonna"], ["updated_at", Sun, 15 Dec 2013 14:09:14 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/12
+Completed 302 Found in 569ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/users/1/entries/12" for 127.0.0.1 at 2013-12-15 09:09:14 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  Rendered entries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 266ms (Views: 10.6ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/1/entries/12" for 127.0.0.1 at 2013-12-15 09:10:33 -0500
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "user_id"=>"1", "id"=>"12"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (1.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = $1[0m  [["id", 12]]
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 12
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = $1[0m  [["id", 14]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entities" WHERE "entities"."id" = $1  [["id", 15]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 353ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 09:10:33 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEXPLAIN (0.7ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 2985ms (Views: 13.7ms | ActiveRecord: 2.2ms)

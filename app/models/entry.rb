@@ -29,6 +29,15 @@ class Entry < ActiveRecord::Base
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
   has_many :entities
   after_initialize :get_entities
+  after_update :update_entities
+  after_destroy :destroy_entities
+
+
+  def destroy_entities
+    self.entities.each do |entity|
+      entity.destroy
+    end
+  end
 
   def get_entities
     alchemy_api = Alchemy.new()
@@ -48,5 +57,11 @@ class Entry < ActiveRecord::Base
       })
     end
   end #create_entities
+
+  def update_entities
+    self.destroy_entities
+    self.get_entities
+    self.create_entities(self.instance_entities)
+  end # update_entities
 
 end
