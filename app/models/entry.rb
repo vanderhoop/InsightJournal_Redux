@@ -27,10 +27,6 @@ class Entry < ActiveRecord::Base
 
   has_many :entities
 
-  def hello_test
-    "hello"
-  end
-
   def create_entities(entities_array)
     entities_array.each do |entity|
       sentiment = entity["sentiment"]

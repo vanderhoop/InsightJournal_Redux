@@ -22,20 +22,12 @@ class EntriesController < ApplicationController
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
 
-
     if @entry.save
-      @entry_entities.each do |entity|
-        sentiment = entity["sentiment"]
-        Entity.create({
-          entry_id: @entry.id,
-          string_representation: entity["text"],
-          count: entity["count"],
-          e_type: entity["type"],
-          sentiment_type: sentiment["type"],
-          sentiment_score: sentiment["score"] })
-      end
+      @entry.create_entities(@entry_entities)
+
       # because entries are a nested resource, need to pass the
       # parent resource on redirect, otherwise you will get 'undefined method entry_url'
+      flash[:notice] = "Entry successfully created."
       redirect_to [@user, @entry]
     else
       flash[:notice] = "Your entry was only #{@entry.word_count} word(s) long. Viable entries must be at least ____ words/characters."
@@ -66,21 +58,10 @@ class EntriesController < ApplicationController
       # TODO are word counts updated? I'm too tired to figure out where to persist this data
       @entry.word_count = @entry.text.split(' ').length
 
-      # abstraction test
+      # create new entities that point to the updated entry.
       @entry.create_entities(@entry_entities)
 
-      # create new entities that point to the updated entry.
-      # @entry_entities.each do |entity|
-      #   sentiment = entity["sentiment"]
-      #   Entity.create({
-      #     entry_id: @entry.id,
-      #     string_representation: entity["text"],
-      #     count: entity["count"],
-      #     e_type: entity["type"],
-      #     sentiment_type: sentiment["type"],
-      #     sentiment_score: sentiment["score"]
-      #   })
-      # end
+
 
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]
