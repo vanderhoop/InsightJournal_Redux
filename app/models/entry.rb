@@ -26,4 +26,23 @@ class Entry < ActiveRecord::Base
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
 
   has_many :entities
+
+  def hello_test
+    "hello"
+  end
+
+  def create_entities(entities_array)
+    entities_array.each do |entity|
+      sentiment = entity["sentiment"]
+      Entity.create({
+        entry_id: self.id,
+        string_representation: entity["text"],
+        count: entity["count"],
+        e_type: entity["type"],
+        sentiment_type: sentiment["type"],
+        sentiment_score: sentiment["score"]
+      })
+    end
+  end #create_entities
+
 end

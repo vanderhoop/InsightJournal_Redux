@@ -1167,6 +1167,11 @@
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/app/controllers/welcome_controller.rb": [
@@ -1404,6 +1409,6 @@
         null
       ]
     },
-    "timestamp": 1387083999
+    "timestamp": 1387109952
   }
 }

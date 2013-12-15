@@ -24,7 +24,7 @@ class EntriesController < ApplicationController
 
 
     if @entry.save
-      @entry_entities. each do |entity|
+      @entry_entities.each do |entity|
         sentiment = entity["sentiment"]
         Entity.create({
           entry_id: @entry.id,
@@ -66,18 +66,21 @@ class EntriesController < ApplicationController
       # TODO are word counts updated? I'm too tired to figure out where to persist this data
       @entry.word_count = @entry.text.split(' ').length
 
+      # abstraction test
+      @entry.create_entities(@entry_entities)
+
       # create new entities that point to the updated entry.
-      @entry_entities.each do |entity|
-        sentiment = entity["sentiment"]
-        Entity.create({
-          entry_id: @entry.id,
-          string_representation: entity["text"],
-          count: entity["count"],
-          e_type: entity["type"],
-          sentiment_type: sentiment["type"],
-          sentiment_score: sentiment["score"]
-        })
-      end
+      # @entry_entities.each do |entity|
+      #   sentiment = entity["sentiment"]
+      #   Entity.create({
+      #     entry_id: @entry.id,
+      #     string_representation: entity["text"],
+      #     count: entity["count"],
+      #     e_type: entity["type"],
+      #     sentiment_type: sentiment["type"],
+      #     sentiment_score: sentiment["score"]
+      #   })
+      # end
 
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]
