@@ -12,7 +12,7 @@ describe Entity do
   it { should allow_mass_assignment_of(:entry_id) }
   it { should allow_mass_assignment_of(:string_representation) }
   it { should allow_mass_assignment_of(:count) }
-  it { should allow_mass_assignment_of(:type) }
+  it { should allow_mass_assignment_of(:e_type) }
   it { should allow_mass_assignment_of(:sentiment_type) }
   it { should allow_mass_assignment_of(:sentiment_score) }
 

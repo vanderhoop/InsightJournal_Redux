@@ -31,7 +31,7 @@ class EntriesController < ApplicationController
           entry_id: @entry.id,
           string_representation: entity["text"],
           count: entity["count"],
-          type: entity["type"],
+          e_type: entity["type"],
           sentiment_type: sentiment["type"],
           sentiment_score: sentiment["score"] })
       end
@@ -54,10 +54,22 @@ class EntriesController < ApplicationController
   end
 
   def update
+    alchemy_api = Alchemy.new()
     @entry = Entry.find(params[:id])
-    @entry.word_count = @entry.text.split(' ').length
     # binding.pry
     if @entry.update_attributes(params[:entry])
+      @entry_entities = alchemy_api.entities('text', @entry.text, { sentiment: 1 })["entities"]
+      @entry.word_count = @entry.text.split(' ').length
+      @entry_entities.each do |entity|
+        entity.update_attributes({
+          string_representation: entity["text"],
+          count: entity["count"],
+          e_type: entity["type"],
+          sentiment_type: sentiment["type"],
+          sentiment_score: sentiment["score"]
+        })
+
+      end
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]
     else
