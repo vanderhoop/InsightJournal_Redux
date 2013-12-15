@@ -29,7 +29,7 @@ end
 
 class Entry < ActiveRecord::Base
   attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at
-  attr_reader :instance_entities, :instance_relations, :tenses
+  attr_reader :instance_entities, :instance_relations, :tenses, :most_used_tense
   validates :user_id, :text, :user_mood_input, :word_count, :presence => true
   validates_numericality_of :user_id, :word_count
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
@@ -54,13 +54,8 @@ class Entry < ActiveRecord::Base
     @instance_relations.each do |relation|
       @tenses << relation["action"]["verb"]["tense"]
     end
-    @most_used_tense = @tenses.group_by(&:to_s).values.max_by(&:size).first
-    # TODO write Array.method for handling cases where there are multiple modes, see below:
-    # class Array
-      # def mode
-      #   sort_by {|i| grep(i).length }.last
-      # end
-    # end
+    @most_used_tense = @tenses.mode
+    # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.
   end
 
   def create_entities(entities_array)
