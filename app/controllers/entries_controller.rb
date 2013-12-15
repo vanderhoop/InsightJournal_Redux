@@ -3,7 +3,7 @@ require 'alchemy'
 class EntriesController < ApplicationController
 
   def index
-    @entries = Entry.all
+    @entries = current_user.entries
     # TODO add link to user dashboard that takes users to a view of all of their entries.
   end
 
@@ -16,7 +16,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    # on instantiation of new Entry, an entity call will be made to the API
+    # on instantiation of new Entry, a combined entity+relations call will be made to the API
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length

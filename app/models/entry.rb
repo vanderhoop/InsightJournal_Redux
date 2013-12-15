@@ -21,12 +21,6 @@
 
 require 'alchemy'
 
-class Array
-  def mode
-    sort_by {|i| grep(i).length }.last
-  end
-end
-
 class Entry < ActiveRecord::Base
   attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at
   attr_reader :instance_entities, :instance_relations, :tenses, :most_used_tense
@@ -55,6 +49,7 @@ class Entry < ActiveRecord::Base
       @tenses << relation["action"]["verb"]["tense"]
     end
     @most_used_tense = @tenses.mode
+    self.tense_orientation = @most_used_tense
     # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.
   end
 

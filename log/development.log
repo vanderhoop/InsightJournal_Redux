@@ -29442,3 +29442,1095 @@ NoMethodError - undefined method `first' for nil:NilClass:
 
 Started POST "/__better_errors/70109915390060/variables" for 127.0.0.1 at 2013-12-15 12:42:06 -0500
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:53:28 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 500  in 29939ms
+
+SystemExit - exit:
+  pry (0.9.12.4) lib/pry/commands/exit_program.rb:17:in `process'
+  pry (0.9.12.4) lib/pry/command.rb:579:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/command.rb:246:in `run'
+  pry (0.9.12.4) lib/pry/command_set.rb:228:in `block in alias_command'
+  pry (0.9.12.4) lib/pry/command.rb:492:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:445:in `process_command'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:426:in `retrieve_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:301:in `block in r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:298:in `r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:276:in `re'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:254:in `rep'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:234:in `block (3 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:232:in `block (2 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:231:in `block in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:230:in `repl'
+  pry (0.9.12.4) lib/pry/pry_class.rb:170:in `start'
+  pry (0.9.12.4) lib/pry/core_extensions.rb:43:in `pry'
+  app/models/entry.rb:59:in `get_entities_and_relations'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__3512065738074480829__initialize__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_initialize_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.14) lib/active_record/base.rb:524:in `init_with'
+  activerecord (3.2.14) lib/active_record/inheritance.rb:68:in `instantiate'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block (2 levels) in find_by_sql'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.14) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.14) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.14) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.14) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:159:in `all'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:382:in `find_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:335:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:44:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:87:in `method_missing'
+  app/controllers/welcome_controller.rb:5:in `index'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:436:in `_run__3954057557310056232__process_action__4071525777269528106__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1013499469532860887__call__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70109859207540/variables" for 127.0.0.1 at 2013-12-15 12:53:58 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:54:13 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 500  in 61360ms
+
+SystemExit - exit:
+  pry (0.9.12.4) lib/pry/commands/exit_program.rb:17:in `process'
+  pry (0.9.12.4) lib/pry/command.rb:579:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/command.rb:246:in `run'
+  pry (0.9.12.4) lib/pry/command_set.rb:228:in `block in alias_command'
+  pry (0.9.12.4) lib/pry/command.rb:492:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:445:in `process_command'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:426:in `retrieve_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:301:in `block in r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:298:in `r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:276:in `re'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:254:in `rep'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:234:in `block (3 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:232:in `block (2 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:231:in `block in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:230:in `repl'
+  pry (0.9.12.4) lib/pry/pry_class.rb:170:in `start'
+  pry (0.9.12.4) lib/pry/core_extensions.rb:43:in `pry'
+  app/models/entry.rb:59:in `get_entities_and_relations'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__3512065738074480829__initialize__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_initialize_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.14) lib/active_record/base.rb:524:in `init_with'
+  activerecord (3.2.14) lib/active_record/inheritance.rb:68:in `instantiate'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block (2 levels) in find_by_sql'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.14) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.14) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.14) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.14) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:159:in `all'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:382:in `find_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:335:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:44:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:87:in `method_missing'
+  app/controllers/welcome_controller.rb:5:in `index'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:436:in `_run__3954057557310056232__process_action__4071525777269528106__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1013499469532860887__call__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:55:14 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 500  in 9510ms
+
+SystemExit - exit:
+  pry (0.9.12.4) lib/pry/commands/exit_program.rb:17:in `process'
+  pry (0.9.12.4) lib/pry/command.rb:579:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/command.rb:246:in `run'
+  pry (0.9.12.4) lib/pry/command_set.rb:228:in `block in alias_command'
+  pry (0.9.12.4) lib/pry/command.rb:492:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:445:in `process_command'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:426:in `retrieve_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:301:in `block in r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:298:in `r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:276:in `re'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:254:in `rep'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:234:in `block (3 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:232:in `block (2 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:231:in `block in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:230:in `repl'
+  pry (0.9.12.4) lib/pry/pry_class.rb:170:in `start'
+  pry (0.9.12.4) lib/pry/core_extensions.rb:43:in `pry'
+  app/models/entry.rb:53:in `get_entities_and_relations'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__3512065738074480829__initialize__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_initialize_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.14) lib/active_record/base.rb:524:in `init_with'
+  activerecord (3.2.14) lib/active_record/inheritance.rb:68:in `instantiate'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block (2 levels) in find_by_sql'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.14) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.14) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.14) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.14) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:159:in `all'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:382:in `find_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:335:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:44:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:87:in `method_missing'
+  app/controllers/welcome_controller.rb:5:in `index'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:436:in `_run__3954057557310056232__process_action__4071525777269528106__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1013499469532860887__call__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:55:23 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (1.2ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 7033ms (Views: 16.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:55:31 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEXPLAIN (1.1ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 6208ms (Views: 14.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:56:28 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.7ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 6042ms (Views: 14.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/1/entries/new" for 127.0.0.1 at 2013-12-15 13:01:47 -0500
+Processing by EntriesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered entries/_entry_form.html.erb (1.3ms)
+  Rendered entries/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 10.8ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-15 13:02:54 -0500
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"I need to test the Array.mode method, as I forgot that I had left the code at the top of the entries controller file. I am ashamed.", "user_mood_input"=>"6"}, "commit"=>"Save Entry", "user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "tense_orientation", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["created_at", Sun, 15 Dec 2013 18:03:28 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["tense_orientation", "present"], ["text", "I need to test the Array.mode method, as I forgot that I had left the code at the top of the entries controller file. I am ashamed."], ["updated_at", Sun, 15 Dec 2013 18:03:28 UTC +00:00], ["user_id", 1], ["user_mood_input", 6], ["word_count", 27]]
+  [1m[35m (138.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1/entries/18
+Completed 302 Found in 33804ms (ActiveRecord: 143.2ms)
+
+
+Started GET "/users/1/entries/18" for 127.0.0.1 at 2013-12-15 13:03:28 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"18"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "18"]]
+Completed 500  in 2618ms
+
+SystemExit - exit:
+  pry (0.9.12.4) lib/pry/commands/exit_program.rb:17:in `process'
+  pry (0.9.12.4) lib/pry/command.rb:579:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/command.rb:246:in `run'
+  pry (0.9.12.4) lib/pry/command_set.rb:228:in `block in alias_command'
+  pry (0.9.12.4) lib/pry/command.rb:492:in `call'
+  pry (0.9.12.4) lib/pry/command.rb:453:in `call_with_hooks'
+  pry (0.9.12.4) lib/pry/command.rb:426:in `call_safely'
+  pry (0.9.12.4) lib/pry/command.rb:368:in `process_line'
+  pry (0.9.12.4) lib/pry/command_set.rb:350:in `process_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:445:in `process_command'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:426:in `retrieve_line'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:301:in `block in r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:298:in `r'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:276:in `re'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:254:in `rep'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:234:in `block (3 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:232:in `block (2 levels) in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:231:in `block in repl'
+  pry (0.9.12.4) lib/pry/pry_instance.rb:230:in `repl'
+  pry (0.9.12.4) lib/pry/pry_class.rb:170:in `start'
+  pry (0.9.12.4) lib/pry/core_extensions.rb:43:in `pry'
+  app/models/entry.rb:54:in `get_entities_and_relations'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__3512065738074480829__initialize__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_initialize_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.14) lib/active_record/base.rb:524:in `init_with'
+  activerecord (3.2.14) lib/active_record/inheritance.rb:68:in `instantiate'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block (2 levels) in find_by_sql'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.14) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.14) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.14) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.14) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:381:in `find_first'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:122:in `first'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:339:in `find_one'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:315:in `find_with_ids'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:107:in `find'
+  activerecord (3.2.14) lib/active_record/querying.rb:5:in `find'
+  app/controllers/entries_controller.rb:11:in `show'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:436:in `_run__1420093824731513777__process_action__3941391356981731480__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1013499469532860887__call__2912388038589338755__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70109908645760/variables" for 127.0.0.1 at 2013-12-15 13:03:31 -0500
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:05:21 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (1.2ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 6690ms (Views: 17.1ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/sign_out" for 127.0.0.1 at 2013-12-15 13:06:06 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y="}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:06:06 -0500
+Processing by WelcomeController#index as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:06:08 -0500
+Processing by WelcomeController#index as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-12-15 13:07:09 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZ8zbyey+Flrh1XvtuoRn5sAsv8cqotk1JpteKFWaS8=", "user"=>{"email"=>"vanderhoop@me.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'vanderhoop@me.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-12-15 01:33:32.774090', "current_sign_in_at" = '2013-12-15 18:07:09.456256', "sign_in_count" = 24, "updated_at" = '2013-12-15 18:07:09.457228' WHERE "users"."id" = 1[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 130ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:07:09 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.6ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 7010ms (Views: 12.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:09:35 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEXPLAIN (0.7ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 6668ms (Views: 12.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:11:55 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.8ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 12617ms (Views: 13.9ms | ActiveRecord: 1.8ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:13:01 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.9ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (7.6ms)
+Compiled twitter-bootstrap-static/bootstrap.css  (54ms)  (pid 30075)
+Compiled twitter-bootstrap-static/fontawesome.css  (15ms)  (pid 30075)
+Compiled bootstrap_and_overrides.css  (93ms)  (pid 30075)
+Compiled custom.css  (0ms)  (pid 30075)
+Compiled application.css  (110ms)  (pid 30075)
+Compiled jquery.js  (1ms)  (pid 30075)
+Compiled jquery_ujs.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 30075)
+Compiled twitter/bootstrap.js  (158ms)  (pid 30075)
+Compiled json2.js  (0ms)  (pid 30075)
+Compiled handlebars.js  (0ms)  (pid 30075)
+Compiled underscore.js  (0ms)  (pid 30075)
+Compiled backbone.js  (0ms)  (pid 30075)
+Compiled app.js  (0ms)  (pid 30075)
+Compiled application.js  (240ms)  (pid 30075)
+Completed 200 OK in 7087ms (Views: 501.3ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:17:03 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 500  in 427ms
+
+SocketError - getaddrinfo: nodename nor servname provided, or not known:
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:763:in `block in connect'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/timeout.rb:55:in `timeout'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/timeout.rb:100:in `timeout'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:763:in `connect'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:756:in `do_start'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:745:in `start'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:482:in `post_form'
+  lib/alchemy.rb:522:in `analyze'
+  lib/alchemy.rb:200:in `entities'
+  app/models/entry.rb:45:in `get_entities_and_relations'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__3033547836800181681__initialize__3529696073843427075__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_initialize_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.14) lib/active_record/base.rb:524:in `init_with'
+  activerecord (3.2.14) lib/active_record/inheritance.rb:68:in `instantiate'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block (2 levels) in find_by_sql'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.14) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.14) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.14) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.14) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:159:in `all'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:382:in `find_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:335:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:44:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:87:in `method_missing'
+  app/controllers/welcome_controller.rb:5:in `index'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:436:in `_run__3453486879596049878__process_action__844629466644155567__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2767051299730470220__call__3529696073843427075__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70227014571660/variables" for 127.0.0.1 at 2013-12-15 13:17:03 -0500
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:17:20 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 500  in 147ms
+
+SocketError - getaddrinfo: nodename nor servname provided, or not known:
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:763:in `block in connect'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/timeout.rb:55:in `timeout'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/timeout.rb:100:in `timeout'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:763:in `connect'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:756:in `do_start'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:745:in `start'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/net/http.rb:482:in `post_form'
+  lib/alchemy.rb:522:in `analyze'
+  lib/alchemy.rb:200:in `entities'
+  app/models/entry.rb:45:in `get_entities_and_relations'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__2648150902027894828__initialize__1109861463614946829__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_initialize_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.14) lib/active_record/base.rb:524:in `init_with'
+  activerecord (3.2.14) lib/active_record/inheritance.rb:68:in `instantiate'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block (2 levels) in find_by_sql'
+  activerecord (3.2.14) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.14) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.14) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.14) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.14) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.14) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.14) lib/active_record/relation/finder_methods.rb:159:in `all'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:382:in `find_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_association.rb:335:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:44:in `load_target'
+  activerecord (3.2.14) lib/active_record/associations/collection_proxy.rb:87:in `method_missing'
+  app/controllers/welcome_controller.rb:5:in `index'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:436:in `_run__2669612124070985901__process_action__3836797092289938518__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.8) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__3450499859048663097__call__1109861463614946829__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/vanderhoop/.rbenv/versions/1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70355439307060/variables" for 127.0.0.1 at 2013-12-15 13:17:20 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:18:02 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.6ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 6471ms (Views: 78.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:22:30 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEXPLAIN (0.6ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8780ms (Views: 12.3ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:28:39 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEXPLAIN (0.8ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+EXPLAIN for: SELECT "entries".* FROM "entries"  WHERE "entries"."user_id" = 1
+                        QUERY PLAN
+-----------------------------------------------------------
+ Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+   Filter: (user_id = 1)
+(2 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (6946.0ms)
+Completed 200 OK in 6991ms (Views: 6951.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:30:51 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5[0m
+  [1m[35mEXPLAIN (1.3ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+                              QUERY PLAN
+-----------------------------------------------------------------------
+ Limit  (cost=10.38..10.39 rows=1 width=2156)
+   ->  Sort  (cost=10.38..10.39 rows=1 width=2156)
+         Sort Key: id
+         ->  Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+               Filter: (user_id = 1)
+(5 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 3141ms (Views: 15.0ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:31:16 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+  [1m[36mEXPLAIN (1.4ms)[0m  [1mEXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5[0m
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+                              QUERY PLAN
+-----------------------------------------------------------------------
+ Limit  (cost=10.38..10.39 rows=1 width=2156)
+   ->  Sort  (cost=10.38..10.39 rows=1 width=2156)
+         Sort Key: id
+         ->  Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+               Filter: (user_id = 1)
+(5 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 3064ms (Views: 15.5ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 13:31:34 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 4[0m
+  [1m[35mEXPLAIN (1.1ms)[0m  EXPLAIN SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 4
+EXPLAIN for: SELECT  "entries".* FROM "entries"  WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 4
+                              QUERY PLAN
+-----------------------------------------------------------------------
+ Limit  (cost=10.38..10.39 rows=1 width=2156)
+   ->  Sort  (cost=10.38..10.39 rows=1 width=2156)
+         Sort Key: id
+         ->  Seq Scan on entries  (cost=0.00..10.38 rows=1 width=2156)
+               Filter: (user_id = 1)
+(5 rows)
+
+  Rendered welcome/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 2379ms (Views: 14.9ms | ActiveRecord: 7.0ms)
