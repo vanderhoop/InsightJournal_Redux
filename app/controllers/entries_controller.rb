@@ -17,13 +17,24 @@ class EntriesController < ApplicationController
 
   def create
     alchemy_api = Alchemy.new()
-    binding.pry
     @entry = Entry.new(params[:entry])
+    @entry_entities = alchemy_api.entities('text', @entry.text, { sentiment: 1 })["entities"]
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
 
 
     if @entry.save
+      @entry_entities. each do |entity|
+        # sentiment = entity["sentiment"].nil? ? nil : entity["sentiment"]
+        sentiment = entity["sentiment"]
+        Entity.create({
+          entry_id: @entry.id,
+          string_representation: entity["text"],
+          count: entity["count"],
+          type: entity["type"],
+          sentiment_type: sentiment["type"],
+          sentiment_score: sentiment["score"] })
+      end
       # because entries are a nested resource, need to pass the
       # parent resource on redirect, otherwise you will get 'undefined method entry_url'
       redirect_to [@user, @entry]

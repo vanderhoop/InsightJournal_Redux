@@ -26750,3 +26750,131 @@ Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-14 21:03:41 -0500
 Processing by EntriesController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"alchemy test 5, 6?", "user_mood_input"=>"1"}, "commit"=>"Save Entry", "user_id"=>"1"}
   [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Sun, 15 Dec 2013 02:22:59 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["text", "alchemy test 5, 6?"], ["updated_at", Sun, 15 Dec 2013 02:22:59 UTC +00:00], ["user_id", 1], ["user_mood_input", 1], ["word_count", 4]]
+  [1m[36m (139.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/7
+Completed 302 Found in 1158320ms (ActiveRecord: 145.9ms)
+
+
+Started GET "/users/1/entries/7" for 127.0.0.1 at 2013-12-14 21:23:00 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"7"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (1.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  Rendered entries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 9.4ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-14 21:23:05 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/entries/new" for 127.0.0.1 at 2013-12-14 21:23:09 -0500
+Processing by EntriesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered entries/_entry_form.html.erb (1.5ms)
+  Rendered entries/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-14 21:25:11 -0500
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"AlchemyAPI is now successfully making calls. Now I want to parse the response to get an array of entities.", "user_mood_input"=>"8"}, "commit"=>"Save Entry", "user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Sun, 15 Dec 2013 03:01:08 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["text", "AlchemyAPI is now successfully making calls. Now I want to parse the response to get an array of entities."], ["updated_at", Sun, 15 Dec 2013 03:01:08 UTC +00:00], ["user_id", 1], ["user_mood_input", 8], ["word_count", 19]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1/entries/8
+Completed 302 Found in 2156865ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/1/entries/8" for 127.0.0.1 at 2013-12-14 22:01:08 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "8"]]
+  Rendered entries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 81ms (Views: 9.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-14 22:01:19 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/entries/new" for 127.0.0.1 at 2013-12-14 22:01:24 -0500
+Processing by EntriesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered entries/_entry_form.html.erb (1.2ms)
+  Rendered entries/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-14 22:09:02 -0500
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"I just binding.pry'd my way though the API's 'entity' response. I ran into something of a roadblock when entity 'sentiment' didn't appear. Turns out, sentiment doesn't appear on default, as the API's website lead me to believe. I had to pass an options hash {  sentiment: 1 } in the entity call. But it seems to have worked. Now lets see if entities are created.", "user_mood_input"=>"7"}, "commit"=>"Save Entry", "user_id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["created_at", Sun, 15 Dec 2013 03:09:11 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["text", "I just binding.pry'd my way though the API's 'entity' response. I ran into something of a roadblock when entity 'sentiment' didn't appear. Turns out, sentiment doesn't appear on default, as the API's website lead me to believe. I had to pass an options hash {  sentiment: 1 } in the entity call. But it seems to have worked. Now lets see if entities are created."], ["updated_at", Sun, 15 Dec 2013 03:09:11 UTC +00:00], ["user_id", 1], ["user_mood_input", 7], ["word_count", 65]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/9
+Completed 302 Found in 8663ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/entries/9" for 127.0.0.1 at 2013-12-14 22:09:11 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"9"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "9"]]
+  Rendered entries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-14 22:10:21 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/entries/new" for 127.0.0.1 at 2013-12-14 22:10:27 -0500
+Processing by EntriesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered entries/_entry_form.html.erb (1.3ms)
+  Rendered entries/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-14 22:11:34 -0500
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"I need to see some entities get created in my entities db table. Therefore, I am including the wonderful Brett Favre in this entry. He was a fantastic football player.", "user_mood_input"=>"6"}, "commit"=>"Save Entry", "user_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", Sun, 15 Dec 2013 03:11:44 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["text", "I need to see some entities get created in my entities db table. Therefore, I am including the wonderful Brett Favre in this entry. He was a fantastic football player."], ["updated_at", Sun, 15 Dec 2013 03:11:44 UTC +00:00], ["user_id", 1], ["user_mood_input", 6], ["word_count", 30]]
+  [1m[35m (144.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "entities" ("count", "created_at", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "type", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["count", 3], ["created_at", Sun, 15 Dec 2013 03:11:44 UTC +00:00], ["entry_id", 10], ["sentiment_score", 0.285275], ["sentiment_type", "positive"], ["string_representation", "Brett Favre"], ["type", "Person"], ["updated_at", Sun, 15 Dec 2013 03:11:44 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/10
+Completed 302 Found in 10009ms (ActiveRecord: 154.0ms)
+
+
+Started GET "/users/1/entries/10" for 127.0.0.1 at 2013-12-14 22:11:44 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"10"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "10"]]
+  Rendered entries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.0ms)
