@@ -16,6 +16,7 @@
 #  subject               :string(255)
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  tense_orientation     :string(255)
 #
 
 require 'spec_helper'

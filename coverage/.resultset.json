@@ -504,7 +504,6 @@
         null,
         0,
         0,
-        null,
         0,
         0,
         null,
@@ -535,12 +534,22 @@
         1,
         0,
         0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        0,
+        null,
         null,
         0,
         0,
         0,
-        0,
-        0,
+        null,
         null,
         null,
         null,
@@ -1150,6 +1159,7 @@
         null,
         null,
         null,
+        null,
         1,
         1,
         1,
@@ -1219,6 +1229,21 @@
         null
       ],
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/spec/models/entity_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
@@ -1275,6 +1300,7 @@
         null
       ],
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/spec/models/entry_spec.rb": [
+        null,
         null,
         null,
         null,
@@ -1378,6 +1404,6 @@
         null
       ]
     },
-    "timestamp": 1387081168
+    "timestamp": 1387083999
   }
 }

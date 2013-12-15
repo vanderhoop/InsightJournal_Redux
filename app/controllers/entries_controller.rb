@@ -66,6 +66,7 @@ class EntriesController < ApplicationController
       # TODO are word counts updated? I'm too tired to figure out where to persist this data
       @entry.word_count = @entry.text.split(' ').length
 
+      # create new entities that point to the updated entry.
       @entry_entities.each do |entity|
         sentiment = entity["sentiment"]
         Entity.create({
@@ -77,6 +78,7 @@ class EntriesController < ApplicationController
           sentiment_score: sentiment["score"]
         })
       end
+
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]
     else
