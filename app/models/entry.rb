@@ -30,8 +30,7 @@ class Entry < ActiveRecord::Base
   has_many :entities
   after_initialize :get_entities
   after_update :update_entities
-  after_destroy :destroy_entities
-
+  before_destroy :destroy_entities
 
   def destroy_entities
     self.entities.each do |entity|

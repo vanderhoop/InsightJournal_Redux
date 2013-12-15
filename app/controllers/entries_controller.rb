@@ -16,16 +16,15 @@ class EntriesController < ApplicationController
   end
 
   def create
+    # on instantiation of new Entry, an entity call will be made to the API
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
-
     if @entry.save
       @entry.create_entities(@entry.instance_entities)
-
       flash[:notice] = "Entry successfully created."
-      # because entries are a nested resource, need to pass the
-      # parent resource on redirect, otherwise you will get 'undefined method entry_url'
+      # nested resources are passed as an array on redirect,
+      # otherwise you will get 'undefined method entry_url'
       redirect_to [@user, @entry]
     else
       flash[:notice] = "Your entry was only #{@entry.word_count} word(s) long. Viable entries must be at least ____ words/characters."
@@ -34,16 +33,13 @@ class EntriesController < ApplicationController
   end
 
   def new
-    # @entry = Entry.new
   end
 
   def edit
     @entry = Entry.find(params[:id])
-
   end
 
   def update
-    # alchemy_api = Alchemy.new()
     @entry = Entry.find(params[:id])
     if @entry.update_attributes(params[:entry])
       # TODO are word counts updated? I'm too tired to figure out where to persist this data
@@ -54,14 +50,12 @@ class EntriesController < ApplicationController
       flash[:error] = "Entry couldn't be updated"
       render :action => :edit
     end
-    # binding.pry
   end
 
   def destroy
-    # binding.pry
     @entry = Entry.find(params[:id])
     if @entry.destroy
-      @entry.destroy_entities
+      # @entry.destroy_entities
       flash[:notice] = "Your entry was successfully erased!"
       redirect_to "/"
     else
