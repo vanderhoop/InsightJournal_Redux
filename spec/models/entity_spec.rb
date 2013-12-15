@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: entities
+#
+#  id                    :integer          not null, primary key
+#  entry_id              :integer
+#  string_representation :string(255)
+#  count                 :integer
+#  e_type                :string(255)
+#  sentiment_type        :string(255)
+#  sentiment_score       :float
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Entity do

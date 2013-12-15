@@ -25,7 +25,6 @@ class EntriesController < ApplicationController
 
     if @entry.save
       @entry_entities. each do |entity|
-        # sentiment = entity["sentiment"].nil? ? nil : entity["sentiment"]
         sentiment = entity["sentiment"]
         Entity.create({
           entry_id: @entry.id,
@@ -56,19 +55,27 @@ class EntriesController < ApplicationController
   def update
     alchemy_api = Alchemy.new()
     @entry = Entry.find(params[:id])
-    # binding.pry
     if @entry.update_attributes(params[:entry])
+      # destroy all entities associated with entry,
+      # as entities may be entirely differnent in the updated text
+      @entry.entities.each do |entity|
+        entity.destroy
+      end
+      # make new call to API with updated text, returns array of entities
       @entry_entities = alchemy_api.entities('text', @entry.text, { sentiment: 1 })["entities"]
+      # TODO are word counts updated? I'm too tired to figure out where to persist this data
       @entry.word_count = @entry.text.split(' ').length
+
       @entry_entities.each do |entity|
-        entity.update_attributes({
+        sentiment = entity["sentiment"]
+        Entity.create({
+          entry_id: @entry.id,
           string_representation: entity["text"],
           count: entity["count"],
           e_type: entity["type"],
           sentiment_type: sentiment["type"],
           sentiment_score: sentiment["score"]
         })
-
       end
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]

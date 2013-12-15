@@ -6,7 +6,7 @@
 #  entry_id              :integer
 #  string_representation :string(255)
 #  count                 :integer
-#  type                  :string(255)
+#  e_type                :string(255)
 #  sentiment_type        :string(255)
 #  sentiment_score       :float
 #  created_at            :datetime         not null

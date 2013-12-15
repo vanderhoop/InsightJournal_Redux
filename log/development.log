@@ -26893,3 +26893,60 @@ Migrating to ChangeTypeColumn (20131215032006)
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131215032006')
   [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-14 23:39:25 -0500
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 81ms (Views: 43.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/users/1/entries/10" for 127.0.0.1 at 2013-12-14 23:39:29 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"10"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "10"]]
+  Rendered entries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/10/entries/10/edit" for 127.0.0.1 at 2013-12-14 23:39:33 -0500
+Processing by EntriesController#edit as HTML
+  Parameters: {"user_id"=>"10", "id"=>"10"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "10"]]
+  Rendered entries/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/users/10/entries/10" for 127.0.0.1 at 2013-12-14 23:40:35 -0500
+Processing by EntriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pzU2RA9SQFSGoPm628AnkQ38lAjrAqMgf92xYe/0r6Y=", "entry"=>{"text"=>"I need to see some entities get created in my entities db table. Therefore, I am including the wonderful Aaron Rodgers in this entry. He is a both a fantastic football player and a loving husband. Long live the good fellow!", "user_mood_input"=>"7"}, "commit"=>"Update Entry", "user_id"=>"10", "id"=>"10"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mUPDATE "entries" SET "text" = 'I need to see some entities get created in my entities db table. Therefore, I am including the wonderful Aaron Rodgers in this entry. He is a both a fantastic football player and a loving husband. Long live the good fellow!', "user_mood_input" = 7, "updated_at" = '2013-12-15 04:40:45.352880' WHERE "entries"."id" = 10[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 10[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "entities" ("count", "created_at", "e_type", "entry_id", "sentiment_score", "sentiment_type", "string_representation", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["count", 3], ["created_at", Sun, 15 Dec 2013 04:40:45 UTC +00:00], ["e_type", "Person"], ["entry_id", 10], ["sentiment_score", 0.311692], ["sentiment_type", "positive"], ["string_representation", "Aaron Rodgers"], ["updated_at", Sun, 15 Dec 2013 04:40:45 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1/entries/10
+Completed 302 Found in 10653ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/users/1/entries/10" for 127.0.0.1 at 2013-12-14 23:40:45 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1  [["id", "10"]]
+  Rendered entries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.9ms)
+Connecting to database specified by database.yml
