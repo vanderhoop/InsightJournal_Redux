@@ -4,7 +4,6 @@ class WelcomeController < ApplicationController
   def index
     @entries = user_signed_in? ?  current_user.entries : nil
     @entries.reverse!
-    binding.pry
   end
 
 end

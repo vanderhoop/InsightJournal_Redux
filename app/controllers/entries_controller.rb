@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   def index
     @entries = Entry.all
+    # TODO add link to user dashboard that takes users to a view of all of their entries.
   end
 
   def show
@@ -15,7 +16,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
-    char_count =
+
 
     if @entry.save
       # because entries are a nested resource, need to pass the
