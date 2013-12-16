@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-15T18:25:33-05:00">2013-12-15T18:25:33-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-16T12:52:00-05:00">2013-12-16T12:52:00-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">69.97%</span></span>
+    (<span class="covered_percent"><span class="red">68.6%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.27
+         1.24
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>21</b> files in total.
-    <b>353</b> relevant lines. 
-    <span class="green"><b>247</b> lines covered</span> and
-    <span class="red"><b>106</b> lines missed </span>
+    <b>363</b> relevant lines. 
+    <span class="green"><b>249</b> lines covered</span> and
+    <span class="red"><b>114</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,21 +52,21 @@
       
       <tr>
         <td class="strong"><a href="#8815cce0e0a0663b10e606e27a800d5925664d05" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.8</td>
+        <td class="red strong">53.85 %</td>
+        <td>21</td>
+        <td>13</td>
+        <td>7</td>
+        <td>6</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#48816e026a1a59314fd1bf7725706843a4e8dad1" class="src_link" title="app/controllers/entries_controller.rb">app/controllers/entries_controller.rb</a></td>
-        <td class="red strong">24.32 %</td>
-        <td>72</td>
-        <td>37</td>
+        <td class="red strong">23.08 %</td>
+        <td>69</td>
+        <td>39</td>
         <td>9</td>
-        <td>28</td>
+        <td>30</td>
         <td>0.2</td>
       </tr>
       
@@ -279,11 +279,11 @@
         <div class="source_table" id="8815cce0e0a0663b10e606e27a800d5925664d05">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">53.85 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -317,28 +317,100 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def user_instance</code>
+          <code class="ruby">  require 'alchemy'</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="6">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    @user = current_user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def user_instance</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="8">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    @user = current_user</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def get_relations(text)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    alchemy_api = Alchemy.new()</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    relations = alchemy_api.relations('text', text)[&quot;relations&quot;]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    tenses = []</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">    relations.each do |relation|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">      tenses &lt;&lt; relation[&quot;action&quot;][&quot;verb&quot;][&quot;tense&quot;]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">    tenses.mode</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
@@ -351,11 +423,11 @@
         <div class="source_table" id="48816e026a1a59314fd1bf7725706843a4e8dad1">
   <div class="header">
     <h3>app/controllers/entries_controller.rb</h3>
-    <h4><span class="red">24.32 %</span> covered</h4>
+    <h4><span class="red">23.08 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
+      <b>39</b> relevant lines. 
       <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>28</b> lines missed.</span>
+      <span class="red"><b>30</b> lines missed.</span>
     </div>
   </div>
   
@@ -467,328 +539,310 @@
         <li class="missed" data-hits="0" data-linenumber="18">
           
           
-          <code class="ruby">    @entry = Entry.new(params[:entry])</code>
+          <code class="ruby">    binding.pry</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">    @entry.user_id = current_user.id</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
           
           
+          <code class="ruby">    @entry = Entry.new(params[:entry])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="21">
+          
+          
+          <code class="ruby">    @entry.user_id = current_user.id</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
           <code class="ruby">    @entry.word_count = params[:entry][:text].split(' ').length</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    # before .save is called, both an 'entity' and a 'relations' call</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    # are made to the API. Both save set instance variables of the Entry</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
           <code class="ruby">    if @entry.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="26">
           
           
           <code class="ruby">      @entry.create_entities(@entry.instance_entities)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
           <code class="ruby">      flash[:notice] = &quot;Entry successfully created.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">      # nested resources are passed as an array on redirect,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">      # otherwise you will get 'undefined method entry_url'</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
           <code class="ruby">      redirect_to [@user, @entry]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="32">
           
           
           <code class="ruby">      flash[:notice] = &quot;Your entry was only #{@entry.word_count} word(s) long. Viable entries must be at least ____ words/characters.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
           <code class="ruby">      render :action =&gt; :new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">  end # create</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">    @entry = Entry.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">    # retrieves entry with old information</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
           <code class="ruby">    @entry = Entry.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">    binding.pry</code>
+          <code class="ruby">    entry_hash = params[:entry]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">    # updates only the attributes available in params[:entry]</code>
+          <code class="ruby">    entry_hash[&quot;word_count&quot;] = entry_hash[&quot;text&quot;].split(' ').length</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">      # I want to update the word count</code>
+          <code class="ruby">    entry_hash[&quot;tense_orientation&quot;] = get_relations(entry_hash[&quot;text&quot;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">      # I want to destroy current entities, retrieve new ones and persist them</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">      # I want to update relations</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">      # I want to call save</code>
+          <code class="ruby">    if @entry.update_attributes(entry_hash)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">    if @entry.update_attributes(params[:entry])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby">      # TODO are word counts updated? I'm too tired to figure out where to persist this data</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
-          
-          <code class="ruby">      @entry.word_count = @entry.text.split(' ').length</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
-          
           <code class="ruby">      flash[:notice] = &quot;Entry successfully updated!&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
           <code class="ruby">      redirect_to [@user, @entry]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="57">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">      flash[:error] = &quot;Entry couldn't be updated&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="58">
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
           <code class="ruby">      render :action =&gt; :edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">  end #update</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="63">
+        <li class="missed" data-hits="0" data-linenumber="60">
           
           
           <code class="ruby">    @entry = Entry.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
           <code class="ruby">    if @entry.destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
+        <li class="missed" data-hits="0" data-linenumber="62">
           
           
           <code class="ruby">      flash[:notice] = &quot;Your entry was successfully erased!&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
           <code class="ruby">      redirect_to &quot;/&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="68">
+        <li class="missed" data-hits="0" data-linenumber="65">
           
           
           <code class="ruby">      flash[:error] = &quot;Couldn't destroy your entry. It's protected by the many pecking hens of Endor.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="69">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
           <code class="ruby">      render :action =&gt; :show</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">  end # destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">end # EntriesController</code>
@@ -1325,7 +1379,7 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_save :get_entities, :get_relations</code>
+          <code class="ruby">  before_save :get_entities, :set_relations</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
@@ -1355,109 +1409,109 @@
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">  # sets instance_entities</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="40">
           
-          <code class="ruby">  def get_entities</code>
+          
+          <code class="ruby">  # sets instance_entities</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">    alchemy_api = Alchemy.new()</code>
+          <code class="ruby">  def get_entities</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    @instance_entities = alchemy_api.entities('text', self.text, { sentiment: 1 })[&quot;entities&quot;]</code>
+          <code class="ruby">    alchemy_api = Alchemy.new()</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end #get_entities</code>
+          <code class="ruby">    @instance_entities = alchemy_api.entities('text', self.text, { sentiment: 1 })[&quot;entities&quot;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end #get_entities</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">  # sets tense_orientation</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">  def get_relations</code>
+          
+          <code class="ruby">  # sets tense_orientation</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">    alchemy_api = Alchemy.new()</code>
+          <code class="ruby">  def set_relations</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">    @instance_relations = alchemy_api.relations('text', self.text)[&quot;relations&quot;]</code>
+          <code class="ruby">    alchemy_api = Alchemy.new()</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">    @tenses = []</code>
+          <code class="ruby">    @instance_relations = alchemy_api.relations('text', self.text)[&quot;relations&quot;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">    @instance_relations.each do |relation|</code>
+          <code class="ruby">    @tenses = []</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
+          <code class="ruby">    @instance_relations.each do |relation|</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
           <code class="ruby">      @tenses &lt;&lt; relation[&quot;action&quot;][&quot;verb&quot;][&quot;tense&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">    self.tense_orientation = @tenses.mode</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">  end # get_relations</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.</code>
+          <code class="ruby">  end # get_relations</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
