@@ -8,7 +8,8 @@
 
 
 
-<h5>Filter by</h5>
+<p>Filter by</p>
 
-  <%= label_tag :time, "Entries writting in the: " %>
-  <%= select_tag :time_of_day,  options_for_select([["Morning", 1], [ "Afternoon", 2], ["Evening",3]]) %>
+<%= label_tag :time, "Entries writting in the: " %>
+<%= select_tag :time_of_day,  options_for_select([["Entries written in the:", 0], ["Morning", "morning"], [ "Afternoon", "afternoon"], ["Evening","night"]]) %>
+

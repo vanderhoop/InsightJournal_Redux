@@ -80,4 +80,5 @@ class Entry < ActiveRecord::Base
     self.create_entities(self.instance_entities)
   end # update_entities
 
+
 end

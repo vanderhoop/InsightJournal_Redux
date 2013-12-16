@@ -12,6 +12,7 @@ class WelcomeController < ApplicationController
     @most_common_tense = get_tense_mode(current_user.entries)
     # here is how I will cull entries in the db
     current_user.entries.where(tense_orientation:"present", user_mood_input: 6)
+    binding.pry
   end
 
 end
