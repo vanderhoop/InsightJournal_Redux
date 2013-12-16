@@ -2,3 +2,8 @@ textarea {
   height: 30em;
   width: 65%;
 }
+
+header form {
+  margin: 0;
+  padding-top: 7px;
+}

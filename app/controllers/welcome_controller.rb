@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
     @entries = user_signed_in? ? Entry.where(user_id: current_user.id).last(4).reverse : nil
   end
 
+  def insights
+
+  end
+
 end

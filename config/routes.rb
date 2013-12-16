@@ -39,6 +39,7 @@ InsightJournalRedux::Application.routes.draw do
   end
 
   root :to => "welcome#index"
+  get '/users/:id/insights' => 'welcome#insights'
 
   resources :users do
     resources :entries
