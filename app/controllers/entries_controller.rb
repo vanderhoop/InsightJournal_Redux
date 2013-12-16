@@ -42,13 +42,10 @@ class EntriesController < ApplicationController
   def update
     # retrieves entry with old information
     @entry = Entry.find(params[:id])
-    binding.pry
-    # updates only the attributes available in params
-      # I want to update the word count
-      # I want to call save
-    if @entry.update_attributes(params[:entry])
-      # TODO are word counts updated? I'm too tired to figure out where to persist this data
-      @entry.word_count = @entry.text.split(' ').length
+    entry_hash = params[:entry]
+    entry_hash["word_count"] = entry_hash["text"].split(' ').length
+    entry_hash["tense_orientation"] = get_relations(entry_hash["text"])
+    if @entry.update_attributes(entry_hash)
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]
     else
@@ -67,4 +64,4 @@ class EntriesController < ApplicationController
       render :action => :show
     end
   end # destroy
-end
+end # EntriesController

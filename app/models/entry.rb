@@ -28,37 +28,37 @@ class Entry < ActiveRecord::Base
   validates_numericality_of :user_id, :word_count
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
   has_many :entities
-  before_save :get_entities, :get_relations
+  # get_entities and get_relation set crucial values
+  # to the Entry before it's saved to the db
+  before_save :get_entities, :set_relations
   after_update :update_entities
   before_destroy :destroy_entities
 
-  # TODO I keep getting the following error:  'getaddrinfo: nodename nor servname provided, or not known' Why?
-
-  def destroy_entities
-    self.entities.each do |entity|
-      entity.destroy
-    end
-  end
+  # TODO I keep getting the following error: 'getaddrinfo: nodename nor servname provided, or not known' Why?
+  # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.
 
   # sets instance_entities
   def get_entities
     alchemy_api = Alchemy.new()
     @instance_entities = alchemy_api.entities('text', self.text, { sentiment: 1 })["entities"]
-  end
+  end #get_entities
 
   # sets tense_orientation
-  def get_relations
+  def set_relations
     alchemy_api = Alchemy.new()
     @instance_relations = alchemy_api.relations('text', self.text)["relations"]
     @tenses = []
     @instance_relations.each do |relation|
       @tenses << relation["action"]["verb"]["tense"]
     end
-    @most_used_tense = @tenses.mode
-    self.tense_orientation = @most_used_tense
-    binding.pry
-    # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.
-  end
+    self.tense_orientation = @tenses.mode
+  end # get_relations
+
+  def destroy_entities
+    self.entities.each do |entity|
+      entity.destroy
+    end
+  end # destroy_entities
 
   def create_entities(entities_array)
     entities_array.each do |entity|
