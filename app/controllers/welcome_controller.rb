@@ -7,7 +7,10 @@ class WelcomeController < ApplicationController
   end
 
   def insights
-
+    @overall_mood_score = avg_mood_score(current_user.entries)
+    @avg_word_count = avg_word_count(current_user.entries)
+    @most_common_tense = get_tense_mode(current_user.entries)
+    binding.pry
   end
 
 end
