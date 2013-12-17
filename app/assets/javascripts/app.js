@@ -1,10 +1,10 @@
 $( document ).ready(function() {
-  // console.log('app.js firing');
-  var avgMoodSpan = $('#avg-mood');
-  var avgWordCountSpan = $('#avg-word-count');
-  var sampleSizeSpan = $('#sample-size');
-  var tenseModeSpan = $('#tense-mode');
-  debugger
-
-  // $('#filter-btn').on("click", repopulateFields);
+  console.log('app.js firing');
+  App = {};
+  App.avgMood = "Marp";
+  App.avgMoodSpan = $('#avg-mood');
+  App.avgWordCountSpan = $('#avg-word-count');
+  App.sampleSizeSpan = $('#sample-size');
+  App.tenseModeSpan = $('#tense-mode');
+  $('#filter-btn').on("click", repopulateFields);
 });

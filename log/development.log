@@ -42588,3 +42588,399 @@ Processing by WelcomeController#insights as HTML
   [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
   Rendered welcome/insights.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 09:46:30 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (7ms)  (pid 25725)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=none" for 127.0.0.1 at 2013-12-17 09:46:32 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"none", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-17 09:46:57 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 09:48:56 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled ajaxCalls.js  (0ms)  (pid 25725)
+Compiled application.js  (7ms)  (pid 25725)
+Completed 200 OK in 84ms (Views: 78.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-17 09:49:00 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 09:51:21 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled ajaxCalls.js  (0ms)  (pid 25725)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (6ms)  (pid 25725)
+Completed 200 OK in 83ms (Views: 78.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 09:51:47 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 09:52:58 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (7ms)  (pid 25725)
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 09:53:21 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (6ms)  (pid 25725)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 09:53:25 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 10:00:34 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (7ms)  (pid 25725)
+Completed 200 OK in 73ms (Views: 45.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 10:01:08 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (12ms)  (pid 25725)
+Completed 200 OK in 132ms (Views: 125.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=none" for 127.0.0.1 at 2013-12-17 10:01:15 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"none", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-17 10:05:40 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-17 10:05:48 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 10:05:53 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled ajaxCalls.js  (0ms)  (pid 25725)
+Compiled application.js  (8ms)  (pid 25725)
+Completed 200 OK in 101ms (Views: 96.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=none" for 127.0.0.1 at 2013-12-17 10:05:59 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"none", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:06:20 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 10:08:15 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 10:08:48 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-17 10:09:23 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:09:26 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-17 10:09:30 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:09:34 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:09:39 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-17 10:09:42 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-17 10:09:44 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 10:09:49 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 10:10:11 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 92ms (Views: 11.8ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 10:10:26 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Compiled app.js  (0ms)  (pid 25725)
+Compiled application.js  (7ms)  (pid 25725)
+Completed 200 OK in 57ms (Views: 54.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/entries/new" for 127.0.0.1 at 2013-12-17 10:10:41 -0500
+Processing by EntriesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (22.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered entries/_entry_form.html.erb (590.7ms)
+  Rendered entries/new.html.erb within layouts/application (596.0ms)
+Completed 200 OK in 630ms (Views: 605.9ms | ActiveRecord: 22.5ms)
+
+
+Started POST "/users/1/entries" for 127.0.0.1 at 2013-12-17 10:11:26 -0500
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0E+qOuRTw8kM6LJlj/CvOf23XkxWJZR8yA1AT5DaveM=", "entry"=>{"text"=>"This is a morning entry. I am not a morning person.", "user_mood_input"=>"2"}, "commit"=>"Save Entry", "user_id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (11.0ms)[0m  INSERT INTO "entries" ("created_at", "humidity", "lat", "long", "most_common_adjective", "most_common_adverb", "subject", "temperature", "tense_orientation", "text", "updated_at", "user_id", "user_mood_input", "word_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["created_at", Tue, 17 Dec 2013 15:11:27 UTC +00:00], ["humidity", nil], ["lat", nil], ["long", nil], ["most_common_adjective", nil], ["most_common_adverb", nil], ["subject", nil], ["temperature", nil], ["tense_orientation", "present"], ["text", "This is a morning entry. I am not a morning person."], ["updated_at", Tue, 17 Dec 2013 15:11:27 UTC +00:00], ["user_id", 1], ["user_mood_input", 2], ["word_count", 11]]
+  [1m[36m (126.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/entries/25
+Completed 302 Found in 670ms (ActiveRecord: 138.6ms)
+
+
+Started GET "/users/1/entries/25" for 127.0.0.1 at 2013-12-17 10:11:27 -0500
+Processing by EntriesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"25"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = $1 LIMIT 1[0m  [["id", "25"]]
+  Rendered entries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-17 10:11:30 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  Rendered welcome/insights.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:11:45 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-17 10:11:51 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-17 10:12:06 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:12:10 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:12:36 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-17 10:12:38 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-17 10:12:40 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-17 10:12:43 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
