@@ -20,9 +20,15 @@ class ApplicationController < ActionController::Base
 
   def get_tense_mode(entries)
    # retrieves tense_orientation values and removes any nil values
-   tense_orientations = entries.to_a.plucky("tense_orientation").compact
+   tense_orientations = entries.pluck("tense_orientation").compact
    tense_mode = tense_orientations.mode
   end
+
+  # def get_tense_mode(entries)
+  #  # retrieves tense_orientation values and removes any nil values
+  #  tense_orientations = entries.to_a.plucky("tense_orientation").compact
+  #  tense_mode = tense_orientations.mode
+  # end
 
   def return_insights_hash(ents)
     insights_hash = {}
@@ -36,6 +42,19 @@ class ApplicationController < ActionController::Base
       insights_hash
     end
   end #return insights_hash
+
+  # def return_insights_hash(ents)
+  #   insights_hash = {}
+  #   insights_hash[:sample_size] = ents.size
+  #   if ents.size == 0
+  #     return insights_hash
+  #   else
+  #     insights_hash[:avg_mood] = ents.average("user_mood_input")
+  #     insights_hash[:avg_word_count] = ents.average("word_count")
+  #     insights_hash[:tense_mode] = get_tense_mode(ents)
+  #     insights_hash
+  #   end
+  # end #return insights_hash
 
   def filter_entries_by_time_written(array_of_entries, time_of_day)
     case time_of_day

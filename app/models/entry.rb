@@ -22,20 +22,36 @@
 require 'alchemy'
 
 class Entry < ActiveRecord::Base
-  attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at
+  attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at, :hour_created
   attr_reader :instance_entities, :instance_relations, :tenses, :most_used_tense
+
   validates :user_id, :text, :user_mood_input, :word_count, :presence => true
   validates_numericality_of :user_id, :word_count
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
+
   has_many :entities
+  belongs_to :user
+
   # get_entities and get_relation set crucial values
   # to the Entry before it's saved to the db
-  before_save :get_entities, :set_relations
+  before_save :get_entities, :set_relations, :set_hour_created
   after_update :update_entities
   before_destroy :destroy_entities
 
+  # custom active record functions for culling Entries
+  scope :past, where(:tense_orientation => 'past')
+  scope :present, where(:tense_orientation => 'present')
+  scope :future, where(:tense_orientation => 'future')
+
+  # scope :recent, where('published_at >= ?', Time.current - 1.week)
+  scope :morning, where("created_at.in_time_zone('Eastern Time (US & Canada)').hour <= ?", 12)
+
   # TODO I keep getting the following error: 'getaddrinfo: nodename nor servname provided, or not known' Why?
   # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.
+
+  def set_hour_created
+    self.hour_created = Time.now.in_time_zone('Eastern Time (US & Canada)').hour
+  end
 
   # sets instance_entities
   def get_entities
