@@ -12,6 +12,8 @@ class WelcomeController < ApplicationController
   def new_insights
     # time_of_day_desired = params["timeOfDay"]
     time_filtered_entries = filter_entries_by_time_written(current_user.entries.to_a, params["timeOfDay"])
+    binding.pry
+    subject_filtered_entries = filter_entries_by_subject(time_filtered_entries, params["properNouns"])
     @new_insights = return_insights_hash(time_filtered_entries)
 
     respond_to do |format|

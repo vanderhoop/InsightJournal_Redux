@@ -58,4 +58,25 @@ class ApplicationController < ActionController::Base
     end
   end # filter_entries_by_time_written
 
+  def filter_entries_by_subject(array_of_entries, targeted_subject)
+    case targeted_subject
+    when "none"
+      return array_of_entries
+    when "morning"
+      a = 0
+      b = 12
+    when "afternoon"
+      a = 12
+      b = 17
+    when "night"
+      a = 17
+      b = 24
+    else
+    end
+
+    array_of_entries.select do |entry|
+      entry["created_at"].in_time_zone("Eastern Time (US & Canada)").hour.between?(a,b)
+    end
+  end # filter_entries_by_subject
+
 end

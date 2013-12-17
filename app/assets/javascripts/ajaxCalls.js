@@ -1,12 +1,9 @@
 var filters = {};
-// var avgMoodSpan = $('#avg-mood');
-// var avgWordCountSpan = $('#avg-word-count');
-// var sampleSizeSpan = $('#sample-size');
-// var tenseModeSpan = $('#tense-mode');
 
 function filterValues(){
-  filters.timeOfDay = $('#time_of_day').val();
   console.log('filterEntries event firing');
+  filters.timeOfDay = $('#time_of_day').val();
+  filters.properNouns = $('#proper_nouns').val();
 
   return(filters);
 }
