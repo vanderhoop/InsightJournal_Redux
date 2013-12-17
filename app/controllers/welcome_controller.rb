@@ -14,4 +14,8 @@ class WelcomeController < ApplicationController
     # current_user.entries.where(tense_orientation:"present", user_mood_input: 6)
   end
 
+  def new_insights
+    binding.pry
+  end
+
 end
