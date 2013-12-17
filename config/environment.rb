@@ -7,11 +7,11 @@ class Array
   end
 
   def average(integer_column)
-    sum = 0
+    sum_num = 0
     self.each do |entry|
-      sum += entry[integer_column]
+      sum_num += entry[integer_column]
     end
-    return sum/self.size
+    return sum_num/self.size
   end #average
 
   def plucky(column_name)

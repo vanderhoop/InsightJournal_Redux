@@ -1,12 +1,8 @@
 <h2>Your insights: </h2>
 
-
-
-<h4>Average Mood Score: <%= @insights[:avg_mood] %></h4>
-<h4>Average Word Count: <%= @insights[:avg_word_count] %></h4>
-<h4><%= @insights[:sample_size] %> entries suggest you're <%= @insights[:tense_mode] %>-oriented</h4>
-
-
+<h4>Average Mood Score: <span id="avg-mood"><%= @insights[:avg_mood] %></span></h4>
+<h4>Average Word Count: <span id="avg-word-count"><%= @insights[:avg_word_count] %></span></h4>
+<h4><span id="sample-size"><%= @insights[:sample_size] %></span> entries suggest you're <span id="tense-mode"><%= @insights[:tense_mode] %></span>-oriented</h4>
 
 <p>Filter by</p>
 

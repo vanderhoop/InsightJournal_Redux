@@ -16,6 +16,6 @@ function repopulateFields(){
     dataType: "json",
     data: data
   }).done(function(msg) {
-    console.log(msg);
-  })
+    debugger
+  });
 }
