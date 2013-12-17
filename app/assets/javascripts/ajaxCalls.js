@@ -1,10 +1,10 @@
-var hashToPass = {};
+var filters = {};
 
 function filterValues(){
-  hashToPass.timeOfDay = $('#time_of_day').val();
+  filters.timeOfDay = $('#time_of_day').val();
   console.log('filterEntries event firing');
 
-  return(hashToPass.timeOfDay);
+  return(filters);
 }
 
 function repopulateFields(){

@@ -32,10 +32,10 @@ class ApplicationController < ActionController::Base
    tense_mode = tense_orientations.mode
   end
 
-  def get_entries_by_time_written(array_of_entities, time_of_day)
+  def filter_entries_by_time_written(array_of_entries, time_of_day)
     case time_of_day
     when "none"
-      return array_of_entities
+      return array_of_entries
     when "morning"
       a = 0
       b = 12
@@ -48,9 +48,9 @@ class ApplicationController < ActionController::Base
     else
     end
 
-    array_of_entities.select do |entry|
+    array_of_entries.select do |entry|
       entry.created_at.in_time_zone("Eastern Time (US & Canada)").hour.between?(a,b)
     end
-  end # get_entries_by_time_written
+  end # filter_entries_by_time_written
 
 end

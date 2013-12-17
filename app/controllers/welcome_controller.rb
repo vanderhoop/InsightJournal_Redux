@@ -15,7 +15,16 @@ class WelcomeController < ApplicationController
   end
 
   def new_insights
-    binding.pry
-  end
+    time_of_day_desired = params["timeOfDay"]
+    @time_filtered_entries = filter_entries_by_time_written(current_user.entries, time_of_day_desired)
+    respond_to do |format|
+      format.json do
+        render json: @time_filtered_entries
+      end
+    end
+    #respond with @time_filtered_entries as JSON.
+  end # new_insights
 
 end
+
+
