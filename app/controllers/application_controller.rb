@@ -20,15 +20,15 @@ class ApplicationController < ActionController::Base
 
   def get_tense_mode(entries)
    # retrieves tense_orientation values and removes any nil values
-   tense_orientations = entries.pluck(:tense_orientation).compact
+   tense_orientations = entries.to_a.plucky("tense_orientation").compact
    tense_mode = tense_orientations.mode
   end
 
-  def return_insights_hash(entries)
+  def return_insights_hash(ents)
     insights_hash = {}
-    insights_hash[:avg_mood] = entries.average("user_mood_input")
-    insights_hash[:avg_word_count] = entries.average("word_count")
-    insights_hash[:tense_mode] = get_tense_mode(entries)
+    insights_hash[:avg_mood] = ents.average("user_mood_input")
+    insights_hash[:avg_word_count] = ents.average("word_count")
+    insights_hash[:tense_mode] = get_tense_mode(ents)
     insights_hash
   end
 
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
     end
 
     array_of_entries.select do |entry|
-      entry.created_at.in_time_zone("Eastern Time (US & Canada)").hour.between?(a,b)
+      entry["created_at"].in_time_zone("Eastern Time (US & Canada)").hour.between?(a,b)
     end
   end # filter_entries_by_time_written
 
