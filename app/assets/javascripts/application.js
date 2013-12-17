@@ -19,4 +19,5 @@
 //= require handlebars
 //= require underscore
 //= require backbone
+//= require ajaxCalls
 //= require app

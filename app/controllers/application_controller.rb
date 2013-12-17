@@ -33,8 +33,9 @@ class ApplicationController < ActionController::Base
   end
 
   def get_entries_by_time_written(array_of_entities, time_of_day)
-
     case time_of_day
+    when "none"
+      return array_of_entities
     when "morning"
       a = 0
       b = 12

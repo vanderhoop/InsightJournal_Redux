@@ -35559,3 +35559,173 @@ Processing by WelcomeController#insights as HTML
   [1m[35m (0.4ms)[0m  SELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
   [1m[36mSQL (0.2ms)[0m  [1mSELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1[0m
   [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 625478ms (Views: 26.6ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:22:55 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 130ms (Views: 10.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:23:53 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:25:14 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:25:20 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:25:52 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:25:57 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 18:26:22 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 20:00:01 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.6ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.3ms)
+Compiled app.js  (0ms)  (pid 6208)
+Compiled application.js  (6ms)  (pid 6208)
+Completed 200 OK in 205ms (Views: 115.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-16 20:00:41 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 4
+  Rendered welcome/index.html.erb within layouts/application (38.5ms)
+Compiled app.js  (0ms)  (pid 6208)
+Compiled application.js  (5ms)  (pid 6208)
+Completed 200 OK in 117ms (Views: 113.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-16 20:00:44 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 4
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-16 20:03:30 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 4
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Compiled app.js  (0ms)  (pid 6208)
+Compiled application.js  (6ms)  (pid 6208)
+Completed 200 OK in 83ms (Views: 79.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 20:03:33 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 20:04:39 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 6208)
+Compiled application.js  (6ms)  (pid 6208)
+Completed 200 OK in 85ms (Views: 80.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 20:05:01 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (0.2ms)
+Compiled app.js  (0ms)  (pid 6208)
+Compiled application.js  (5ms)  (pid 6208)
+Completed 200 OK in 84ms (Views: 78.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-16 20:05:39 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "entries"."tense_orientation" FROM "entries" WHERE "entries"."user_id" = 1
+  Rendered welcome/insights.html.erb within layouts/application (36.6ms)
+Compiled ajaxCalls.js  (0ms)  (pid 6208)
+Compiled application.js  (24ms)  (pid 6208)
+Completed 200 OK in 140ms (Views: 134.4ms | ActiveRecord: 1.7ms)

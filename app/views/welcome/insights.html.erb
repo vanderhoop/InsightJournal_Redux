@@ -2,8 +2,8 @@
 
 
 
-<h4>Average Mood Score: <%= @overall_mood_score %></h4>
-<h4>Average Word Count: <%= @avg_word_count %></h4>
+<h4>Average Mood Score: <%= @overall_mood_score.truncate(2) %></h4>
+<h4>Average Word Count: <%= @avg_word_count.truncate(2) %></h4>
 <h4>Your entries suggest you're <%= @most_common_tense %>-oriented</h4>
 
 
@@ -11,5 +11,7 @@
 <p>Filter by</p>
 
 <%= label_tag :time, "Entries writting in the: " %>
-<%= select_tag :time_of_day,  options_for_select([["Entries written in the:", 0], ["Morning", "morning"], [ "Afternoon", "afternoon"], ["Evening","night"]]) %>
+<%= select_tag :time_of_day,  options_for_select([["", "none"], ["Morning", "morning"], [ "Afternoon", "afternoon"], ["Evening","night"]]) %>
+
+<input type="button" value="Filter Entries" id="filter-btn">
 
