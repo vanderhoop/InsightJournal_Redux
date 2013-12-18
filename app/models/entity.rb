@@ -19,4 +19,5 @@ class Entity < ActiveRecord::Base
   validates_numericality_of :entry_id
 
   belongs_to :entry
+  belongs_to :user
 end

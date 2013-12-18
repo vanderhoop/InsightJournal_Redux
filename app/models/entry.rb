@@ -44,7 +44,9 @@ class Entry < ActiveRecord::Base
   scope :future, where(:tense_orientation => 'future')
 
   # scope :recent, where('published_at >= ?', Time.current - 1.week)
-  scope :morning, where("created_at.in_time_zone('Eastern Time (US & Canada)').hour <= ?", 12)
+  scope :morning, where(:hour_created => 0..12 )
+  scope :afternoon, where(:hour_created => 13..17 )
+  scope :night, where(:hour_created => 18..24 )
 
   # TODO I keep getting the following error: 'getaddrinfo: nodename nor servname provided, or not known' Why?
   # TODO customize Array.mode method (in config/environment) for handling cases where there are multiple modes.

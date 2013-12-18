@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
   <h3>Recent Entries:</h3>
   <ul>
-    <% for i in 0..(current_user.entries.length-1) %>
-      <li><%= link_to @entries[i][:text], url_for([@user, @entries[i]]) %></li>
+    <% for i in 0..(@entries.length-1) %>
+      <li><%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
     <% end %>
   </ul>
   <% url = "users/#{@current_user.id}/entries/new" %>
