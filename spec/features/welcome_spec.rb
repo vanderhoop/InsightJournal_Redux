@@ -21,15 +21,15 @@ describe "The Home Page" do
       expect(page).to_not have_css("input[value='Log out']")
     end
 
-    describe "the signing in process" do
-      context "with the correct user name/pw", :js => true do
-        it "takes you to the user's dashboard" do
+    describe "signing in" do
+      context "with the correct user name/pw for the first time", :js => true do
+        it "takes you to the new user dashboard" do
           # binding.pry
 
           fill_in "Email", with: @user.email
           fill_in "Password", with: @user.password
           click_on "Sign in"
-          expect(page).to have_content("Entries")
+          expect(page).to have_content("Get Journaling")
         end
       end # with correct credentials
     end #signing in

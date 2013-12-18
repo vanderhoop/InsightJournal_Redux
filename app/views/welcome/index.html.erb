@@ -1,13 +1,21 @@
 <% if user_signed_in? %>
-  <h3>Recent Entries:</h3>
-  <ul>
-    <% for i in 0..(@entries.length-1) %>
-      <li><%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
-    <% end %>
-  </ul>
   <% url = "users/#{@current_user.id}/entries/new" %>
-  <%= link_to "Create an entry", url %>
+  <% if @entries.length > 0 %>
+      <h3>Recent Entries:</h3>
+      <ul>
+        <% for i in 0..(@entries.length-1) %>
+          <li><%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
+        <% end %>
+      </ul>
+      <%= link_to "Create an entry", url %>
+  <% end %>
+
+  <% if @entries.length == 0 %>
+      <h3>Welcome to Insight Journal!</h3>
+      <%= link_to "Get Journaling", url %>
+  <% end %>
 <% else %>
+
 <h2>Sign in</h2>
 
 <%= form_for(:user, :as => resource_name, :url => session_path(resource_name)) do |f| %>
