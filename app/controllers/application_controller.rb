@@ -6,15 +6,10 @@ class ApplicationController < ActionController::Base
   require 'alchemy'
 
   def quotes
-    @sampled_quote = [
-        {
+    @sampled_quote = {
           quote: "In order to understand the world, one has to turn away from it on occasion.",
           author: "Albert Camus"
-        },
-      {
-        quote: "The true sign of intelligence is not knowledge but imagination.",
-        author: "Albert Einstein"
-        }].sample
+        }
   end
 
   def user_instance
@@ -56,14 +51,28 @@ class ApplicationController < ActionController::Base
     insights_hash[:sample_size] = ents.size
     insights_hash[:total_words] = current_user.entries.sum("word_count")
     if ents.size == 0
+      insights_hash[:avg_mood] = "N/A"
+      insights_hash[:avg_word_count] = "N/A"
+      insights_hash[:tense_mode] = "N/A"
       return insights_hash
     else
-      insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(2)
+      insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(1).to_s + "/10"
       insights_hash[:avg_word_count] = ents.average("word_count").truncate(2)
       insights_hash[:tense_mode] = get_tense_mode(ents)
       relevant_entities = return_relevant_entities(ents)
-      # TODO I pushed all relavant entities into the :most_common_entities array. That's over kill.
-      insights_hash[:most_common_entities] = relevant_entities.plucky("string_representation").uniq
+      entities_by_string_rep = relevant_entities.group_by(&:string_representation)
+
+      entity_storage_array = []
+      # iterate through the entities by string_representation
+      entities_by_string_rep.each do |entity|
+        # entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count") }
+        entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count"), most_common_sentiment: entity[1].plucky("sentiment_type").mode, entity_type: entity[1].plucky("e_type").mode, entries: entity[1].plucky("entry_id") }
+      end
+
+      # TODO I pushed all relevant entities into the :most_common_entities array. That's over kill.
+      insights_hash[:most_common_entities] = entity_storage_array
+      insights_hash[:humanity_sentiment] = nil
+      # insights_hash[:most_common_entities] = relevant_entities.plucky("string_representation").uniq
       insights_hash
     end
   end #return insights_hash

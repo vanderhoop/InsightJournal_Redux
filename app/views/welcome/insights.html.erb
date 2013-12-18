@@ -1,4 +1,4 @@
-<% if @insights[:avg_mood] == nil %>
+<% if @insights[:most_common_entities] == nil %>
 
     <h2>Hello and Welcome</h2>
       <p>You've reached the Insights page. This is normally where we let you in on all the cool little secrets you've been keeping even from yourself, but you have to write an entry before we can make our particular brand of magic happen!</p>
@@ -13,13 +13,16 @@
 
     <h4>Subjects You're Most Concerned About: </h4>
       <ul id="most-common-entities-ul">
-        <% @insights[:most_common_entities].shuffle.each do |entity| %>
-          <li><%= entity %></li>
+        <% @insights[:most_common_entities].each do |entity| %>
+          <li><h5><%= entity[:subject] %></h5></li>
+            <ul>
+              <li>Sentiment: <%= entity[:most_common_sentiment] %></li>
+            </ul>
         <% end %>
       </ul>
     <h4>Average Mood Score: <span id="avg-mood"><%= @insights[:avg_mood] %></span></h4>
     <h4>Average Word Count: <span id="avg-word-count"><%= @insights[:avg_word_count] %></span></h4>
-    <h4>You live in the <span id="tense-mode"><%= @insights[:tense_mode] %></span></h4>
+    <h4>Tense-orientation: <span id="tense-mode"><%= @insights[:tense_mode] %></span></h4>
 
     <%= label_tag :time_of_day, "Entries writtin in the: " %>
     <%= select_tag :time_of_day,  options_for_select([

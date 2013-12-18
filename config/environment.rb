@@ -14,6 +14,14 @@ class Array
   #   return sum_num/self.size
   # end #average
 
+  def sum_entity_column(column_name)
+    sum = 0
+    self.each do |entity|
+      sum += entity[column_name]
+    end
+    sum
+  end
+
   def plucky(column_name)
     new_array = []
     self.select do |entry|
