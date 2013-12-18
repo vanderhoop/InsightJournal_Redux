@@ -13,8 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= twitter/bootstrap
-
+//
 //= require json2
 //= require handlebars
 //= require underscore
