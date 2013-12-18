@@ -3,6 +3,10 @@ textarea {
   width: 100%;
 }
 
+#intro-p {
+  width: 80%;
+}
+
 header form {
   margin: 0;
   padding-top: 7px;
