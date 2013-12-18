@@ -7,9 +7,10 @@ class ApplicationController < ActionController::Base
 
   def quotes
     @sampled_quote = [
-      { quote: "Since people are going to be living longer and getting older, they'll just have to learn how to be babies longer.",
-        author: "Andy Warhol"
-      },
+        {
+          quote: "In order to understand the world, one has to turn away from it on occasion.",
+          author: "Albert Camus"
+        },
       {
         quote: "The true sign of intelligence is not knowledge but imagination.",
         author: "Albert Einstein"

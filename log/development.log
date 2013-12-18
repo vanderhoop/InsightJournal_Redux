@@ -52677,3 +52677,45 @@ Processing by WelcomeController#new_insights as JSON
   [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
   [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
 Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:10:19 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.6ms)[0m  [1mSELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33
+  Rendered welcome/insights.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 9.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:14:57 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 119ms (Views: 9.8ms | ActiveRecord: 11.2ms)
