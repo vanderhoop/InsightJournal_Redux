@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-17T20:51:49-05:00">2013-12-17T20:51:49-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-17T21:55:56-05:00">2013-12-17T21:55:56-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">66.59%</span></span>
+    (<span class="covered_percent"><span class="red">66.83%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.24
+         1.27
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>21</b> files in total.
-    <b>410</b> relevant lines. 
-    <span class="green"><b>273</b> lines covered</span> and
+    <b>413</b> relevant lines. 
+    <span class="green"><b>276</b> lines covered</span> and
     <span class="red"><b>137</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#8815cce0e0a0663b10e606e27a800d5925664d05" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="red strong">40.0 %</td>
-        <td>74</td>
-        <td>40</td>
-        <td>16</td>
+        <td class="red strong">44.19 %</td>
+        <td>86</td>
+        <td>43</td>
+        <td>19</td>
         <td>24</td>
-        <td>0.6</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -279,10 +279,10 @@
         <div class="source_table" id="8815cce0e0a0663b10e606e27a800d5925664d05">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="red">40.0 %</span> covered</h4>
+    <h4><span class="red">44.19 %</span> covered</h4>
     <div>
-      <b>40</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>43</b> relevant lines. 
+      <span class="green"><b>19</b> lines covered</span> and
       <span class="red"><b>24</b> lines missed.</span>
     </div>
   </div>
@@ -308,172 +308,172 @@
           <code class="ruby">  before_filter :user_instance</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_filter :quotes</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  require 'alchemy'</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  def user_instance</code>
+          <code class="ruby">  def quotes</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="8">
+        <li class="covered" data-hits="10" data-linenumber="9">
           <span class="hits">10</span>
           
-          <code class="ruby">    @user = current_user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @sampled_quote = [</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      { quote: &quot;Since people are going to be living longer and getting older, they'll just have to learn how to be babies longer.&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="11">
           
-          <code class="ruby">  def get_relations(text)</code>
+          
+          <code class="ruby">        author: &quot;Andy Warhol&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">    alchemy_api = Alchemy.new()</code>
+          <code class="ruby">      },</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">    relations = alchemy_api.relations('text', text)[&quot;relations&quot;]</code>
+          <code class="ruby">      {</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    tenses = []</code>
+          <code class="ruby">        quote: &quot;The true sign of intelligence is not knowledge but imagination.&quot;,</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">    relations.each do |relation|</code>
+          <code class="ruby">        author: &quot;Albert Einstein&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">      tenses &lt;&lt; relation[&quot;action&quot;][&quot;verb&quot;][&quot;tense&quot;]</code>
+          <code class="ruby">        }].sample</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">    tenses.mode</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  def get_tense_mode(entries)</code>
+          <code class="ruby">  def user_instance</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="20">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    @user = current_user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">   # retrieves tense_orientation values and removes any nil values</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">   tense_orientations = entries.pluck(&quot;tense_orientation&quot;).compact</code>
+          <code class="ruby">  def get_relations(text)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">   tense_mode = tense_orientations.mode</code>
+          <code class="ruby">    alchemy_api = Alchemy.new()</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    relations = alchemy_api.relations('text', text)[&quot;relations&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    tenses = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
-          <code class="ruby">  # def get_tense_mode(entries)</code>
+          <code class="ruby">    relations.each do |relation|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby">  #  # retrieves tense_orientation values and removes any nil values</code>
+          <code class="ruby">      tenses &lt;&lt; relation[&quot;action&quot;][&quot;verb&quot;][&quot;tense&quot;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">  #  tense_orientations = entries.to_a.plucky(&quot;tense_orientation&quot;).compact</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">  #  tense_mode = tense_orientations.mode</code>
+          <code class="ruby">    tenses.mode</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -485,250 +485,322 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  def return_relevant_entities(array_of_entries)</code>
+          <code class="ruby">  def get_tense_mode(entries)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">    all_relevant_entities = []</code>
+          <code class="ruby">   # retrieves tense_orientation values and removes any nil values</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="35">
           
           
-          <code class="ruby">    array_of_entries.each do |entry|</code>
+          <code class="ruby">   tense_orientations = entries.pluck(&quot;tense_orientation&quot;).compact</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="36">
           
           
-          <code class="ruby">      all_relevant_entities &lt;&lt; entry.entities</code>
+          <code class="ruby">   tense_mode = tense_orientations.mode</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">    all_relevant_entities.flatten!</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # def get_tense_mode(entries)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
+          <code class="ruby">  #  # retrieves tense_orientation values and removes any nil values</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  #  tense_orientations = entries.to_a.plucky(&quot;tense_orientation&quot;).compact</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  #  tense_mode = tense_orientations.mode</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def return_insights_hash(ents)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="42">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    insights_hash = {}</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    insights_hash[:sample_size] = ents.size</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    if ents.size == 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">      return insights_hash</code>
+          <code class="ruby">  def return_relevant_entities(array_of_entries)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">    all_relevant_entities = []</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">      insights_hash[:avg_mood] = ents.average(&quot;user_mood_input&quot;).truncate(2)</code>
+          <code class="ruby">    array_of_entries.each do |entry|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">      insights_hash[:avg_word_count] = ents.average(&quot;word_count&quot;).truncate(2)</code>
+          <code class="ruby">      all_relevant_entities &lt;&lt; entry.entities</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">      insights_hash[:tense_mode] = get_tense_mode(ents)</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">      relevant_entities = return_relevant_entities(ents)</code>
+          <code class="ruby">    all_relevant_entities.flatten!</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">      # TODO I pushed all relavant entities into the :most_common_entities array. That's over kill.</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
-          
-          
-          <code class="ruby">      insights_hash[:most_common_entities] = relevant_entities.plucky(&quot;string_representation&quot;).uniq</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
-          
-          <code class="ruby">      insights_hash</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">  end #return insights_hash</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def return_insights_hash(ents)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    insights_hash = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    insights_hash[:sample_size] = ents.size</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if ents.size == 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">  def filter_entries_by_time_written(array_of_entries, time_of_day)</code>
+          <code class="ruby">      return insights_hash</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="58">
-          
-          
-          <code class="ruby">    case time_of_day</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">    when &quot;morning&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="60">
-          
-          
-          <code class="ruby">      return array_of_entries.morning</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">    when &quot;afternoon&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="62">
-          
-          
-          <code class="ruby">      return array_of_entries.afternoon</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">    when &quot;night&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="64">
-          
-          
-          <code class="ruby">      return array_of_entries.night</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">      return array_of_entries</code>
+          <code class="ruby">      insights_hash[:avg_mood] = ents.average(&quot;user_mood_input&quot;).truncate(2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="missed" data-hits="0" data-linenumber="60">
+          
+          
+          <code class="ruby">      insights_hash[:avg_word_count] = ents.average(&quot;word_count&quot;).truncate(2)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="61">
+          
+          
+          <code class="ruby">      insights_hash[:tense_mode] = get_tense_mode(ents)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
+          
+          <code class="ruby">      relevant_entities = return_relevant_entities(ents)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">      # TODO I pushed all relavant entities into the :most_common_entities array. That's over kill.</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
+          
+          <code class="ruby">      insights_hash[:most_common_entities] = relevant_entities.plucky(&quot;string_representation&quot;).uniq</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">      insights_hash</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">  end # filter_entries_by_time_written</code>
+          <code class="ruby">  end #return insights_hash</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
-          <code class="ruby">  def filter_entries_by_subject(array_of_entries, targeted_subject)</code>
+          <code class="ruby">  def filter_entries_by_time_written(array_of_entries, time_of_day)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">      return array_of_entries</code>
+          <code class="ruby">    case time_of_day</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">  end # filter_entries_by_subject</code>
+          <code class="ruby">    when &quot;morning&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="72">
+          
+          
+          <code class="ruby">      return array_of_entries.morning</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
+          <code class="ruby">    when &quot;afternoon&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
+          
+          <code class="ruby">      return array_of_entries.afternoon</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">    when &quot;night&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="76">
+          
+          
+          <code class="ruby">      return array_of_entries.night</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="78">
+          
+          
+          <code class="ruby">      return array_of_entries</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">  end # filter_entries_by_time_written</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def filter_entries_by_subject(array_of_entries, targeted_subject)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
+          
+          <code class="ruby">      return array_of_entries</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">  end # filter_entries_by_subject</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">end</code>
