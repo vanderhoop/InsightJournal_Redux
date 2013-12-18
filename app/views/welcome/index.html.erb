@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
+
   <% url = "users/#{@current_user.id}/entries/new" %>
+
   <% if @entries.length > 0 %>
+
       <h3>Recent Entries:</h3>
       <ul>
         <% for i in 0..(@entries.length-1) %>
@@ -8,27 +11,40 @@
         <% end %>
       </ul>
       <%= link_to "Create an entry", url %>
+
   <% end %>
 
   <% if @entries.length == 0 %>
-      <h3>Welcome to Insight Journal!</h3>
+
+      <h3>Welcome to InsightJournal!</h3>
+      <p id="intro-p">The journal is one of life's most powerful tools. The goal of InsightJournal is to give users an easy-to-use journaling tool that uncovers common themes and patterns in a user's entries over time and against environmental variables like weather patterns, location, and time of writing. We hope you like it.</p>
       <%= link_to "Get Journaling", url %>
+
   <% end %>
+
 <% else %>
 
 <h2>Sign in</h2>
 
 <%= form_for(:user, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-<div><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, :autofocus => true %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
 
-  <div><%= f.label :password %>
-    <%= f.password_field :password %></div>
+  <% if devise_mapping.rememberable? -%>
 
-    <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-    <% end -%>
-    <div><%= f.submit "Sign in" %></div>
-    <% end %>
+
+  <% end -%>
+    <div>
+      <%= f.submit "Sign in" %>
+    </div>
+  <% end %>
     <%= render "devise/shared/links" %>
-    <% end %>
+
+<% end %> <!-- if user_signed_in? -->
