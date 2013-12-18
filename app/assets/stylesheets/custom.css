@@ -3,14 +3,24 @@ textarea {
   width: 100%;
 }
 
+select {
+  height: 1.9em;
+}
+
+input {
+  line-height: 20px;
+}
+
 #intro-p {
   width: 80%;
 }
 
-header form {
+header a {
   margin: 0;
-  padding-top: 7px;
-  margin-left: 0.7em;
+  padding-top: 10px;
+  margin-left: 1.2em;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .well.sidebar-nav {
@@ -19,4 +29,18 @@ header form {
 
 .width-restrictor {
   width: 58%;
+}
+
+
+.create-entry-link {
+ background-color: green;
+ margin: 1.5em;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#filter-btn {
+  margin-bottom: 0.7em;
 }

@@ -5,7 +5,9 @@
     <%= button_to "Get Journaling!", "/users/#{current_user.id}/entries/new", :method => "get" %>
 
 <% else %>
-
+    <div>
+      <h5>You've written <%= @insights[:sample_size] %> entries for a total of <%= @insights[:total_words] %> words</h5>
+    </div>
     <h2>Insights</h2></t>
     <h4>Entries: <span id="sample-size"><%= @insights[:sample_size] %></span> entries</h4>
 

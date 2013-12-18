@@ -53,6 +53,7 @@ class ApplicationController < ActionController::Base
   def return_insights_hash(ents)
     insights_hash = {}
     insights_hash[:sample_size] = ents.size
+    insights_hash[:total_words] = current_user.entries.sum("word_count")
     if ents.size == 0
       return insights_hash
     else

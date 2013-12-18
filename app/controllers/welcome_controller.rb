@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
 
   def insights
     @insights = return_insights_hash(current_user.entries)
+    flash[:notice] = "You've written #{@insights[:sample_size]} entries for a total of #{@insights[:total_words]} words."
   end
 
   def new_insights
