@@ -51122,3 +51122,4 @@ Processing by WelcomeController#insights as HTML
   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 3[0m
   Rendered welcome/insights.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.0ms)
+Connecting to database specified by database.yml

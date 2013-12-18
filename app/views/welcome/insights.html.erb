@@ -7,9 +7,9 @@
 <% else %>
 
     <h2>Insights</h2></t>
-    <h2>Your insights across: <span id="sample-size"><%= @insights[:sample_size] %></span> entries</h2>
+    <h4>Entries: <span id="sample-size"><%= @insights[:sample_size] %></span> entries</h4>
 
-    <h4>Subjects Appearing Most Often in Your Writing: </h4>
+    <h4>Subjects You're Most Concerned About: </h4>
       <ul id="most-common-entities-ul">
         <% @insights[:most_common_entities].shuffle.each do |entity| %>
           <li><%= entity %></li>
@@ -17,7 +17,7 @@
       </ul>
     <h4>Average Mood Score: <span id="avg-mood"><%= @insights[:avg_mood] %></span></h4>
     <h4>Average Word Count: <span id="avg-word-count"><%= @insights[:avg_word_count] %></span></h4>
-    <h4> entries suggest you're <span id="tense-mode"><%= @insights[:tense_mode] %></span>-oriented</h4>
+    <h4>You live in the <span id="tense-mode"><%= @insights[:tense_mode] %></span></h4>
 
     <%= label_tag :time_of_day, "Entries writtin in the: " %>
     <%= select_tag :time_of_day,  options_for_select([
