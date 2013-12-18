@@ -42,8 +42,8 @@
       <div class="navbar-inner">
         <div class="container-fluid">
           <% if user_signed_in? %>
-            <%= button_to "Log out", destroy_user_session_path, { :form_class => "pull-right", :id => "logout-btn" } %>
-            <%= button_to "Insights", "/users/#{current_user.id}/insights", :method => "get", :form_class => "pull-right" %>
+            <%= link_to "Log out", destroy_user_session_path, { :class => "pull-right", :method => "post", :id => "logout-btn" } %>
+            <%= link_to "Insights", "/users/#{current_user.id}/insights", :method => "get", :class => "pull-right" %>
           <% end %>
           <a class="brand" href="/">InsightJournal</a>
           <div class="container-fluid nav-collapse">
