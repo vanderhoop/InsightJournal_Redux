@@ -52401,3 +52401,241 @@ Processing by WelcomeController#insights as HTML
   [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
   Rendered welcome/insights.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 94ms (Views: 10.7ms | ActiveRecord: 14.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-18 13:03:21 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (1.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 ORDER BY id DESC LIMIT 5[0m
+  Rendered welcome/index.html.erb within layouts/application (12.6ms)
+Compiled custom.css  (0ms)  (pid 9103)
+Compiled application.css  (1ms)  (pid 9103)
+Completed 200 OK in 259ms (Views: 90.3ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:03:24 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+  Rendered welcome/insights.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 66ms (Views: 10.6ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-18 13:03:45 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-18 13:03:47 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 0 AND 12)
+  [1m[36m (0.5ms)[0m  [1mSELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 0 AND 12)
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-18 13:03:50 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36m (0.3ms)[0m  [1mSELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)[0m
+  [1m[35m (0.3ms)[0m  SELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:05:56 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.7ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+  Rendered welcome/insights.html.erb within layouts/application (0.7ms)
+Compiled custom.css  (0ms)  (pid 9103)
+Compiled application.css  (1ms)  (pid 9103)
+Completed 200 OK in 68ms (Views: 53.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:06:04 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntity Load (0.6ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+  Rendered welcome/insights.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 9.9ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:06:13 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+  Rendered welcome/insights.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 9.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:06:29 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.8ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+  [1m[36mEntity Load (0.6ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+  Rendered welcome/insights.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 127ms (Views: 11.1ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/users/1/insights" for 127.0.0.1 at 2013-12-18 13:06:32 -0500
+Processing by WelcomeController#insights as HTML
+  Parameters: {"authenticity_token"=>"pSz7gcDZmygRDRF4m7aj+TKWtptbIKlDB2IKOFr7tXo=", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+  Rendered welcome/insights.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 10.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-18 13:07:02 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 0 AND 12)[0m
+  [1m[35m (0.2ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 0 AND 12)[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=afternoon" for 127.0.0.1 at 2013-12-18 13:07:04 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"afternoon", "id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35m (0.6ms)[0m  SELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 13 AND 17)[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 28
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 29[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 30
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=night" for 127.0.0.1 at 2013-12-18 13:07:07 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"night", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("entries"."user_mood_input") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("entries"."word_count") AS avg_id FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT tense_orientation FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 18 AND 24)
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 31[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 32
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."entry_id" = 33[0m
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/1/new-insights?timeOfDay=morning" for 127.0.0.1 at 2013-12-18 13:07:10 -0500
+Processing by WelcomeController#new_insights as JSON
+  Parameters: {"timeOfDay"=>"morning", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 0 AND 12)[0m
+  [1m[35m (0.4ms)[0m  SELECT SUM("entries"."word_count") AS sum_id FROM "entries" WHERE "entries"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entries" WHERE "entries"."user_id" = 1 AND ("entries"."hour_created" BETWEEN 0 AND 12)[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms)

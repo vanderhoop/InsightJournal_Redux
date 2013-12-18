@@ -15,6 +15,12 @@ input {
   width: 80%;
 }
 
+.green-container {
+  border-radius: 8px;
+  background-color: rgb(223, 240, 216);
+  padding: 1em;
+}
+
 header a {
   margin: 0;
   padding-top: 10px;
