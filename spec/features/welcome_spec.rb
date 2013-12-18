@@ -35,7 +35,7 @@ describe "The Home Page" do
     end #signing in
   end # when users aren't signed in
 
-  context "when users are signed in" do
+  context "when users are signed in", :js => true do
     before(:each) do
       @user = User.new
       @user.name = Faker::Name.name
@@ -43,6 +43,19 @@ describe "The Home Page" do
       @user.password = "batman11"
       @user.password_confirmation = "batman11"
       @user.save
+      visit '/'
+      fill_in "Email", with: @user.email
+      fill_in "Password", with: @user.password
+      click_on "Sign in"
+    end
+
+    context "and have no entries" do
+      describe "the insights page" do
+        it "invites the user to start journaling" do
+          click_on 'Insights'
+          expect(page).to have_button("Get Journaling!")
+        end
+      end
     end
 
     # it "displays the user's most recent entries" do
