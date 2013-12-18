@@ -1,10 +1,18 @@
 textarea {
-  height: 30em;
-  width: 65%;
+  height: 38em;
+  width: 100%;
 }
 
 header form {
   margin: 0;
   padding-top: 7px;
   margin-left: 0.7em;
+}
+
+.well.sidebar-nav {
+  overflow:hidden;
+}
+
+.width-restrictor {
+  width: 58%;
 }

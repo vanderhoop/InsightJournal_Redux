@@ -1,7 +1,7 @@
 <% if @insights[:avg_mood] == nil %>
 
-    <h2>Hi!</h2>
-      <p>You've reached the Insights page. This is normally where we let you in on all the cool little secrets you've been keeping from yourself, but you have to write an entry before we can make the magic happen!</p>
+    <h2>Hello and Welcome</h2>
+      <p>You've reached the Insights page. This is normally where we let you in on all the cool little secrets you've been keeping even from yourself, but you have to write an entry before we can make our particular brand of magic happen!</p>
     <%= button_to "Get Journaling!", "/users/#{current_user.id}/entries/new", :method => "get" %>
 
 <% else %>
@@ -23,7 +23,7 @@
     <%= select_tag :time_of_day,  options_for_select([
       ["Select time of day", "none"],
       ["Morning", "morning"],
-      [ "Afternoon", "afternoon"],
+      ["Afternoon", "afternoon"],
       ["Evening","night"]
     ]) %>
 

@@ -1,8 +1,20 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :user_instance
+  before_filter :quotes
 
   require 'alchemy'
+
+  def quotes
+    @sampled_quote = [
+      { quote: "Since people are going to be living longer and getting older, they'll just have to learn how to be babies longer.",
+        author: "Andy Warhol"
+      },
+      {
+        quote: "The true sign of intelligence is not knowledge but imagination.",
+        author: "Albert Einstein"
+        }].sample
+  end
 
   def user_instance
     @user = current_user
