@@ -3,16 +3,17 @@ textarea {
   width: 98%;
 }
 
-.green, .red {
-  font-weight: bold;
+.Positive, .Negative {
+  padding: 0.35em 0.26em;
+  border-radius: 3.5px;
 }
 
-.green {
-  color: green;
+.Positive {
+  background-color: rgb(223, 240, 216);
 }
 
-.red {
-  color: red;
+.Negative {
+  background-color: rgba(200, 77, 72, .8);
 }
 
 label {

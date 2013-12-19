@@ -17,7 +17,8 @@
     <h3>Subjects: </h3>
       <ul id="most-common-entities-ul">
         <% @insights[:most_common_entities].each do |entity| %>
-          <li><h4><%= entity[:subject] %></h4></li>
+
+          <li><h4><span class="<%= entity[:most_common_sentiment] %>"><%= entity[:subject] %></span></h4></li>
             <ul>
               <li>Association: <%= entity[:most_common_sentiment] %></li>
               <li>Appearances: <%= entity[:count_total] %></li>
