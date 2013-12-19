@@ -1,6 +1,10 @@
 textarea {
   height: 38em;
-  width: 100%;
+  width: 98%;
+}
+
+label {
+  font-weight: 700;
 }
 
 select {

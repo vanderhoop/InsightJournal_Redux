@@ -10,7 +10,7 @@
           <li><%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
         <% end %>
       </ul>
-      <%= link_to "Create an entry", url %>
+      <h4><%= link_to "Write It Out!", url %></h4>
 
   <% end %>
 
