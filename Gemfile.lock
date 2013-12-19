@@ -85,6 +85,8 @@ GEM
     execjs (2.0.2)
     faker (1.2.0)
       i18n (~> 0.5)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
     geocoder (1.1.9)
@@ -133,6 +135,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.2)
+    multipart-post (1.2.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
@@ -263,8 +266,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   devise
-  excon
+  excon (~> 0.28.0)
   faker
+  faraday (~> 0.8.1)
   geocoder
   guard-rspec
   handlebars_assets
