@@ -34,7 +34,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
   </head>
   <body>
 
@@ -44,6 +43,7 @@
           <% if user_signed_in? %>
             <%= link_to "Log out", destroy_user_session_path, { :class => "pull-right", :method => "post", :id => "logout-btn" } %>
             <%= link_to "Insights", "/users/#{current_user.id}/insights", :method => "get", :class => "pull-right" %>
+            <%= link_to "Write", "/users/#{current_user.id}/entries/new", :class => "pull-right" %>
           <% end %>
           <a class="brand" href="/">InsightJournal</a>
           <div class="container-fluid nav-collapse">
@@ -80,5 +80,6 @@
       <p>&copy; Darth Vander Hoop 2013</p>
     </footer>
 
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
