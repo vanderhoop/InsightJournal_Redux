@@ -523,7 +523,6 @@ class Alchemy
 
 		#Fire off the HTTP request
 		res = Net::HTTP::post_form(URI.parse(url), options)
-		binding.pry
 		#parse and return the response
 		return JSON.parse(res.body)
 	end
