@@ -25,7 +25,8 @@ class EntriesController < ApplicationController
       flash[:notice] = "Entry successfully created."
       # nested resources are passed as an array on redirect,
       # otherwise you will get 'undefined method entry_url'
-      redirect_to [@user, @entry]
+      redirect_to "/users/#{current_user.id}/insights"
+      # redirect_to [@user, @entry]
     else
       flash[:notice] = "Your entry was only #{@entry.word_count} character(s) long. Viable entries must be at least 10 characters."
       render :action => :new
