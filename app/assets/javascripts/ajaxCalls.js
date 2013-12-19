@@ -32,7 +32,7 @@ function repopulateFields(){
     _.each(new_values_hash.most_common_entities, function(e, i , l){
       console.log(e)
       debugger
-      var newListItem = $('<li>').html('<h4>'+ e.subject + '</h4>');
+      var newListItem = $('<li>').html('<h4><span class=' + e.most_common_sentiment + '>'+ e.subject + '</h4>');
       var childUL = $('<ul>');
       $('<li>').html("Association: " + e.most_common_sentiment).appendTo(childUL);
       $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
