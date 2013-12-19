@@ -11,7 +11,9 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap_helper', '3.2.2.0'
 gem 'json'
 gem 'geocoder'
-gem 'excon'
+gem 'faraday', '~> 0.8.1'
+gem 'excon', '~> 0.28.0'
+
 # gem 'treat'
 
 # Gems used only for assets and not required
