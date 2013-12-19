@@ -3,7 +3,7 @@ textarea {
   width: 98%;
 }
 
-.Positive, .Negative {
+.Positive, .Negative, .Neutral {
   padding: 0.35em 0.26em;
   border-radius: 3.5px;
 }
@@ -14,6 +14,10 @@ textarea {
 
 .Negative {
   background-color: rgba(200, 77, 72, .8);
+}
+
+.Neutral {
+  background-color: rgba(252, 219, 154, .6);
 }
 
 label {
