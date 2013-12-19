@@ -70,7 +70,12 @@ class ApplicationController < ActionController::Base
       end
 
       # TODO I pushed all relevant entities into the :most_common_entities array. That's over kill.
-      insights_hash[:most_common_entities] = entity_storage_array
+
+      entity_storage_array.sort_by! do |h|
+        h[:count_total]
+      end
+
+      insights_hash[:most_common_entities] = entity_storage_array.reverse
       insights_hash[:humanity_sentiment] = nil
       # insights_hash[:most_common_entities] = relevant_entities.plucky("string_representation").uniq
       insights_hash

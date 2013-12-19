@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-18T21:15:18-05:00">2013-12-18T21:15:18-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-18T23:10:40-05:00">2013-12-18T23:10:40-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">66.51%</span></span>
+    (<span class="covered_percent"><span class="red">66.2%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.25
+         1.24
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>21</b> files in total.
-    <b>424</b> relevant lines. 
+    <b>426</b> relevant lines. 
     <span class="green"><b>282</b> lines covered</span> and
-    <span class="red"><b>142</b> lines missed </span>
+    <span class="red"><b>144</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,11 +52,11 @@
       
       <tr>
         <td class="strong"><a href="#8815cce0e0a0663b10e606e27a800d5925664d05" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="red strong">44.23 %</td>
-        <td>97</td>
-        <td>52</td>
+        <td class="red strong">42.59 %</td>
+        <td>102</td>
+        <td>54</td>
         <td>23</td>
-        <td>29</td>
+        <td>31</td>
         <td>0.8</td>
       </tr>
       
@@ -279,11 +279,11 @@
         <div class="source_table" id="8815cce0e0a0663b10e606e27a800d5925664d05">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="red">44.23 %</span> covered</h4>
+    <h4><span class="red">42.59 %</span> covered</h4>
     <div>
-      <b>52</b> relevant lines. 
+      <b>54</b> relevant lines. 
       <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>29</b> lines missed.</span>
+      <span class="red"><b>31</b> lines missed.</span>
     </div>
   </div>
   
@@ -641,7 +641,7 @@
         <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">      insights_hash[:avg_mood] = ents.average(&quot;user_mood_input&quot;).truncate(1).to_s + &quot;/10&quot;</code>
+          <code class="ruby">      insights_hash[:avg_mood] = ents.average(&quot;user_mood_input&quot;).truncate(1).to_s + &quot; out of 10&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="60">
@@ -653,7 +653,7 @@
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">      insights_hash[:tense_mode] = get_tense_mode(ents)</code>
+          <code class="ruby">      insights_hash[:tense_mode] = get_tense_mode(ents).capitalize</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="62">
@@ -701,7 +701,7 @@
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">        entity_storage_array &lt;&lt; { subject: entity[0], count_total: entity[1].sum_entity_column(&quot;count&quot;), most_common_sentiment: entity[1].plucky(&quot;sentiment_type&quot;).mode, entity_type: entity[1].plucky(&quot;e_type&quot;).mode, entries: entity[1].plucky(&quot;entry_id&quot;) }</code>
+          <code class="ruby">        entity_storage_array &lt;&lt; { subject: entity[0], count_total: entity[1].sum_entity_column(&quot;count&quot;), most_common_sentiment: entity[1].plucky(&quot;sentiment_type&quot;).mode.capitalize, entity_type: entity[1].plucky(&quot;e_type&quot;).mode, entries: entity[1].plucky(&quot;entry_id&quot;) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
@@ -722,130 +722,130 @@
           <code class="ruby">      # TODO I pushed all relevant entities into the :most_common_entities array. That's over kill.</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">      insights_hash[:most_common_entities] = entity_storage_array</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="74">
           
           
-          <code class="ruby">      insights_hash[:humanity_sentiment] = nil</code>
+          <code class="ruby">      entity_storage_array.sort_by! do |h|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="missed" data-hits="0" data-linenumber="75">
           
           
-          <code class="ruby">      # insights_hash[:most_common_entities] = relevant_entities.plucky(&quot;string_representation&quot;).uniq</code>
+          <code class="ruby">        h[:count_total]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">      insights_hash</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby">  end #return insights_hash</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="80">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="78">
           
-          <code class="ruby">  def filter_entries_by_time_written(array_of_entries, time_of_day)</code>
+          
+          <code class="ruby">      insights_hash[:most_common_entities] = entity_storage_array.reverse</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="79">
+          
+          
+          <code class="ruby">      insights_hash[:humanity_sentiment] = nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">      # insights_hash[:most_common_entities] = relevant_entities.plucky(&quot;string_representation&quot;).uniq</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="81">
           
           
-          <code class="ruby">    case time_of_day</code>
+          <code class="ruby">      insights_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">    when &quot;morning&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">      return array_of_entries.morning</code>
+          <code class="ruby">  end #return insights_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def filter_entries_by_time_written(array_of_entries, time_of_day)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="86">
+          
+          
+          <code class="ruby">    case time_of_day</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    when &quot;morning&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="88">
+          
+          
+          <code class="ruby">      return array_of_entries.morning</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
           <code class="ruby">    when &quot;afternoon&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
+        <li class="missed" data-hits="0" data-linenumber="90">
           
           
           <code class="ruby">      return array_of_entries.afternoon</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">    when &quot;night&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="87">
+        <li class="missed" data-hits="0" data-linenumber="92">
           
           
           <code class="ruby">      return array_of_entries.night</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="89">
-          
-          
-          <code class="ruby">      return array_of_entries</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="90">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="91">
-          
-          
-          <code class="ruby">  end # filter_entries_by_time_written</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="92">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="93">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def filter_entries_by_subject(array_of_entries, targeted_subject)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="94">
@@ -857,16 +857,46 @@
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">  end # filter_entries_by_subject</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end # filter_entries_by_time_written</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def filter_entries_by_subject(array_of_entries, targeted_subject)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="99">
+          
+          
+          <code class="ruby">      return array_of_entries</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">  end # filter_entries_by_subject</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby">end</code>
