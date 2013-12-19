@@ -3,6 +3,18 @@ textarea {
   width: 98%;
 }
 
+.green, .red {
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
 label {
   font-weight: 700;
 }

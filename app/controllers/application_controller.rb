@@ -56,9 +56,9 @@ class ApplicationController < ActionController::Base
       insights_hash[:tense_mode] = "N/A"
       return insights_hash
     else
-      insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(1).to_s + "/10"
+      insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(1).to_s + " out of 10"
       insights_hash[:avg_word_count] = ents.average("word_count").truncate(2)
-      insights_hash[:tense_mode] = get_tense_mode(ents)
+      insights_hash[:tense_mode] = get_tense_mode(ents).capitalize
       relevant_entities = return_relevant_entities(ents)
       entities_by_string_rep = relevant_entities.group_by(&:string_representation)
 
@@ -66,7 +66,7 @@ class ApplicationController < ActionController::Base
       # iterate through the entities by string_representation
       entities_by_string_rep.each do |entity|
         # entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count") }
-        entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count"), most_common_sentiment: entity[1].plucky("sentiment_type").mode, entity_type: entity[1].plucky("e_type").mode, entries: entity[1].plucky("entry_id") }
+        entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count"), most_common_sentiment: entity[1].plucky("sentiment_type").mode.capitalize, entity_type: entity[1].plucky("e_type").mode, entries: entity[1].plucky("entry_id") }
       end
 
       # TODO I pushed all relevant entities into the :most_common_entities array. That's over kill.

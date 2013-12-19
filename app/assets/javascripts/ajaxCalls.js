@@ -1,5 +1,11 @@
 var filters = {};
 
+// App.subjectsUL = $('#most-common-entities-ul');
+// App.avgMoodSpan = $('#avg-mood');
+// App.avgWordCountSpan = $('#avg-word-count');
+// App.sampleSizeSpan = $('#sample-size');
+// App.tenseModeSpan = $('#tense-mode');
+
 function filterValues(){
   console.log('filterValues event firing');
   filters.timeOfDay = $('#time_of_day').val();
@@ -17,20 +23,22 @@ function repopulateFields(){
     data: data
   }).done(function(new_values_hash) {
     console.log("done function is firing");
+    // debugger
     App.subjectsUL.html('');
     App.avgMoodSpan.html(new_values_hash.avg_mood);
     App.avgWordCountSpan.html(new_values_hash.avg_word_count);
     App.sampleSizeSpan.html(new_values_hash.sample_size);
     App.tenseModeSpan.html(new_values_hash.tense_mode);
     _.each(new_values_hash.most_common_entities, function(e, i , l){
-      var newListItem = $('<li>').html(e.subject);
-      var childUL = $('ul');
-      $('<li>').html("Sentiment: " + e.most_common_sentiment).appendTo(childUL);
-      // $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
+      console.log(e)
+      debugger
+      var newListItem = $('<li>').html('<h4>'+ e.subject + '</h4>');
+      var childUL = $('<ul>');
+      $('<li>').html("Association: " + e.most_common_sentiment).appendTo(childUL);
+      $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
       childUL.appendTo(newListItem);
       App.subjectsUL.append(newListItem);
     });
 
-    // App.subjectsUL.append('<li>I like turtles</>');
   });
 }

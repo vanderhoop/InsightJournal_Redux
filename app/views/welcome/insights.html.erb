@@ -11,15 +11,16 @@
     </div>
     <h2 class='title-h2'>Insights</h2></t>
     <h4>Average Mood Score: <span id="avg-mood"><%= @insights[:avg_mood] %></span></h4><br>
-    <h4>Average Word Count: <span id="avg-word-count"><%= @insights[:avg_word_count] %></span></h4><br>
-    <h4>Tense-Orientation: <span id="tense-mode"><%= @insights[:tense_mode].capitalize %></span></h4><br>
+    <h4>Words Per Entry: <span id="avg-word-count"><%= @insights[:avg_word_count] %></span></h4><br>
+    <h4>Tense-Orientation: <span id="tense-mode"><%= @insights[:tense_mode] %></span></h4><br>
 
-    <h4>Subjects: </h4>
+    <h3>Subjects: </h3>
       <ul id="most-common-entities-ul">
         <% @insights[:most_common_entities].each do |entity| %>
-          <li><h5><%= entity[:subject] %></h5></li>
+          <li><h4><%= entity[:subject] %></h4></li>
             <ul>
               <li>Association: <%= entity[:most_common_sentiment] %></li>
+              <li>Appearances: <%= entity[:count_total] %></li>
             </ul>
         <% end %>
       </ul>
