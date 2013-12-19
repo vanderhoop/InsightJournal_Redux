@@ -18,7 +18,6 @@ require 'rubygems'
 require 'net/http'
 require 'uri'
 require 'json'
-require 'pry'
 
 Faraday.default_adapter = :excon
 
@@ -520,6 +519,7 @@ class Alchemy
 		#Add the API key and set the output mode to JSON
 		options['apikey'] = @apiKey
 		options['outputMode'] = 'json'
+		options['']
 
 		#Fire off the HTTP request
 		res = Net::HTTP::post_form(URI.parse(url), options)
