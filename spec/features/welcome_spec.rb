@@ -1,6 +1,31 @@
 require 'spec_helper'
 require 'selenium-webdriver'
 
+describe 'InsightJournal', :js => true do
+  context "when a user doesn't have an account" do
+     describe "signing up" do
+      it "is displayed as a linked option at the root url" do
+        visit '/'
+        expect(page).to have_link("Sign up")
+      end
+
+      describe "the user sign up form" do
+        before(:each) do
+          visit '/users/sign_up'
+        end
+
+        it "takes an email" do
+          page.has_field? 'Email'
+        end
+
+        it "takes a password" do
+          page.has_field? 'Password'
+        end
+      end
+     end
+  end
+end
+
 describe "The Home Page" do
   before(:each) do
     visit "/"
