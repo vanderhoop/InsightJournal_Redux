@@ -10,22 +10,22 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
     @day_created = @entry.created_at.strftime("%B %d, %Y")
-    # binding.pry
-    @url = "users/#{params[:user_id]}/entries/#{params[:id]}"
+    # TODO fix bug that ask Users to confirm deletion of an entry twice.
   end
 
   def create
     @entry = Entry.new(params[:entry])
+    # TODO is setting user_id necessary?
     @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
-    # before .save is called, both an 'entity' and a 'relations' call
-    # are made to the API. Both save set instance variables of the Entry
+    # before @entry.save is called, both an 'entity' and a 'relations' call
+    # are made to the API. Both set instance variables of the Entry
     if @entry.save
       @entry.create_entities(@entry.instance_entities)
       flash[:notice] = "Entry successfully created."
-      # nested resources are passed as an array on redirect,
-      # otherwise you will get 'undefined method entry_url'
       redirect_to "/users/#{current_user.id}/insights"
+
+      # TODO Once I've setup entry-specific insights to the entries#show page, change redirect back to the entry itself
       # redirect_to [@user, @entry]
     else
       flash[:notice] = "Your entry was only #{@entry.word_count} character(s) long. Viable entries must be at least 10 characters."
@@ -41,9 +41,10 @@ class EntriesController < ApplicationController
   end
 
   def update
-    # retrieves entry with old information
     @entry = Entry.find(params[:id])
     entry_hash = params[:entry]
+    # TODO refactor the setting of word_count and tense_orientation
+    # resets word_cound and test orientation
     entry_hash["word_count"] = entry_hash["text"].split(' ').length
     entry_hash["tense_orientation"] = get_relations(entry_hash["text"])
     if @entry.update_attributes(entry_hash)

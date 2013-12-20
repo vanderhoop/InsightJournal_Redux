@@ -43,7 +43,6 @@ class Entry < ActiveRecord::Base
   scope :present, where(:tense_orientation => 'present')
   scope :future, where(:tense_orientation => 'future')
 
-  # scope :recent, where('published_at >= ?', Time.current - 1.week)
   scope :morning, where(:hour_created => 0..12 )
   scope :afternoon, where(:hour_created => 13..17 )
   scope :night, where(:hour_created => 18..24 )
