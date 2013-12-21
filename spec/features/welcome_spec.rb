@@ -47,8 +47,23 @@ describe 'InsightJournal', :js => true do
           end # context - signing up w/ proper creditials
 
           context "when passed an invalid email" do
-            it "flashes an "
+            before(:each) do
+              fill_in "Email", with: "samantha@boyd"
+              fill_in "Password", with: "samantha"
+              fill_in "Password confirmation", with: "samantha"
+            end
+
+            it "rerenders the sign up page" do
+              page.has_field?("Password confirmation")
+            end
+
+            it "flashes an error message" do
+              page.has_text?("Email invalid")
+            end
           end # context - "when passed an invalid email"
+
+          context "when pw doesn't match pw confirmation" do
+          end # context - when pw doesn't match pw confirmation
 
         end # describe - the user_sign_up form
 
