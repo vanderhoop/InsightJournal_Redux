@@ -36,6 +36,20 @@ describe 'InsightJournal', :js => true do
             page.has_field? "Password Confirmation"
           end
 
+          context "when passed valid creditials", :js => true do
+            it "takes you to the new user dashboard" do
+              fill_in "Email", with: "gijoe@gmail.com"
+              fill_in "Password", with: "lovely"
+              fill_in "Password confirmation", with: "lovely"
+              page.has_link?("Get Journaling")
+            end
+
+          end # context - signing up w/ proper creditials
+
+          context "when passed an invalid email" do
+            it "flashes an "
+          end # context - "when passed an invalid email"
+
         end # describe - the user_sign_up form
 
       end # describe - the user_sign_up page
