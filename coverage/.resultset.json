@@ -1358,6 +1358,31 @@
         1,
         null
       ],
+      "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/spec/features/entry_creation_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/spec/features/logging_in_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/spec/features/sign_up_spec.rb": [
         1,
         1,
@@ -1368,7 +1393,7 @@
         1,
         null,
         1,
-        1,
+        null,
         1,
         1,
         1,
@@ -1465,17 +1490,12 @@
         null,
         null,
         null,
-        null,
-        null,
         1,
         1,
         11,
         null,
         null,
         1,
-        1,
-        1,
-        null,
         null,
         1,
         1,
@@ -1489,6 +1509,7 @@
         1,
         null,
         null,
+        1,
         1,
         null,
         null,
@@ -1739,6 +1760,6 @@
         null
       ]
     },
-    "timestamp": 1387667963
+    "timestamp": 1387669110
   }
 }

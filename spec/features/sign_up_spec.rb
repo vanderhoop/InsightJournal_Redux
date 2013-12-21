@@ -7,7 +7,7 @@ Warden.test_mode!
 describe 'signing up', :js => true do
 
   context "when a user doesn't have an account" do
-     describe "signing up" do
+
       it "is displayed as a linked option at the root url" do
         visit '/'
         expect(page).to have_link("Sign up")
@@ -100,11 +100,9 @@ describe 'signing up', :js => true do
 
       end # describe - the user_sign_up page
 
-    end # describe - signing up
-
   end # context - when a user doesn't have an account
 
-end # InsightJournal
+end # describe - signing up
 
 describe "The Root URL" do
   before(:each) do
@@ -112,6 +110,7 @@ describe "The Root URL" do
   end
 
   context "when users aren't signed in" do
+
     it "displays the sign in form" do
       expect(page).to have_css("form[action='/users/sign_in']")
     end
@@ -127,9 +126,6 @@ describe "The Root URL" do
     it "doesn't display the Write link" do
       page.has_no_link?("Write")
     end
-
-    describe "signing in" do
-    end # describe - signing in
 
   end # context - when users aren't signed in
 
