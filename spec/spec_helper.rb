@@ -44,6 +44,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.color_enabled = true
   config.tty = true
-  config.formatter = :documentation
+  # commented this out because rspec tests were running twice(because this line is already in my .rspec file in my comp's root directory)
+  # config.formatter = :documentation
   config.order = "random"
 end

@@ -1,4 +1,4 @@
-Capybara.javascript_driver = :webkit # Selenium works, but not as well
+Capybara.javascript_driver = :selenium # Selenium works, but not as well
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false

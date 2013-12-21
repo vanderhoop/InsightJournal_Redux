@@ -31,5 +31,13 @@ class Array
   end
 end
 
+class String
+
+def get_word_count
+  self.split(' ').length
+end
+
+end
+
 # Initialize the rails application
 InsightJournalRedux::Application.initialize!

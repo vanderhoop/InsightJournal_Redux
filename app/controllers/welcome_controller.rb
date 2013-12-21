@@ -6,8 +6,9 @@ class WelcomeController < ApplicationController
   end
 
   def insights
-    @insights = return_insights_hash(current_user.entries)
-    # flash[:notice] = "You've written #{@insights[:sample_size]} entries for a total of #{@insights[:total_words]} words."
+    if user_signed_in?
+      @insights = return_insights_hash(current_user.entries)
+    end
   end
 
   def new_insights
@@ -20,7 +21,6 @@ class WelcomeController < ApplicationController
         render json: @new_insights
       end
     end
-    #respond with @time_filtered_entries as JSON.
   end # new_insights
 
 end

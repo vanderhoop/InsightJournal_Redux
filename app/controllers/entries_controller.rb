@@ -15,16 +15,13 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(params[:entry])
-    # TODO is setting user_id necessary?
-    @entry.user_id = current_user.id
     @entry.word_count = params[:entry][:text].split(' ').length
     # before @entry.save is called, both an 'entity' and a 'relations' call
     # are made to the API. Both set instance variables of the Entry
-    if @entry.save
+    if current_user.entries << @entry
       @entry.create_entities(@entry.instance_entities)
       flash[:notice] = "Entry successfully created."
       redirect_to "/users/#{current_user.id}/insights"
-
       # TODO Once I've setup entry-specific insights to the entries#show page, change redirect back to the entry itself
       # redirect_to [@user, @entry]
     else
@@ -44,7 +41,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     entry_hash = params[:entry]
     # TODO refactor the setting of word_count and tense_orientation
-    # resets word_cound and test orientation
+    # resets word_cound and tense orientation
     entry_hash["word_count"] = entry_hash["text"].split(' ').length
     entry_hash["tense_orientation"] = get_relations(entry_hash["text"])
     if @entry.update_attributes(entry_hash)

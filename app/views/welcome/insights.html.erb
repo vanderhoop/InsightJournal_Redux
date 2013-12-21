@@ -2,7 +2,7 @@
 
     <h2>Hello and Welcome</h2>
       <p>You've reached the Insights page. This is normally where we let you in on all the cool little secrets you've been keeping even from yourself, but you have to write an entry before we can make our particular brand of magic happen!</p>
-    <%= button_to "Get Journaling!", "/users/#{current_user.id}/entries/new", :method => "get" %>
+    <%= link_to "Get Journaling!", "/users/#{current_user.id}/entries/new" %>
 
 <% else %>
 
