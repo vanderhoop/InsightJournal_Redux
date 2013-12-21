@@ -36,13 +36,13 @@ describe 'InsightJournal', :js => true do
             page.has_field? "Password Confirmation"
           end
 
-        end # the user_sign_up form
+        end # describe - the user_sign_up form
 
-      end # the user_sign_up page
+      end # describe - the user_sign_up page
 
-    end # signing up
+    end # describe - signing up
 
-  end #when a user doesn't have an account
+  end # context - when a user doesn't have an account
 
 end # InsightJournal
 
@@ -69,9 +69,9 @@ describe "The Root URL" do
     end
 
     describe "signing in" do
-    end #signing in
+    end # describe - signing in
 
-  end # when users aren't signed in
+  end # context - when users aren't signed in
 
   context "when users are signed in", :js => true do
     before(:each) do
@@ -111,7 +111,7 @@ describe "The Root URL" do
         page.has_link?("Get Journaling")
       end
 
-    end # context: users have no entries
+    end # context - users have no entries
 
     context "when users have written entries" do
       before(:each) do
@@ -130,9 +130,9 @@ describe "The Root URL" do
         page.has_no_link?("Get Journaling")
       end
 
-    end # context: users have written entries
+    end # context - users have written entries
 
   end # context - when users are signed in
 
-end # describe "The Home Page"
+end # describe "The Root URL"
 
