@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/vanderhoop/InsightJournal_Redux.png)](https://travis-ci.org/vanderhoop/InsightJournal_Redux)
+
 ###InsightJournal_Redux
 ---
 
