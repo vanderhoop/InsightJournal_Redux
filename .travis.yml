@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - 1.9.3
-secure: "jR5xoeu9LIZ/S6M5JByXK7n3C3caFpnoqoipDYAR5or5YGH4Hodl4etuEMbOg7X7xE/8mDfRkYigx3JuqU1Yh9FBGS7iEK4LtvuH7xifqGxiU+mkkqKhroPtI9mMZDDGpsAMw8dyDHct17qx4wjRd0rtace8BSf3WFGJ7lRiX7g="
 before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "export DISPLAY=:99.0"
@@ -10,4 +9,6 @@ script:
   - "bundle exec rake db:migrate RAILS_ENV=test"
   - "bundle exec rspec"
 env:
-  - PG_USERNAME='postgres'
+  global:
+    - PG_USERNAME='postgres'
+    - secure: "CmMbzwj8C8PWs7PQYlJ/FxavSIgFYjGug9cxomImKLOSl3TlwQT2jd8/hZNSss9VjL/FdkwGZxF4HCKKqXVKyaITSju5bpv4uFhabY3PMEV+ry9jRJcUyE2b0YKo+G6sQXuo3TQS1/3ySWl+mlLlbwMeMAbhAFZ/xOZt5KLrcP4="
