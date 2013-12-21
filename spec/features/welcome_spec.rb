@@ -56,12 +56,16 @@ describe "The Root URL" do
       expect(page).to have_css("form[action='/users/sign_in']")
     end
 
-    it "won't display the logout button" do
+    it "doesn't display the logout button" do
       expect(page).to_not have_css("input[value='Log out']")
     end
 
-    it "won't display the insights link" do
+    it "doesn't display the insights link" do
       page.has_no_link? "Insights"
+    end
+
+    it "doesn't display the Write link" do
+      page.has_no_link?("Write")
     end
 
     describe "signing in" do
@@ -114,14 +118,16 @@ describe "The Root URL" do
         @entry = Entry.new
         @entry.text = "I'm in love with (nearly) all things relating to the Green Bay Packers"
         @entry.user_mood_input = 8
-        # @entry.user_id = @user.id
         @entry.word_count = @entry.text.get_word_count
         @user.entries << @entry
       end
 
       it "should display the first 90 characters of the last entry" do
-        visit '/'
         page.has_text?("I'm in love with (nearly) all things relating to the Green Bay Packers")
+      end
+
+      it "should not have a Get Journaling link" do
+        page.has_no_link?("Get Journaling")
       end
 
     end # context: users have written entries

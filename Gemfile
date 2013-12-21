@@ -59,6 +59,7 @@ group :development, :test do
   gem "faker"
 end
 
+
 group :development do
   gem "annotate"
   gem "quiet_assets"
@@ -69,9 +70,13 @@ group :development do
   gem "terminal-notifier-guard"
 end
 
+group :test do
+  gem 'shoulda-matchers'
+  gem 'rake'
+end
+
 group :assets do
   gem "handlebars_assets"
 end
 
 gem "simplecov", :require => false, :group => :test
-gem 'shoulda-matchers', :group => :test

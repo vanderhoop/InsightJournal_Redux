@@ -25,8 +25,8 @@ class Entry < ActiveRecord::Base
   attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at, :hour_created
   attr_reader :instance_entities, :instance_relations, :tenses, :most_used_tense
 
-  validates :user_id, :text, :user_mood_input, :word_count, :presence => true
-  validates_numericality_of :user_id, :word_count
+  validates :user_id, :text, :user_mood_input, :word_count, :hour_created, :presence => true
+  validates_numericality_of :user_id, :word_count, :hour_created
   validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
 
   has_many :entities

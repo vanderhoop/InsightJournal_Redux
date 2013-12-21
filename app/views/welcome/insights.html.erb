@@ -15,9 +15,9 @@
     <h4>Tense-Orientation: <span id="tense-mode"><%= @insights[:tense_mode] %></span></h4><br>
 
     <h3>Subjects: </h3>
+
       <ul id="most-common-entities-ul">
         <% @insights[:most_common_entities].each do |entity| %>
-
           <li><h4><span class="<%= entity[:most_common_sentiment] %>"><%= entity[:subject] %></span></h4></li>
             <ul>
               <li>Association: <%= entity[:most_common_sentiment] %></li>
@@ -27,6 +27,7 @@
       </ul>
 
     <h2 class="title-h2">Filters</h2>
+
     <%= label_tag :time_of_day, "Entries writtin in the: " %>
     <%= select_tag :time_of_day,  options_for_select([
       ["Select time of day", "none"],

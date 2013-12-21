@@ -40,6 +40,7 @@ describe User do
   it { should allow_mass_assignment_of(:password_confirmation) }
 
   it { should validate_uniqueness_of(:email) }
+  it { should ensure_length_of(:password).is_at_least(6) }
   # TODO devise created an additional attr_accessible, :remember_me,
   # to populate the sign in fields on an established user's computer.
   # Look up exactly what it's doing.

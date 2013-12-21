@@ -46,5 +46,5 @@ RSpec.configure do |config|
   config.tty = true
   # commented this out because rspec tests were running twice(because this line is already in my .rspec file in my comp's root directory)
   # config.formatter = :documentation
-  config.order = "random"
+  # config.order = "random"
 end
