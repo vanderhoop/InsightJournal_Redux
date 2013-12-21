@@ -75,6 +75,7 @@ group :test do
   gem 'rake'
 end
 
+
 group :assets do
   gem "handlebars_assets"
 end
