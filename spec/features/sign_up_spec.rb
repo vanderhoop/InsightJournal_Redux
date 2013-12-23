@@ -111,21 +111,21 @@ describe "The Root URL" do
 
   context "when users aren't signed in" do
 
-    it "displays the sign in form" do
-      expect(page).to have_css("form[action='/users/sign_in']")
-    end
+    # it "displays the sign in form" do
+    #   expect(page).to have_css("form[action='/users/sign_in']")
+    # end
 
-    it "doesn't display the logout button" do
-      expect(page).to_not have_css("input[value='Log out']")
-    end
+    # it "doesn't display the logout button" do
+    #   expect(page).to_not have_css("input[value='Log out']")
+    # end
 
-    it "doesn't display the insights link" do
-      page.has_no_link? "Insights"
-    end
+    # it "doesn't display the insights link" do
+    #   page.has_no_link? "Insights"
+    # end
 
-    it "doesn't display the Write link" do
-      page.has_no_link?("Write")
-    end
+    # it "doesn't display the Write link" do
+    #   page.has_no_link?("Write")
+    # end
 
   end # context - when users aren't signed in
 
