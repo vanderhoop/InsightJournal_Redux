@@ -25,7 +25,7 @@ class EntriesController < ApplicationController
       # TODO Once I've setup entry-specific insights to the entries#show page, change redirect back to the entry itself
       # redirect_to [@user, @entry]
     else
-      flash[:notice] = "Your entry was only #{@entry.word_count} character(s) long. Viable entries must be at least 10 characters."
+      flash[:error] = "Your entry was only #{@entry.text.length} character(s) long. Viable entries must be at least 10 characters."
       render :action => :new
     end
   end # create
