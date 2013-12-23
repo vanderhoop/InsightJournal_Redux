@@ -4,130 +4,106 @@ require 'selenium-webdriver'
 include Warden::Test::Helpers
 Warden.test_mode!
 
-describe 'signing up', :js => true do
+feature 'Signing Up', :js => true do
 
   context "when a user doesn't have an account" do
 
-      it "is displayed as a linked option at the root url" do
-        visit '/'
-        expect(page).to have_link("Sign up")
+    describe 'the user_sign_up page' do
+      before(:each) do
+        Warden.test_reset!
+        visit '/users/sign_up'
       end
 
-      describe 'the user_sign_up page' do
-        before(:each) do
-          visit '/users/sign_up'
+      it "has a sign up form" do
+        expect(page).to have_css("form[action='/users']")
+      end
+
+      describe "the user sign up form" do
+
+        it "takes an email" do
+          page.has_field? 'Email'
         end
 
-        it "has a sign up form" do
-          expect(page).to have_css("form[action='/users']")
+        it "takes a password" do
+          page.has_field? 'Password'
         end
 
-        describe "the user sign up form" do
+        it "takes a password confirmation" do
+          page.has_field? "Password Confirmation"
+        end
 
-          it "takes an email" do
-            page.has_field? 'Email'
+        context "when passed valid credentials", :js => true do
+          it "takes you to the new user dashboard" do
+            fill_in "Email", with: "gijoe@gmail.com"
+            fill_in "Password", with: "lovely"
+            fill_in "Password confirmation", with: "lovely"
+            page.has_link?("Get Journaling")
           end
 
-          it "takes a password" do
-            page.has_field? 'Password'
+        end # context - signing up w/ proper creditials
+
+        context "when passed an invalid email" do
+          before(:each) do
+            fill_in "Email", with: "samantha@boyd"
+            fill_in "Password", with: "samantha"
+            fill_in "Password confirmation", with: "samantha"
           end
 
-          it "takes a password confirmation" do
-            page.has_field? "Password Confirmation"
+          it "rerenders the sign up page" do
+            page.has_field?("Password confirmation")
           end
 
-          context "when passed valid creditials", :js => true do
-            it "takes you to the new user dashboard" do
-              fill_in "Email", with: "gijoe@gmail.com"
-              fill_in "Password", with: "lovely"
-              fill_in "Password confirmation", with: "lovely"
-              page.has_link?("Get Journaling")
-            end
+          it "flashes an error message" do
+            page.has_text?("Email invalid")
+          end
+        end # context - "when passed an invalid email"
 
-          end # context - signing up w/ proper creditials
+        context "when pw doesn't match pw confirmation" do
+          before(:each) do
+            fill_in "Email", with: "sam.eldred@gmail.com"
+            fill_in "Password", with: "Uruguay"
+            fill_in "Password confirmation", with: "Baseball"
+          end
 
-          context "when passed an invalid email" do
-            before(:each) do
-              fill_in "Email", with: "samantha@boyd"
-              fill_in "Password", with: "samantha"
-              fill_in "Password confirmation", with: "samantha"
-            end
+          it "rerenders the sign up page" do
+            page.has_field?("Password confirmation")
+          end
 
-            it "rerenders the sign up page" do
-              page.has_field?("Password confirmation")
-            end
+          it "flashes an error message" do
+            page.has_text?("match")
+          end
 
-            it "flashes an error message" do
-              page.has_text?("Email invalid")
-            end
-          end # context - "when passed an invalid email"
+        end # context - when pw doesn't match pw confirmation
 
-          context "when pw doesn't match pw confirmation" do
-            before(:each) do
-              fill_in "Email", with: "sam.eldred@gmail.com"
-              fill_in "Password", with: "Uruguay"
-              fill_in "Password confirmation", with: "Baseball"
-            end
+        context "when pw and pw confirmation < 6 characters" do
+          before(:each) do
+            fill_in "Email", with: "tonymcgibbon@yahoo.com"
+            fill_in "Password", with: "small"
+            fill_in "Password confirmation", with: "small"
+          end
 
-            it "rerenders the sign up page" do
-              page.has_field?("Password confirmation")
-            end
+          it "rerenders the sign up page" do
+            page.has_field?("Password confirmation")
+          end
 
-            it "flashes an error message" do
-              page.has_text?("match")
-            end
+          it "flashes an error message" do
+            page.has_text?("minimum")
+          end
 
-          end # context - when pw doesn't match pw confirmation
+        end # context - when pw and pw confirmation < 6 characters
 
-          context "when pw and pw confirmation < 6 characters" do
-            before(:each) do
-              fill_in "Email", with: "tonymcgibbon@yahoo.com"
-              fill_in "Password", with: "small"
-              fill_in "Password confirmation", with: "small"
-            end
+      end # describe - the user_sign_up form
 
-            it "rerenders the sign up page" do
-              page.has_field?("Password confirmation")
-            end
-
-            it "flashes an error message" do
-              page.has_text?("minimum")
-            end
-
-          end # context - when pw and pw confirmation < 6 characters
-
-        end # describe - the user_sign_up form
-
-      end # describe - the user_sign_up page
+    end # describe - the user_sign_up page
 
   end # context - when a user doesn't have an account
 
-end # describe - signing up
+end # feature - Signing Up
 
 describe "The Root URL" do
   before(:each) do
     visit "/"
   end
-
-  context "when users aren't signed in" do
-
-    # it "displays the sign in form" do
-    #   expect(page).to have_css("form[action='/users/sign_in']")
-    # end
-
-    # it "doesn't display the logout button" do
-    #   expect(page).to_not have_css("input[value='Log out']")
-    # end
-
-    # it "doesn't display the insights link" do
-    #   page.has_no_link? "Insights"
-    # end
-
-    # it "doesn't display the Write link" do
-    #   page.has_no_link?("Write")
-    # end
-
-  end # context - when users aren't signed in
 
   context "when users are signed in", :js => true do
     before(:each) do
@@ -140,17 +116,17 @@ describe "The Root URL" do
       login_as(@user, :scope => :user)
     end
 
-    it "should link to the insights page" do
-      page.has_link?("Insights")
-    end
+  #   it "should link to the insights page" do
+  #     page.has_link?("Insights")
+  #   end
 
-    it "should link to the new entry action" do
-      page.has_link?("Write")
-    end
+  #   it "should link to the new entry action" do
+  #     page.has_link?("Write")
+  #   end
 
-    it "should display a log out button" do
-      page.has_link?("Log out")
-    end
+  #   it "should display a log out button" do
+  #     page.has_link?("Log out")
+  #   end
 
     context "when users have no entries" do
 

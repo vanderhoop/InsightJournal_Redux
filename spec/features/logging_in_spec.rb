@@ -4,25 +4,19 @@ require 'selenium-webdriver'
 include Warden::Test::Helpers
 Warden.test_mode!
 
-feature 'logging in' do
+feature 'Logging In', :js => true do
 
-  describe 'the root url' do
-    before(:each) do
-      visit '/'
-    end
+  context "when users aren't logged in" do
 
-    context "when users aren't logged in" do
+      before(:each) do
+        Warden.test_reset!
+        visit '/'
+      end
 
-      describe 'the login form' do
+      it "displays the login form" do
+        expect(page).to have_css("form[action='/users/sign_in']")
+      end
 
-        it "is displayed" do
-          expect(page).to have_css("form[action='/users/sign_in']")
-        end
-
-      end # describe - the login form
-
-    end # context - when users aren't logged in
-
-  end # describe - the root url
+  end # context - when users aren't logged in
 
 end # feature - logging in
