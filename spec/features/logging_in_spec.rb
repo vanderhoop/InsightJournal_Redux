@@ -63,6 +63,7 @@ feature 'Logging In', :js => true do
         it "flashes an incorrect credentials error" do
           page.has_text?("Invalid email or password")
         end
+
       end # context - when passed an email unassociated with a user
 
     end # describe - the login form

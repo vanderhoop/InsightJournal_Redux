@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-23T11:07:56-06:00">2013-12-23T11:07:56-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-12-23T12:02:53-06:00">2013-12-23T12:02:53-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">71.46%</span></span>
+    (<span class="covered_percent"><span class="red">70.55%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.52
+         1.49
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>24</b> files in total.
-    <b>536</b> relevant lines. 
-    <span class="green"><b>383</b> lines covered</span> and
-    <span class="red"><b>153</b> lines missed </span>
+    <b>550</b> relevant lines. 
+    <span class="green"><b>388</b> lines covered</span> and
+    <span class="red"><b>162</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -222,12 +222,12 @@
       
       <tr>
         <td class="strong"><a href="#19d6509bf1a770bdf9200ce6c6ae23687acc9fdb" class="src_link" title="spec/features/entry_creation_spec.rb">spec/features/entry_creation_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="red strong">52.63 %</td>
+        <td>34</td>
+        <td>19</td>
         <td>10</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>9</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -243,7 +243,7 @@
       <tr>
         <td class="strong"><a href="#78098cd6d7f70637bf0f9e832848155061f47ca4" class="src_link" title="spec/features/logging_in_spec.rb">spec/features/logging_in_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>72</td>
+        <td>73</td>
         <td>40</td>
         <td>40</td>
         <td>0</td>
@@ -8553,11 +8553,11 @@
         <div class="source_table" id="19d6509bf1a770bdf9200ce6c6ae23687acc9fdb">
   <div class="header">
     <h3>spec/features/entry_creation_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">52.63 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>19</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -8594,22 +8594,22 @@
           <code class="ruby">Warden.test_mode!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">describe &quot;entries&quot; do</code>
+          <code class="ruby">Warden.test_reset!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">feature &quot;New Entry Creation&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -8618,10 +8618,154 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before(:each) do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">    @user = User.new</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    @user.name = &quot;Bob Joe&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    @user.email = &quot;bobbyjoe@marpdarp.com&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    @user.password = &quot;batman11&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">    @user.password_confirmation = &quot;batman11&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">    @user.save</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    login_as(@user, :scope =&gt; :user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">    visit new_user_entry_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  context &quot;when users create an entry &gt; 10 characters&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    before(:each) do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">      fill_in &quot;entry_text&quot;, with: &quot;Marp de darp de darp de doo&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">    #&quot;displays their results&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end # context - when users create an entry &gt; 10 characters</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  context &quot;when users create an entry &lt; 10 chars&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">    #it &quot;rerenders the new entry page&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end # context - when users create an entry &lt; 10 chars</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">end # feature - New</code>
         </li>
       
     </ol>
@@ -9269,40 +9413,46 @@
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">      end # context - when passed an email unassociated with a user</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end # context - when passed an email unassociated with a user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">    end # describe - the login form</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end # describe - the login form</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">  end # context - when users aren't logged in</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end # context - when users aren't logged in</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">end # feature - logging in</code>
