@@ -31,18 +31,6 @@ describe 'The Landing Page', :js => true do
       expect(page).to have_css("form[action='/users/sign_in']")
     end
 
-    describe 'the login form' do
-
-      it "has an 'Email' text input" do
-        page.has_field?("Email")
-      end
-
-      it "has a 'Password' text input" do
-        page.has_field?("Password")
-      end
-
-    end # describe - the login form
-
   end # context - when users aren't logged in
 
 end # describe - The Landing Page
