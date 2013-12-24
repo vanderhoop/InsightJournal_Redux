@@ -1,7 +1,7 @@
 require 'alchemy'
 
 class EntriesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :user_signed_in?
 
   def index
     @entries = current_user.entries
