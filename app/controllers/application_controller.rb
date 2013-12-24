@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
   def get_relations(text)
     alchemy_api = Alchemy.new()
+    binding.pry
     relations = alchemy_api.relations('text', text)["relations"]
     tenses = []
     relations.each do |relation|

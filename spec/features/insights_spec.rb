@@ -31,15 +31,21 @@ describe "The Insights Page", :js => true do
 
   end # context - when a user has no entries
 
-  # context "when a user has one or more entries" do
-  #   it "displays insights" do
-  #     visit "/users/#{@user.id}/entries/new"
-  #     fill_in "entry_text", with: "Michael Jackson was my favorite musician, but he abused kids, so not anymore."
-  #     page.find("#create-entry").click
-  #     # login_as(@user, :scope => :user)
-  #     # visit "/users/#{@user.id}/insights"
-  #     expect(page).to have_content("Subjects")
-  #   end
-  # end # context - when a user has entries
+  context "when a user has one or more entries" do
+    it "displays insights" do
+      Warden.test_reset!
+      visit '/'
+      click_on "Sign up"
+      fill_in "Email", with: "Devise@hasfailings.com"
+      fill_in "Password", with: "deviser"
+      fill_in "Password confirmation", with: "deviser"
+      page.execute_script("$('form#new_user').submit()")
+      click_on "Get Journaling"
+      fill_in "entry_text", with: "Michael Jackson used to be my favorite musician. Not anymore."
+      page.find("#create-entry").click
+      expect(page).to have_content("Subjects")
+      click_on "Log out"
+    end
+  end # context - when a user has entries
 
 end # describe - The Insights Page
