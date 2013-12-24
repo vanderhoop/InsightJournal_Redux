@@ -64,6 +64,7 @@ class Entry < ActiveRecord::Base
   # sets tense_orientation before .save
   def set_relations
     alchemy_api = Alchemy.new()
+    binding.pry
     @instance_relations = alchemy_api.relations('text', self.text)["relations"]
     @tenses = []
     @instance_relations.each do |relation|
