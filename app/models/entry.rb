@@ -27,14 +27,15 @@ class Entry < ActiveRecord::Base
 
   validates :user_id, :text, :user_mood_input, :word_count, :hour_created, :presence => true
   validates_numericality_of :user_id, :word_count, :hour_created
-  validates :text, length: { minimum: 10, too_short: "is too short (minimum is 10 characters)" }
+  validates_length_of :text, minimum: 10, too_short: "is too short (minimum is 10 characters)"
 
   has_many :entities
   belongs_to :user
 
   # get_entities and get_relation set crucial values
   # to the Entry before it's saved to the db
-  before_save :get_entities, :set_relations, :set_hour_created
+  after_initialize :set_hour_created
+  before_save :get_entities, :set_relations
   after_update :update_entities
   before_destroy :destroy_entities
 
@@ -60,7 +61,7 @@ class Entry < ActiveRecord::Base
     @instance_entities = alchemy_api.entities('text', self.text, { sentiment: 1 })["entities"]
   end #get_entities
 
-  # sets tense_orientation
+  # sets tense_orientation before .save
   def set_relations
     alchemy_api = Alchemy.new()
     @instance_relations = alchemy_api.relations('text', self.text)["relations"]

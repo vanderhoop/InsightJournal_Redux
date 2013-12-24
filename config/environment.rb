@@ -3,7 +3,12 @@ require File.expand_path('../application', __FILE__)
 
 class Array
   def mode
-    sort_by {|i| grep(i).length }.last
+    mode = sort_by {|i| grep(i).length }.last
+    if mode != nil
+      mode
+    else
+      "N/A"
+    end
   end
 
   # def average(integer_column)

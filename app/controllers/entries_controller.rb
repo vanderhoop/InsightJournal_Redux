@@ -16,21 +16,25 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     @entry.word_count = params[:entry][:text].split(' ').length
+    @entry.user_id = current_user.id
     # before @entry.save is called, both an 'entity' and a 'relations' call
     # are made to the API. Both set instance variables of the Entry
-    if current_user.entries << @entry
+    if @entry.save
       @entry.create_entities(@entry.instance_entities)
       flash[:notice] = "Entry successfully created."
-      redirect_to "/users/#{current_user.id}/insights"
+      redirect_to "/users/#{@user.id}/insights"
       # TODO Once I've setup entry-specific insights to the entries#show page, change redirect back to the entry itself
       # redirect_to [@user, @entry]
     else
-      flash[:error] = "Your entry was only #{@entry.text.length} character(s) long. Viable entries must be at least 10 characters."
+      flash[:error] = @entry.errors.full_messages.to_sentence
+      # flash[:error] = "Your entry was only #{@entry.text.length} character(s) long. Viable entries must be at least 10 characters."
+
       render :action => :new
     end
   end # create
 
   def new
+    # TODO I want to make the default selection of the User_Mood_Input select dropdown say "Select Mood" and pass along a value of nil.
   end
 
   def edit
