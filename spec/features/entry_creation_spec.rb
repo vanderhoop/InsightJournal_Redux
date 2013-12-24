@@ -24,7 +24,7 @@ feature "New Entry Creation" do
     end
 
     it "persists the entry to the db" do
-      num_entries_before_click = Entry.last.id
+      num_entries_before_click = Entry.last == nil ? 0 : Entry.last.id
       page.find("#create-entry").click
       expect(Entry.last.id).to eq(num_entries_before_click + 1)
     end
