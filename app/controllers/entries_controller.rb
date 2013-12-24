@@ -1,6 +1,7 @@
 require 'alchemy'
 
 class EntriesController < ApplicationController
+  before_filter :authenticate_user!
 
   def index
     @entries = current_user.entries
@@ -16,12 +17,13 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     @entry.word_count = params[:entry][:text].split(' ').length
+    @entry.user_id = params["user_id"].to_i
     # before @entry.save is called, both an 'entity' and a 'relations' call
     # are made to the API. Both set instance variables of the Entry
-    if current_user.entries << @entry
+    if @entry.save
       @entry.create_entities(@entry.instance_entities)
       flash[:notice] = "Entry successfully created."
-      redirect_to "/users/#{@user.id}/insights"
+      redirect_to "/users/#{@entry.user_id}/insights"
       # TODO Once I've setup entry-specific insights to the entries#show page, change redirect back to the entry itself
       # redirect_to [@user, @entry]
     else

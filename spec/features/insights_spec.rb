@@ -32,7 +32,12 @@ describe "The Insights Page", :js => true do
   end # context - when a user has no entries
 
   context "when a user has one or more entries" do
-
+    it "displays insights" do
+      visit "/users/#{@user.id}/entries/new"
+      fill_in "entry_text", with: "Michael Jackson was my favorite musician, but he abused kids, so not anymore."
+      page.find("#create-entry").click
+      page.has_text?("Subjects")
+    end
   end # context - when a user has entries
 
 end # describe - The Insights Page
