@@ -16,10 +16,9 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     @entry.word_count = params[:entry][:text].split(' ').length
-    @entry.user_id = current_user.id
     # before @entry.save is called, both an 'entity' and a 'relations' call
     # are made to the API. Both set instance variables of the Entry
-    if @entry.save
+    if current_user.entries << @entry
       @entry.create_entities(@entry.instance_entities)
       flash[:notice] = "Entry successfully created."
       redirect_to "/users/#{@user.id}/insights"
@@ -27,8 +26,6 @@ class EntriesController < ApplicationController
       # redirect_to [@user, @entry]
     else
       flash[:error] = @entry.errors.full_messages.to_sentence
-      # flash[:error] = "Your entry was only #{@entry.text.length} character(s) long. Viable entries must be at least 10 characters."
-
       render :action => :new
     end
   end # create
