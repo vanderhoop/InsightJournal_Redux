@@ -4,7 +4,7 @@ require File.expand_path('../application', __FILE__)
 class Array
   def mode
     mode = sort_by {|i| grep(i).length }.last
-    if mode != nil
+    if mode
       mode
     else
       "N/A"
