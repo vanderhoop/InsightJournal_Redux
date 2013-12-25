@@ -5,7 +5,7 @@ module CapybaraAbstractions
     fill_in "Email", with: "capybara1987@hotmail.com"
     fill_in "Password", with: "yearofbirth"
     fill_in "Password confirmation", with: "yearofbirth"
-    page.execute_script("$('form#new_user').submit()")
+    page.find("input[value='Sign up']").click
   end
 
   def create_entry

@@ -3,19 +3,13 @@ require 'selenium-webdriver'
 
 include Warden::Test::Helpers
 Warden.test_mode!
-Warden.test_reset!
 
 feature "New Entry Creation" do
 
   before(:each) do
-    @user = User.new
-    @user.name = "Bob Joe"
-    @user.email = Faker::Internet.email
-    @user.password = "batman11"
-    @user.password_confirmation = "batman11"
-    @user.save
-    login_as(@user, :scope => :user)
-    visit "/users/#{@user.id}/entries/new"
+    Warden.test_reset!
+    sign_up
+    click_on "Write"
   end
 
   context "when users write an entry > 10 characters" do
