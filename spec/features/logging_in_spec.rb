@@ -4,7 +4,7 @@ require 'selenium-webdriver'
 include Warden::Test::Helpers
 Warden.test_mode!
 
-feature 'Logging In', :js => true do
+feature 'The Login Process', :js => true do
 
   before(:each) do
     Warden.test_reset!
@@ -16,6 +16,24 @@ feature 'Logging In', :js => true do
     @user.save
     visit '/'
   end
+
+  context "when the user enters valid credentials" do
+    before(:each) do
+      fill_in "Email", with: "bobbyjoe@marpdarp.com"
+      fill_in "Password", with: "batman11"
+      click_on "Sign in"
+    end
+
+    it "welcomes the user to their dashboard" do
+      expect(page).to have_content("You're in!")
+    end
+
+    it "allows the user to sign out" do
+      click_on "Log out"
+      expect(page).to have_content("Goodbye from the team at InsightJournal")
+    end
+
+  end # context - when the user enters valid credentials
 
   context "when the user enters the wrong password" do
     before(:each) do
@@ -46,7 +64,7 @@ feature 'Logging In', :js => true do
     end
 
     it "flashes an incorrect credentials error" do
-      page.has_text?("Invalid email or password")
+      page.has_content?("Invalid email or password")
     end
 
   end # context - when passed an email unassociated with a user
