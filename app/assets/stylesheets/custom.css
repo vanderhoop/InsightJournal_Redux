@@ -24,6 +24,14 @@ label {
   font-weight: 700;
 }
 
+label[for="user_remember_me"] {
+  display:inline;
+}
+
+#user_remember_me {
+  vertical-align: inherit;
+}
+
 select {
   height: 1.9em;
 }
