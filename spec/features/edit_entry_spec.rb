@@ -8,14 +8,15 @@ Warden.test_mode!
 
 feature "Edit Entry" do
 
-  context "when an entry has been validly updated" do
+  context "when an entry has been updated with a valid length" do
 
     it "should destroy entities associated with the entry"
 
   end # context - when an entry has been updated
 
   context "when a user attempts to update an entry with an invalid length" do
-
+    it "should not persist the entry as updated"
+    it "should flash an error message"
   end
 
 end # feature Edit Entry

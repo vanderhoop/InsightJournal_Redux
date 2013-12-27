@@ -17,6 +17,7 @@
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #  tense_orientation     :string(255)
+#  hour_created          :integer
 #
 
 require 'alchemy'
