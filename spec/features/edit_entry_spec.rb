@@ -4,11 +4,13 @@ require 'selenium-webdriver'
 include Warden::Test::Helpers
 Warden.test_mode!
 
-# TODO write tests for the Edit Entry Page
+# TODO write tests for the Entry Edit Feature
 
-describe "The Edit Entry Page" do
+feature "Edit Entry" do
 
-  it "should display the edit_entry form"
-  it "should allow the user to update their mood"
+  context "when an entry has been updated" do
+    it "should destroy the entities associated with the entry's"
 
-end
+  end # context - when an entry has been updated
+
+end # feature Edit Entry
