@@ -4,9 +4,9 @@ include Warden::Test::Helpers
 
 # TODO write tests for the Entry Edit Feature
 
-feature "Edit Entry", :js => true do
+feature "Editing An Entry", :js => true do
 
-  context "when an entry has been updated with a valid length" do
+  context "when a user attempts to edit an entry with valid length" do
     before(:each) do
       Warden.test_reset!
       sign_up
@@ -18,11 +18,9 @@ feature "Edit Entry", :js => true do
       expect(page).to have_link("Edit Entry")
     end
 
-    it "should "
-
   end # context - when an entry has been updated
 
-  context "when a user attempts to update an entry with too short a text" do
+  context "when a user shortens an entry to < 10 chars" do
     before(:each) do
       Warden.test_reset!
       sign_up
@@ -30,13 +28,14 @@ feature "Edit Entry", :js => true do
       edit_last_entry(false)
     end
 
-    # it "should not persist the entry as updated" do
-    #   Entry.last.text
-    # end
+    it "rerenders the edit page" do
+      expect(page). to have_css("input[value='Update Entry']")
+    end
 
     it "should flash an error message" do
       expect(page).to have_content("Text is too short")
     end
-  end
+
+  end # context - when an entry has been updated
 
 end # feature Edit Entry
