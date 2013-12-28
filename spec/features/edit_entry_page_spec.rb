@@ -6,9 +6,9 @@ Warden.test_mode!
 
 # TODO write tests for the Edit Entry Page
 
-descrbie "The Edit Entry Page" do
+describe "The Edit Entry Page" do
 
-  it "should display the edit_entry form"
-  it "should allow the user to update their mood"
+  # it "should display the edit_entry form"
+  # it "should allow the user to update their mood"
 
 end
