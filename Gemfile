@@ -12,6 +12,7 @@ gem 'geocoder'
 # necessary for Net::HTTP requests to work in production
 gem 'faraday', '~> 0.8.1'
 gem 'excon', '~> 0.28.0'
+gem 'coveralls', require: false
 
 
 # Gems used only for assets and not required
@@ -49,7 +50,6 @@ group :development do
 end
 
 group :test do
-  gem 'coveralls', require: false
   gem "simplecov", :require => false
   gem 'shoulda-matchers'
   gem 'rake'
