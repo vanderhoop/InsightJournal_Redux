@@ -1,9 +1,6 @@
 require 'spec_helper'
 require 'selenium-webdriver'
 
-include Warden::Test::Helpers
-Warden.test_mode!
-
 # TODO write tests for the Edit Entry Page
 
 describe "The Edit Entry Page" do

@@ -1,10 +1,6 @@
 require 'spec_helper'
 require 'selenium-webdriver'
 
-include Warden::Test::Helpers
-Warden.test_mode!
-Warden.test_reset!
-
 describe "The Insights Page", :js => true do
   before(:each) do
     sign_up

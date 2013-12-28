@@ -1,16 +1,12 @@
 require 'spec_helper'
 require 'selenium-webdriver'
 
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature 'Signing Up', :js => true do
 
   context "when a user doesn't have an account" do
 
     describe 'the user_sign_up page' do
       before(:each) do
-        Warden.test_reset!
         visit '/users/sign_up'
       end
 

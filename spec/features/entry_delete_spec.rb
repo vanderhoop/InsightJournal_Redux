@@ -1,9 +1,6 @@
 require 'spec_helper'
 require 'selenium-webdriver'
 
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature "Entry Deletion" do
 
   context "when a user clicks delete entry button" do
