@@ -19,6 +19,7 @@
       <h3>Welcome to InsightJournal!</h3>
       <p id="intro-p">The journal is one of life's most powerful tools. The goal of InsightJournal is to give users an easy-to-use journaling tool that uncovers common themes and patterns in a user's entries over time and against environmental variables like weather patterns, location, and time of writing. We hope you like it.</p>
       <%= link_to "Get Journaling", url %>
+      <%= link_to "All Entries", "/users/#{current_user.id}/entries" %>
 
   <% end %>
 
