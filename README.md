@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/vanderhoop/InsightJournal_Redux.png)](https://travis-ci.org/vanderhoop/InsightJournal_Redux)
+[![Build Status](https://travis-ci.org/vanderhoop/InsightJournal_Redux.png)](https://travis-ci.org/vanderhoop/InsightJournal_Redux) [![Coverage Status](https://coveralls.io/repos/vanderhoop/InsightJournal_Redux/badge.png)](https://coveralls.io/r/vanderhoop/InsightJournal_Redux)
 
 ###InsightJournal_Redux
 ---
