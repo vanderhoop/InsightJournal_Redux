@@ -44,14 +44,14 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     entry_hash = params[:entry]
     # TODO refactor the setting of word_count and tense_orientation
-    # resets word_cound and tense orientation
+    # resets word_count and tense orientation
     entry_hash["word_count"] = entry_hash["text"].split(' ').length
     entry_hash["tense_orientation"] = get_relations(entry_hash["text"])
     if @entry.update_attributes(entry_hash)
       flash[:notice] = "Entry successfully updated!"
       redirect_to [@user, @entry]
     else
-      flash[:error] = "Entry couldn't be updated"
+      flash[:error] = @entry.errors.full_messages.to_sentence
       render :action => :edit
     end
   end #update

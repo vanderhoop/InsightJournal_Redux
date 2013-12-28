@@ -33,7 +33,6 @@ group :development, :test do
   gem "capybara-webkit"
   gem 'launchy'
   gem "selenium-webdriver"
-  # gem "jasmine"
   gem "pry-rails"
   gem "awesome_print"
   gem "faker"
