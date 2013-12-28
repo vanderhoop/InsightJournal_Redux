@@ -28,5 +28,4 @@ feature "Entry Deletion" do
 
   end # context - when the user clicks delete entry link
 
-
 end # feature - Entry Deletion
