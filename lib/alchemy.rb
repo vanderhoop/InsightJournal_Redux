@@ -155,20 +155,22 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def sentiment_targeted(flavor, data, target, options = {})
-		if target == '' || target == nil
-			return { 'status'=>'ERROR', 'statusMessage'=>'targeted sentiment requires a non-null target' }
-		end
 
-		unless @@ENDPOINTS['sentiment_targeted'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'targeted sentiment analysis for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data and the target to the options and analyze
-		options[flavor] = data
-		options['target'] = target
-		return analyze(@@ENDPOINTS['sentiment_targeted'][flavor], options)
-	end
+	# def sentiment_targeted(flavor, data, target, options = {})
+	# 	if target == '' || target == nil
+	# 		return { 'status'=>'ERROR', 'statusMessage'=>'targeted sentiment requires a non-null target' }
+	# 	end
+
+	# 	unless @@ENDPOINTS['sentiment_targeted'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'targeted sentiment analysis for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data and the target to the options and analyze
+	# 	options[flavor] = data
+	# 	options['target'] = target
+	# 	return analyze(@@ENDPOINTS['sentiment_targeted'][flavor], options)
+	# end
 
 
 	# Extracts the entities for text, a URL or HTML.
@@ -192,6 +194,7 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
+
 	def entities(flavor, data, options = {})
 		unless @@ENDPOINTS['entities'].key?(flavor)
 			return { 'status'=>'ERROR', 'statusInfo'=>'entity extraction for ' + flavor + ' not available' }
@@ -218,15 +221,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def author(flavor, data, options = {})
-		unless @@ENDPOINTS['author'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'author extraction for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['author'][flavor], options)
-	end
+
+	# def author(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['author'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'author extraction for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['author'][flavor], options)
+	# end
 
 
 	# Extracts the keywords from text, a URL or HTML.
@@ -247,15 +252,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def keywords(flavor, data, options = {})
-		unless @@ENDPOINTS['keywords'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'keyword extraction for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['keywords'][flavor], options)
-	end
+
+	# def keywords(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['keywords'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'keyword extraction for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['keywords'][flavor], options)
+	# end
 
 
 	# Tags the concepts for text, a URL or HTML.
@@ -270,15 +277,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def concepts(flavor, data, options = {})
-		unless @@ENDPOINTS['concepts'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'concept tagging for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['concepts'][flavor], options)
-	end
+
+	# def concepts(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['concepts'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'concept tagging for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['concepts'][flavor], options)
+	# end
 
 
 	# Categorizes the text for text, a URL or HTML.
@@ -296,15 +305,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def category(flavor, data, options = {})
-		unless @@ENDPOINTS['category'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'text categorization for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['category'][flavor], options)
-	end
+
+	# def category(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['category'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'text categorization for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['category'][flavor], options)
+	# end
 
 
 	# Extracts the relations for text, a URL or HTML.
@@ -331,6 +342,8 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
+
+
 	def relations(flavor, data, options = {})
 		unless @@ENDPOINTS['relations'].key?(flavor)
 			return { 'status'=>'ERROR', 'statusInfo'=>'relation extraction for ' + flavor + ' not available' }
@@ -357,15 +370,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def language(flavor, data, options = {})
-		unless @@ENDPOINTS['language'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'language detection for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['language'][flavor], options)
-	end
+
+	# def language(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['language'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'language detection for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['language'][flavor], options)
+	# end
 
 
 	# Extracts the cleaned text (removes ads, navigation, etc.) for text, a URL or HTML.
@@ -384,15 +399,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def text(flavor, data, options = {})
-		unless @@ENDPOINTS['text'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'clean text extraction for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['text'][flavor], options)
-	end
+
+	# def text(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['text'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'clean text extraction for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['text'][flavor], options)
+	# end
 
 
 	# Extracts the raw text (includes ads, navigation, etc.) for a URL or HTML.
@@ -410,15 +427,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def text_raw(flavor, data, options = {})
-		unless @@ENDPOINTS['text_raw'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'raw text extraction for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['text_raw'][flavor], options)
-	end
+
+	# def text_raw(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['text_raw'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'raw text extraction for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['text_raw'][flavor], options)
+	# end
 
 
 	# Extracts the title for a URL or HTML.
@@ -436,15 +455,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def title(flavor, data, options = {})
-		unless @@ENDPOINTS['title'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'title extraction for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['title'][flavor], options)
-	end
+
+	# def title(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['title'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'title extraction for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['title'][flavor], options)
+	# end
 
 
 	# Parses the microformats for a URL or HTML.
@@ -462,15 +483,16 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def microformats(flavor, data, options = {})
-		unless @@ENDPOINTS['microformats'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'microformats parsing for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['microformats'][flavor], options)
-	end
+	# def microformats(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['microformats'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'microformats parsing for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['microformats'][flavor], options)
+	# end
 
 
 	# Detects the RSS/ATOM feeds for a URL or HTML.
@@ -488,15 +510,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
 	#
-	def feeds(flavor, data, options = {})
-		unless @@ENDPOINTS['feeds'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'feed detection for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['feeds'][flavor], options)
-	end
+
+	# def feeds(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['feeds'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'feed detection for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['feeds'][flavor], options)
+	# end
 
 
 	private
