@@ -59,7 +59,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry = Entry.find(params[:id])
     if @entry.destroy
-      flash[:notice] = "Your entry was successfully erased!"
+      flash[:notice] = "Your entry was erased."
       redirect_to "/"
     else
       flash[:error] = "Couldn't destroy your entry. It's protected by the many pecking hens of Endor."

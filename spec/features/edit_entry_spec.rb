@@ -37,4 +37,4 @@ feature "Editing An Entry", :js => true do
 
   end # context - when an entry has been updated
 
-end # feature Edit Entry
+end # feature - Edit Entry
