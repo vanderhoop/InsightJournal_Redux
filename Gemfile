@@ -8,8 +8,12 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap_helper', '3.2.2.0'
 gem 'json'
 gem 'geocoder'
+gem 'coveralls', require: false
+
+# necessary for Net::HTTP requests to work in production
 gem 'faraday', '~> 0.8.1'
 gem 'excon', '~> 0.28.0'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
