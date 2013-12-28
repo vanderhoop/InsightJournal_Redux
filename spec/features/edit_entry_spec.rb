@@ -9,6 +9,11 @@ Warden.test_mode!
 feature "Edit Entry" do
 
   context "when an entry has been updated with a valid length" do
+    before(:each) do
+      sign_up
+      create_entry
+
+    end
 
     it "should destroy entities associated with the entry"
 
