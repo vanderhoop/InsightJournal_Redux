@@ -1,3 +1,7 @@
+require 'coveralls/rake/task'
+Coveralls::RakeTask.new
+task :test_with_coveralls => [:spec, :features, 'coveralls:push']
+
 namespace :travis do
   desc "Prepare DB and run Tests"
   task :run do
