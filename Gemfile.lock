@@ -292,6 +292,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   selenium-webdriver
   shoulda-matchers
+  simplecov
   terminal-notifier-guard
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
