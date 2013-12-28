@@ -84,18 +84,18 @@ class Alchemy
 		begin
 			key = ENV["ALCHEMY_API_KEY"]
 
-			if key.empty?
-				#The key file should't be blank
-				puts 'The api_key.txt file appears to be blank, please copy/paste your API key in the file: api_key.txt'
-				puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'
-				Process.exit(1)
-			end
+			# if key.empty?
+			# 	#The key file should't be blank
+			# 	puts 'The api_key.txt file appears to be blank, please copy/paste your API key in the file: api_key.txt'
+			# 	puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'
+			# 	Process.exit(1)
+			# end
 
-			if key.length != 40
-				#Keys should be exactly 40 characters long
-				puts 'It appears that the key in api_key.txt is invalid. Please make sure the file only includes the API key, and it is the correct one.'
-				Process.exit(1)
-			end
+			# if key.length != 40
+			# 	#Keys should be exactly 40 characters long
+			# 	puts 'It appears that the key in api_key.txt is invalid. Please make sure the file only includes the API key, and it is the correct one.'
+			# 	Process.exit(1)
+			# end
 
 			@apiKey = key
 		rescue => err
@@ -128,15 +128,17 @@ class Alchemy
 	# OUTPUT:
 	# The response, already converted from JSON to a Ruby object.
  	#
-	def sentiment(flavor, data, options = {})
-		unless @@ENDPOINTS['sentiment'].key?(flavor)
-			return { 'status'=>'ERROR', 'statusInfo'=>'sentiment analysis for ' + flavor + ' not available' }
-		end
 
-		#Add the URL encoded data to the options and analyze
-		options[flavor] = data
-		return analyze(@@ENDPOINTS['sentiment'][flavor], options)
-	end
+
+	# def sentiment(flavor, data, options = {})
+	# 	unless @@ENDPOINTS['sentiment'].key?(flavor)
+	# 		return { 'status'=>'ERROR', 'statusInfo'=>'sentiment analysis for ' + flavor + ' not available' }
+	# 	end
+
+	# 	#Add the URL encoded data to the options and analyze
+	# 	options[flavor] = data
+	# 	return analyze(@@ENDPOINTS['sentiment'][flavor], options)
+	# end
 
 
 	# Calculates the targeted sentiment for text, a URL or HTML.
@@ -567,15 +569,15 @@ end
 
 if __FILE__==$0
   	# this will only run if the script was the main, not load'd or require'd
-	if ARGV.length == 1
-		if (ARGV[0].length == 40)
-			puts 'Key: ' + ARGV[0] + ' was written to api_key.txt'
-			puts 'You are now ready to start using AlchemyAPI. For an example, run: ruby example.rb'
-			File.open('api_key.txt','w') {|f| f.write(ARGV[0]) }
-		else
-			puts 'The key appears to invalid. Please make sure to use the 40 character key assigned by AlchemyAPI'
-		end
-	end
+	# if ARGV.length == 1
+	# 	if (ARGV[0].length == 40)
+	# 		puts 'Key: ' + ARGV[0] + ' was written to api_key.txt'
+	# 		puts 'You are now ready to start using AlchemyAPI. For an example, run: ruby example.rb'
+	# 		File.open('api_key.txt','w') {|f| f.write(ARGV[0]) }
+	# 	else
+	# 		puts 'The key appears to invalid. Please make sure to use the 40 character key assigned by AlchemyAPI'
+	# 	end
+	# end
 
 end
 

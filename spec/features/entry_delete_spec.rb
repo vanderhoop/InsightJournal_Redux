@@ -17,26 +17,16 @@ feature "Entry Deletion" do
       click_on "Delete Entry"
     end
 
-    # it "the browser will ask the user to confirm their decision" do
-    #   page.driver.browser.switch_to.alert.accept
-    # end
-
-    context "when the user confirms their decision" do
-      before(:each) do
-        # page.driver.action.key_down(:enter).key_up(:enter)
-      end
-
-      it "flashes a success message" do
-        expect(page).to have_content("Your entry was erased.")
-      end
-
-      it "takes the user back to the user dashboard" do
-        dashboard_text = User.last.entries.size > 0 ? "Recent Entries:" : "Welcome to InsightJournal!"
-        expect(page).to have_content(dashboard_text)
-      end
+    it "flashes a success message" do
+      expect(page).to have_content("Your entry was erased.")
     end
 
-  end
+    it "takes the user back to the user dashboard" do
+      dashboard_text = User.last.entries.size > 0 ? "Recent Entries:" : "Welcome to InsightJournal!"
+      expect(page).to have_content(dashboard_text)
+    end
+
+  end # context - when the user clicks delete entry link
 
 
 end # feature - Entry Deletion
