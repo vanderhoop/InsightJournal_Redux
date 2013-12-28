@@ -50,7 +50,7 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  # gem "simplecov", :require => false
+  gem "simplecov", :require => false
   gem 'shoulda-matchers'
   gem 'rake'
 end

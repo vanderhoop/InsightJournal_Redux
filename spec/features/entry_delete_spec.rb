@@ -11,7 +11,7 @@ feature "Entry Deletion" do
     visit "/users/1/entries/#{entry_id}"
   end
 
-  context "when the user clicks delete entry link" do
+  context "when the user clicks delete entry link", :js => true do
     before(:each) do
       page.evaluate_script('window.confirm = function() { return true; }')
       click_on "Delete Entry"
@@ -21,13 +21,18 @@ feature "Entry Deletion" do
     #   page.driver.browser.switch_to.alert.accept
     # end
 
-    context "when the user confirms their decision", :js => true do
+    context "when the user confirms their decision" do
       before(:each) do
         # page.driver.action.key_down(:enter).key_up(:enter)
       end
 
-      it "flashes a success messages" do
+      it "flashes a success message" do
         expect(page).to have_content("Your entry was erased.")
+      end
+
+      it "takes the user back to the user dashboard" do
+        dashboard_text = User.last.entries.size > 0 ? "Recent Entries:" : "Welcome to InsightJournal!"
+        expect(page).to have_content(dashboard_text)
       end
     end
 

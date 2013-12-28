@@ -1,5 +1,5 @@
 require 'coveralls'
-Coveralls.wear_merged!('rails')
+Coveralls.wear!('rails')
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
