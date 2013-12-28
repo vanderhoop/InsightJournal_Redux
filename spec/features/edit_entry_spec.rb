@@ -5,12 +5,14 @@ include Warden::Test::Helpers
 # TODO write tests for the Entry Edit Feature
 
 feature "Editing An Entry", :js => true do
+  before(:each) do
+    Warden.test_reset!
+    sign_up
+    create_entry
+  end
 
   context "when a user attempts to edit an entry with valid length" do
     before(:each) do
-      Warden.test_reset!
-      sign_up
-      create_entry
       edit_last_entry(true)
     end
 
@@ -22,9 +24,6 @@ feature "Editing An Entry", :js => true do
 
   context "when a user shortens an entry to < 10 chars" do
     before(:each) do
-      Warden.test_reset!
-      sign_up
-      create_entry
       edit_last_entry(false)
     end
 
