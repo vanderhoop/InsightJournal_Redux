@@ -19,7 +19,7 @@ describe 'Entries Index Page', :js => true do
     # TODO write a more relevant test for the entries#index page
 
     it "renders an archive header" do
-      click_on "All Entries"
+      click_on "Archive"
       expect(page).to have_content("Archive")
     end
 

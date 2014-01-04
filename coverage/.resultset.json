@@ -126,9 +126,9 @@
         1,
         1,
         null,
-        0,
-        null,
         1,
+        null,
+        0,
         null,
         0,
         null,
@@ -145,7 +145,7 @@
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/app/helpers/application_helper.rb": [
         1,
         1,
-        160,
+        144,
         null,
         null,
         1,
@@ -971,6 +971,6 @@
         null
       ]
     },
-    "timestamp": 1388458801
+    "timestamp": 1388783563
   }
 }
