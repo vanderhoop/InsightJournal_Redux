@@ -8,6 +8,7 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap_helper', '3.2.2.0'
 gem 'json'
 gem 'geocoder'
+gem 'newrelic_rpm'
 
 # necessary for Net::HTTP requests to work in production
 gem 'faraday', '~> 0.8.1'
