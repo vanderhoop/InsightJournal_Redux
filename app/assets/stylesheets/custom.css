@@ -1,8 +1,96 @@
+/*================================*/
+/* Dev Helpers */
+/*================================*/
+div {
+  border: 1px dotted black;
+}
+/*================================*/
+/* App-Wide */
+/*================================*/
+html, body {
+  height: 100%;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container-fluid {
+  min-height:100%;
+}
+
+.content-container {
+  width: 58%;
+  margin-bottom: 4em;
+}
+
+/* Title that appears at top of page, i.e. Insights, Entry Created at ... */
+.title-h2 {
+  border-bottom: 1px solid black;
+}
+
+/*================================*/
+/* Header/Nav-bar */
+/*================================*/
+header a {
+  margin: 0;
+  padding-top: 10px;
+  margin-left: 1.2em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.navbar .brand {
+  font-weight: 500;
+}
+
+.well.sidebar-nav {
+  overflow:hidden;
+}
+
+/*================================*/
+/* Forms */
+/*================================*/
 textarea {
   height: 38em;
   width: 98%;
 }
 
+label {
+  font-weight: 700;
+}
+
+label[for="user_remember_me"] {
+  display:inline;
+}
+select {
+  height: 1.9em;
+}
+
+
+footer {
+  background-color: green;
+  height:10em;
+}
+
+input {
+  line-height: 20px;
+}
+
+#user_remember_me {
+  vertical-align: inherit;
+}
+
+#filter-btn, #create-entry, #update-entry {
+  margin-bottom: 0.7em;
+}
+/*================================*/
+/* Footer
+/*================================*/
+
+/*================================*/
+/* Insights
+/*================================*/
 .Positive, .Negative, .Neutral {
   padding: 0.35em 0.26em;
   border-radius: 3.5px;
@@ -20,62 +108,15 @@ textarea {
   background-color: rgba(252, 219, 154, .6);
 }
 
-label {
-  font-weight: 700;
-}
-
-label[for="user_remember_me"] {
-  display:inline;
-}
-
-#user_remember_me {
-  vertical-align: inherit;
-}
-
-select {
-  height: 1.9em;
-}
-
-footer {
-  visibility:hidden;
-}
-
-input {
-  line-height: 20px;
-}
-
-.title-h2 {
-  border-bottom: 1px solid black;
-}
-
-#intro-p {
-  width: 80%;
-}
-
+/* Word-Count Box at top of Insights Page */
 .green-container {
   border-radius: 8px;
   background-color: rgb(223, 240, 216);
   padding: 1em;
 }
 
-.navbar .brand {
-  font-weight: 500;
-}
-
-header a {
-  margin: 0;
-  padding-top: 10px;
-  margin-left: 1.2em;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.well.sidebar-nav {
-  overflow:hidden;
-}
-
-.width-restrictor {
-  width: 58%;
+#intro-p {
+  width: 80%;
 }
 
 
@@ -84,10 +125,3 @@ header a {
  margin: 1.5em;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
-#filter-btn, #create-entry, #update-entry {
-  margin-bottom: 0.7em;
-}

@@ -8,6 +8,7 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap_helper', '3.2.2.0'
 gem 'json'
 gem 'geocoder'
+# necessary for uptime using new_relic through heroku
 gem 'newrelic_rpm'
 
 # necessary for Net::HTTP requests to work in production
