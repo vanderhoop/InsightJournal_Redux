@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= 960_24_col
  *= require custom
  *
  */

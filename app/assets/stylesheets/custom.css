@@ -15,13 +15,14 @@ a:hover {
   text-decoration: none;
 }
 
-.container-fluid {
+.container {
   min-height:100%;
 }
 
 .content-container {
   width: 58%;
-  margin-bottom: 4em;
+  /* margin-bottom must offset the footer height */
+  margin-bottom: -10em;
 }
 
 /* Title that appears at top of page, i.e. Insights, Entry Created at ... */
@@ -39,10 +40,10 @@ header a {
   font-weight: bold;
   font-size: 1.1em;
 }
-
+/*
 .navbar .brand {
   font-weight: 500;
-}
+}*/
 
 .well.sidebar-nav {
   overflow:hidden;
