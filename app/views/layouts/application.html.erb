@@ -22,18 +22,30 @@
 
     <header class="navbar">
       <div class="container_24">
-        <div class="container-fluid">
+        <div>
           <% if user_signed_in? %>
             <%= link_to "Log out", destroy_user_session_path, { :class => "pull-right", :method => "post", :id => "logout-btn" } %>
             <%= link_to "Insights", "/users/#{current_user.id}/insights", :method => "get", :class => "pull-right" %>
             <%= link_to "Write", "/users/#{current_user.id}/entries/new", :class => "pull-right" %>
+          <% else %>
+            <%= form_for("user", :html => {:class => "pull-right", :id => "nav-sign-in"}, :url => user_session_path) do |f| %>
+            <div class="input-wrapper" id="email-div">
+              <%= f.label :email, "Email", :id =>"email-label" %>
+              <%= f.text_field :email %>
+            </div>
+            <div class="input-wrapper" id="password-div">
+              <%= f.label :password, "Password", :id =>"password-label"  %>
+              <%= f.password_field :password %>
+            </div>
+              <% #f.check_box :remember_me %>
+              <% #f.label :remember_me %>
+              <div class="input-wrapper" id="login-submit-div">
+                <%= f.submit 'Log In' %>
+              </div>
+            <% end %>
           <% end %>
-          <a class="brand" href="/">InsightJournal</a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
 
-            </ul>
-          </div><!--/.nav-collapse -->
+          <a class="brand" href="/">InsightJournal</a>
         </div>
       </div>
     </header>
@@ -41,15 +53,9 @@
     <div class="container container_24">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li><%= @sampled_quote[:quote] %></li>
-              <li class="nav-header pull-right">- <%= @sampled_quote[:author] %> -</li>
-
-            </ul>
-          </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
+          <%= bootstrap_flash %>
           <%= bootstrap_flash %>
           <div class="content-container container_24">
             <%= yield %>
@@ -60,8 +66,8 @@
 
     </div> <!-- /container -->
     <footer>
-      <div class="container_24">
-        <p>&copy; Your Friend Travis 2013</p>
+      <div class="container_24" id="footer-content">
+        <p>&copy; Your Friend Travis 2014</p>
       </div>
     </footer>
 
