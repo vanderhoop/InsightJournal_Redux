@@ -29,7 +29,7 @@ feature 'The Login Process', :js => true do
     end
 
     it "allows the user to sign out" do
-      click_on "Log out"
+      click_on "Log Out"
       expect(page).to have_content("Goodbye from the team at InsightJournal")
     end
 

@@ -16,7 +16,7 @@ describe 'The Landing Page', :js => true do
     end
 
     it "doesn't display the logout button" do
-      expect(page).to_not have_css("input[value='Log out']")
+      expect(page).to_not have_css("input[value='Log Out']")
     end
 
     it "doesn't display the Insights link" do

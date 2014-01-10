@@ -29,7 +29,7 @@ describe "The User Dashboard" do
     end
 
     it "should display a log out button" do
-      page.has_link?("Log out")
+      page.has_link?("Log Out")
     end
 
     context "when users have no entries" do

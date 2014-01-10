@@ -10,6 +10,7 @@ div {
 html, body {
   height: 100%;
   color: rgb(68, 68, 68);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
 }
 
 .container {
@@ -18,7 +19,6 @@ html, body {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  /*color: rgb(68, 68, 68);*/
 }
 
 a:hover {
@@ -39,6 +39,72 @@ form {
   margin:0;
 }
 
+
+
+/*================================*/
+/* Buttons */
+/*================================*/
+.square-button {
+padding: 15px 20px!important;
+font-size: 18px;
+border-radius: 4px!important;
+-webkit-border-radius: 4px!important;
+-moz-border-radius: 4px!important;
+-o-border-radius: 4px!important;
+}
+
+.square-button.green {
+  border-color: #69963b!important;
+  background: #7fc33c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b1d960), to(#7fc33c));
+  background: -webkit-linear-gradient(top, #b1d960, #7fc33c);
+  background: -moz-linear-gradient(top, #b1d960, #7fc33c);
+  background: -ms-linear-gradient(top, #b1d960, #7fc33c);
+  background: -o-linear-gradient(top, #b1d960, #7fc33c);
+}
+
+.square-button.red {
+  border-color: #ab4b44!important;
+  background: #e3514a;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ed8376), to(#e3514a));
+  background: -webkit-linear-gradient(top, #ed8376, #e3514a);
+  background: -moz-linear-gradient(top, #ed8376, #e3514a);
+  background: -ms-linear-gradient(top, #ed8376, #e3514a);
+  background: -o-linear-gradient(top, #ed8376, #e3514a);
+}
+
+.square-button {
+display: inline-block;
+color: #fff!important;
+text-decoration: none!important;
+text-align: center;
+font-family: Helvetica, Arial, Sans-serif;
+text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+font-size: 14px;
+outline: none;
+font-weight: bold;
+line-height: 1em;
+padding: 7px 13px!important;
+cursor: pointer;
+border-radius: 16px;
+-webkit-border-radius: 16px;
+-moz-border-radius: 16px;
+-o-border-radius: 16px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+-o-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+border: 1px solid #0d507a!important;
+margin: 0 0.1em 1.5em 0!important;
+vertical-align: middle;
+background: #0c6fb1;
+background: -webkit-gradient(linear, left top, left bottom, from(#14a7cf), to(#0c6fb1));
+background: -webkit-linear-gradient(top, #14a7cf, #0c6fb1);
+background: -moz-linear-gradient(top, #14a7cf, #0c6fb1);
+background: -ms-linear-gradient(top, #14a7cf, #0c6fb1);
+background: -o-linear-gradient(top, #14a7cf, #0c6fb1);
+}
+
 /*================================*/
 /* Header/Nav-bar */
 /*================================*/
@@ -50,11 +116,20 @@ header .container_24 {
   min-height:100%;
 }
 
+.navbar .brand {
+  font-weight: bold;
+  font-size: 29px;
+  color:inherit;
+}
+
+header.navbar .container_24 {
+  border-bottom: 1px solid black;
+}
+
 header a {
-  margin: 0;
+  margin-top: 0.9em; /*pushes branding down*/
   padding-top: 10px;
   margin-left: 1.2em;
-  font-weight: bold;
   font-size: 1.1em;
 }
 
@@ -74,21 +149,6 @@ header .input-wrapper {
   right: 1.4em;
 }
 
-/*#email-label, #password-label {
-  position: relative;
-  bottom: 33px;
-}
-
-#email-label {
-  left: 41px;
-}
-
-#password-label {
-  left: 70px;
-}*/
-
-
-
 header input[type="submit"] {
   display: inline-block;
   padding: 0;
@@ -97,7 +157,7 @@ header input[type="submit"] {
 }
 
 header input[type="text"], header input[type="password"] {
-/*  margin-top: 1.5em;*/
+  /*border:1px solid rgba(51,51,51, 0.8);*/
 }
 
 #email-div {
@@ -112,9 +172,10 @@ header input[type="text"], header input[type="password"] {
   text-align: center;
 }
 
+
 .navbar, footer {
   font-weight: 500;
-  background-color: #D1D1D1;
+  background-color: white;
 }
 
 .well.sidebar-nav {
@@ -176,6 +237,10 @@ cursor: pointer;
 footer {
   height:10em;
   position:relative;
+}
+
+.top-border {
+  border-top: 1px solid rgb(51,51,51);
 }
 
 /* Weird Hack made necessary by sticky footer */

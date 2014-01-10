@@ -29,7 +29,7 @@ describe "The Insights Page", :js => true do
 
     it "displays insights" do
       expect(page).to have_content("Subjects")
-      click_on "Log out"
+      click_on "Log Out"
     end
 
   end # context - when a user has entries

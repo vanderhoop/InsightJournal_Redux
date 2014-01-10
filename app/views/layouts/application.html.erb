@@ -24,7 +24,7 @@
       <div class="container_24">
         <div>
           <% if user_signed_in? %>
-            <%= link_to "Log out", destroy_user_session_path, { :class => "pull-right", :method => "post", :id => "logout-btn" } %>
+            <%= link_to "Log Out", destroy_user_session_path, { :class => "pull-right", :method => "post", :id => "logout-btn" } %>
             <%= link_to "Insights", "/users/#{current_user.id}/insights", :method => "get", :class => "pull-right" %>
             <%= link_to "Write", "/users/#{current_user.id}/entries/new", :class => "pull-right" %>
           <% else %>
@@ -52,10 +52,7 @@
 
     <div class="container container_24">
       <div class="row-fluid">
-        <div class="span3">
-        </div><!--/span-->
         <div class="span9">
-          <%= bootstrap_flash %>
           <%= bootstrap_flash %>
           <div class="content-container container_24">
             <%= yield %>
@@ -66,8 +63,9 @@
 
     </div> <!-- /container -->
     <footer>
+      <div class="top-border container_24"></div>
       <div class="container_24" id="footer-content">
-        <p>&copy; Your Friend Travis 2014</p>
+        <p>&copy; Your Friend Travis 2014. Text analysis by AlchemyAPI.</p>
       </div>
     </footer>
 
