@@ -10,8 +10,8 @@
           <li><%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
         <% end %>
       </ul>
-      <h4><%= link_to "Write It Out!", url %></h4>
-      <%= link_to "Archive", "/users/#{current_user.id}/entries" %>
+      <%= link_to "New Entry", url, :class => "square-button green" %>
+      <%= link_to "Archive", "/users/#{current_user.id}/entries", :class => "square-button grey" %>
 
   <% end %>
 
@@ -35,16 +35,13 @@
       <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="GtN1Hx54JRGIIQOcwz5Abxqzh/LTMJB+egtQ2Ipx2As=">
     </div>
     <div>
-      <label for="user_email">Email</label>
-      <input autofocus="autofocus" id="user_email" name="user[email]" size="30" type="email" value="">
+      <input autofocus="autofocus" id="user_email_sign_up" name="user[email]" size="30" placeholder="Email" type="email" value="">
     </div>
     <div>
-      <label for="user_password">Password</label>
-      <input id="user_password" name="user[password]" size="30" type="password">
+      <input id="user_password_sign_up" name="user[password]" placeholder="Password" size="30" type="password">
     </div>
     <div>
-      <label for="user_password_confirmation">Password confirmation</label>
-      <input id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password">
+      <input id="user_password_confirmation_sign_up" name="user[password_confirmation]" placeholder="Password confirmation" size="30" type="password">
     </div>
     <div>
       <input name="commit" type="submit" value="Sign Up">

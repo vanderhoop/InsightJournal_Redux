@@ -19,9 +19,9 @@ feature 'The Login Process', :js => true do
 
   context "when the user enters valid credentials" do
     before(:each) do
-      fill_in "Email", with: "bobbyjoe@marpdarp.com"
-      fill_in "Password", with: "batman11"
-      click_on "Sign in"
+      fill_in "user_email", with: "bobbyjoe@marpdarp.com"
+      fill_in "user_password", with: "batman11"
+      click_on "Log In"
     end
 
     it "welcomes the user to their dashboard" do
@@ -37,9 +37,9 @@ feature 'The Login Process', :js => true do
 
   context "when the user enters the wrong password" do
     before(:each) do
-      fill_in "Email", with: "bobbyjoe@marpdarp.com"
-      fill_in "Password", with: "batman99"
-      click_on "Sign in"
+      fill_in "user_email", with: "bobbyjoe@marpdarp.com"
+      fill_in "user_password", with: "batman99"
+      click_on "Log In"
     end
 
     it "rerenders the sign in page" do
@@ -54,9 +54,9 @@ feature 'The Login Process', :js => true do
 
   context "when the user enters the wrong email address" do
     before(:each) do
-      fill_in "Email", with: "humpty@dumpty.com"
-      fill_in "Password", with: "humptysPass"
-      click_on "Sign in"
+      fill_in "user_email", with: "humpty@dumpty.com"
+      fill_in "user_password", with: "humptysPass"
+      click_on "Log In"
     end
 
     it "rerenders the sign in page" do

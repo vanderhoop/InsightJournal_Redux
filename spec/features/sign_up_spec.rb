@@ -5,9 +5,9 @@ feature 'Signing Up', :js => true do
 
   context "when a user doesn't have an account" do
 
-    describe 'the user_sign_up page' do
+    describe 'the splash page' do
       before(:each) do
-        visit '/users/sign_up'
+        visit '/'
       end
 
       it "has a sign up form" do
@@ -30,9 +30,9 @@ feature 'Signing Up', :js => true do
 
         context "when passed valid credentials", :js => true do
           it "takes you to the new user dashboard" do
-            fill_in "Email", with: "gijoe@gmail.com"
-            fill_in "Password", with: "lovely"
-            fill_in "Password confirmation", with: "lovely"
+            fill_in "user_email_sign_up", with: "gijoe@gmail.com"
+            fill_in "user_password_sign_up", with: "lovely"
+            fill_in "user_password_confirmation_sign_up", with: "lovely"
             page.has_link?("Get Journaling")
           end
 
@@ -40,9 +40,9 @@ feature 'Signing Up', :js => true do
 
         context "when passed an invalid email" do
           before(:each) do
-            fill_in "Email", with: "samantha@boyd"
-            fill_in "Password", with: "samantha"
-            fill_in "Password confirmation", with: "samantha"
+            fill_in "user_email_sign_up", with: "samantha@boyd"
+            fill_in "user_password_sign_up", with: "samantha"
+            fill_in "user_password_confirmation_sign_up", with: "samantha"
           end
 
           it "rerenders the sign up page" do
@@ -50,15 +50,15 @@ feature 'Signing Up', :js => true do
           end
 
           it "flashes an error message" do
-            page.has_text?("Email invalid")
+            page.has_text?("user_email invalid")
           end
         end # context - "when passed an invalid email"
 
         context "when pw doesn't match pw confirmation" do
           before(:each) do
-            fill_in "Email", with: "sam.eldred@gmail.com"
-            fill_in "Password", with: "Uruguay"
-            fill_in "Password confirmation", with: "Baseball"
+            fill_in "user_email_sign_up", with: "sam.eldred@gmail.com"
+            fill_in "user_password_sign_up", with: "Uruguay"
+            fill_in "user_password_confirmation_sign_up", with: "Baseball"
           end
 
           it "rerenders the sign up page" do
@@ -73,9 +73,9 @@ feature 'Signing Up', :js => true do
 
         context "when pw and pw confirmation < 6 characters" do
           before(:each) do
-            fill_in "Email", with: "tonymcgibbon@yahoo.com"
-            fill_in "Password", with: "small"
-            fill_in "Password confirmation", with: "small"
+            fill_in "user_email_sign_up", with: "tonymcgibbon@yahoo.com"
+            fill_in "user_password_sign_up", with: "small"
+            fill_in "user_password_confirmation_sign_up", with: "small"
           end
 
           it "rerenders the sign up page" do

@@ -73,6 +73,18 @@ border-radius: 4px!important;
   background: -o-linear-gradient(top, #ed8376, #e3514a);
 }
 
+.square-button.grey {
+  color: #555!important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-color: #acacac!important;
+  background: #e5e5e5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#e5e5e5));
+  background: -webkit-linear-gradient(top, #efefef, #e5e5e5);
+  background: -moz-linear-gradient(top, #efefef, #e5e5e5);
+  background: -ms-linear-gradient(top, #efefef, #e5e5e5);
+  background: -o-linear-gradient(top, #efefef, #e5e5e5);
+}
+
 .square-button {
 display: inline-block;
 color: #fff!important;

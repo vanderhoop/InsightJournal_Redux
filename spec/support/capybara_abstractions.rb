@@ -1,11 +1,11 @@
 module CapybaraAbstractions
 
   def sign_up
-    visit '/users/sign_up'
-    fill_in "Email", with: Faker::Internet.email
-    fill_in "Password", with: "yearofbirth"
-    fill_in "Password confirmation", with: "yearofbirth"
-    page.find("input[value='Sign up']").click
+    visit '/'
+    fill_in "user_email_sign_up", with: Faker::Internet.email
+    fill_in "user_password_sign_up", with: "yearofbirth"
+    fill_in "user_password_confirmation_sign_up", with: "yearofbirth"
+    page.find("input[value='Sign Up']").click
   end
 
   def create_entry
