@@ -43,8 +43,6 @@ form {
   margin:0;
 }
 
-
-
 /*================================*/
 /* Buttons */
 /*================================*/
@@ -105,6 +103,24 @@ background: -webkit-linear-gradient(top, #fcfcfc, #f6f6f6);
 background: -moz-linear-gradient(top, #fcfcfc, #f6f6f6);
 background: -ms-linear-gradient(top, #fcfcfc, #f6f6f6);
 background: -o-linear-gradient(top, #fcfcfc, #f6f6f6);
+}
+
+.square-button.orange {
+border-color: #dc9014!important;
+background: #ffb031;
+background: -webkit-gradient(linear, left top, left bottom, from(#ffce4f), to(#ffb031));
+background: -webkit-linear-gradient(top, #ffce4f, #ffb031);
+background: -moz-linear-gradient(top, #ffce4f, #ffb031);
+background: -ms-linear-gradient(top, #ffce4f, #ffb031);
+background: -o-linear-gradient(top, #ffce4f, #ffb031);
+}
+.square-button.orange:hover {
+  background: #ffc531;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffdb4f), to(#ffc531));
+  background: -webkit-linear-gradient(top, #ffdb4f, #ffc531);
+  background: -moz-linear-gradient(top, #ffdb4f, #ffc531);
+  background: -ms-linear-gradient(top, #ffdb4f, #ffc531);
+  background: -o-linear-gradient(top, #ffdb4f, #ffc531);
 }
 
 .square-button {
@@ -282,6 +298,26 @@ footer {
   position: relative;
   bottom: -7.7em;
 }
+
+/*================================*/
+/* Splash Page */
+/*================================*/
+#front-card {
+  width:100%;
+  display:inline-block;
+  float:left;
+}
+
+#front-welcome {
+  width:49%;
+  float:left;
+}
+
+#sign-up-wrapper {
+  width:50%;
+  float:left;
+}
+
 
 /*================================*/
 /* Insights

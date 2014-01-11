@@ -24,28 +24,31 @@
   <% end %>
 
 <% else %>
-
-<h2>Welcome to InsightJournal</h2>
-<h4>The journaling tool that grows to know you.</h4>
-<div id="sign-up-wrapper">
-  <h2>New to InsightJournal?</h2>
-  <h2>Sign Up</h2>
-  <form accept-charset="UTF-8" action="/users" method="post">
-    <div style="margin:0;padding:0;display:inline">
-      <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="GtN1Hx54JRGIIQOcwz5Abxqzh/LTMJB+egtQ2Ipx2As=">
+  <div id="front-card">
+    <div id="front-welcome">
+      <h2>Welcome to InsightJournal.</h2>
+      <h4>The journaling tool that grows to know you.</h4>
+      <img src="http://surreycanalsportsfoundation.org.uk/cms/wp-content/themes/SCSF/images/lightbulb.png" alt="">
     </div>
-    <div>
-      <input id="user_email_sign_up" name="user[email]" size="30" placeholder="Email" type="email" value="" autocomplete="off">
+    <div id="sign-up-wrapper">
+      <h4>New to InsightJournal? Sign up.</h4>
+      <form accept-charset="UTF-8" action="/users" method="post">
+        <div style="margin:0;padding:0;display:inline">
+          <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="GtN1Hx54JRGIIQOcwz5Abxqzh/LTMJB+egtQ2Ipx2As=">
+        </div>
+        <div>
+          <input id="user_email_sign_up" name="user[email]" size="30" placeholder="Email" type="email" value="" autocomplete="off">
+        </div>
+        <div>
+          <input id="user_password_sign_up" name="user[password]" placeholder="Password" size="30" type="password">
+        </div>
+        <div>
+          <input id="user_password_confirmation_sign_up" name="user[password_confirmation]" placeholder="Password confirmation" size="30" type="password">
+        </div>
+        <div>
+          <input name="commit" type="submit" value="Sign Up" class="square-button orange">
+        </div>
+      </form>
     </div>
-    <div>
-      <input id="user_password_sign_up" name="user[password]" placeholder="Password" size="30" type="password">
-    </div>
-    <div>
-      <input id="user_password_confirmation_sign_up" name="user[password_confirmation]" placeholder="Password confirmation" size="30" type="password">
-    </div>
-    <div>
-      <input name="commit" type="submit" value="Sign Up" class="square-button grey">
-    </div>
-  </form>
-</div>
+  </div>
 <% end %> <!-- if user_signed_in? -->
