@@ -63,6 +63,15 @@ border-radius: 4px!important;
   background: -o-linear-gradient(top, #b1d960, #7fc33c);
 }
 
+.square-button.green:hover {
+background: #8dd242;
+background: -webkit-gradient(linear, left top, left bottom, from(#b9e46a), to(#8dd242));
+background: -webkit-linear-gradient(top, #b9e46a, #8dd242);
+background: -moz-linear-gradient(top, #b9e46a, #8dd242);
+background: -ms-linear-gradient(top, #b9e46a, #8dd242);
+background: -o-linear-gradient(top, #b9e46a, #8dd242);
+}
+
 .square-button.red {
   border-color: #ab4b44!important;
   background: #e3514a;
@@ -83,6 +92,15 @@ border-radius: 4px!important;
   background: -moz-linear-gradient(top, #efefef, #e5e5e5);
   background: -ms-linear-gradient(top, #efefef, #e5e5e5);
   background: -o-linear-gradient(top, #efefef, #e5e5e5);
+}
+
+.square-button.grey:hover {
+background: #f6f6f6;
+background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f6f6f6));
+background: -webkit-linear-gradient(top, #fcfcfc, #f6f6f6);
+background: -moz-linear-gradient(top, #fcfcfc, #f6f6f6);
+background: -ms-linear-gradient(top, #fcfcfc, #f6f6f6);
+background: -o-linear-gradient(top, #fcfcfc, #f6f6f6);
 }
 
 .square-button {
