@@ -13,6 +13,10 @@ html, body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
 }
 
+input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 .container {
   min-height:100%;
   padding-bottom: -10em;
