@@ -10,8 +10,8 @@
           <li><%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
         <% end %>
       </ul>
-      <%= link_to "New Entry", url, :class => "square-button green" %>
       <%= link_to "Archive", "/users/#{current_user.id}/entries", :class => "square-button grey" %>
+      <%= link_to "New Entry", url, :class => "square-button green" %>
 
   <% end %>
 
@@ -26,12 +26,11 @@
 <% else %>
   <div id="front-card">
     <div id="front-welcome">
-      <h2>Welcome to InsightJournal.</h2>
+      <h3>Welcome to InsightJournal.</h3>
       <h4>The journaling tool that grows to know you.</h4>
-      <img src="http://surreycanalsportsfoundation.org.uk/cms/wp-content/themes/SCSF/images/lightbulb.png" alt="">
     </div>
-    <div id="sign-up-wrapper">
-      <h4>New to InsightJournal? Sign up.</h4>
+    <div id="sign-up-wrapper" class="rounded-border">
+      <h4>New to InsightJournal? <span class="thin-header">Sign up.</span></h4>
       <form accept-charset="UTF-8" action="/users" method="post">
         <div style="margin:0;padding:0;display:inline">
           <input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="GtN1Hx54JRGIIQOcwz5Abxqzh/LTMJB+egtQ2Ipx2As=">
