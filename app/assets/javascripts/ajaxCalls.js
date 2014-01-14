@@ -53,10 +53,10 @@ function rebuildEntityList(elementToAppendTo, array_of_entities){
   elementToAppendTo.html('');
   _.each(array_of_entities, function(e, i , l){
       console.log(e)
-      var newListItem = $('<li>').html('<h4>' + e.subject + '</h4>');
+      var newListItem = $('<li>').html('<h4><span>' + e.subject + '</span></h4>');
       var childUL = $('<ul>');
       $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
       childUL.appendTo(newListItem);
-      App.subjectsUL.append(newListItem);
+      elementToAppendTo.append(newListItem);
     }); // _.each
 }
