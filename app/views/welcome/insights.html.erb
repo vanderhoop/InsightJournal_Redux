@@ -7,21 +7,30 @@
 <% else %>
 
     <div class="green-container">
-      <h5>You've written <%= @insights[:sample_size] %> entries for a total of <%= @insights[:total_words] %> words</h5>
+      <h5>To date, you've written <%= @insights[:sample_size] %> entries for a total of <%= @insights[:total_words] %> words</h5>
     </div>
     <h2 class='title-h2'>Across <span id="num-entries">all</span> entries<span id="filtered-language"></span>...</h2></t>
     <p>Your Average Mood Score is: <strong><span id="avg-mood"><%= @insights[:avg_mood] %></span></p></strong><br>
     <p>Words Per Entry: <strong><span id="avg-word-count"><%= @insights[:avg_word_count] %></span></p></strong><br>
-    <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</p></strong><br>
+    <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</strong> and feel <strong><span id="humanity-sentiment">neutral</span></strong> toward humanity.</p><br>
 
-    <h3>Subjects: </h3>
+    <h3>Subjects You Reference Positively: </h3>
 
-      <ul id="most-common-entities-ul">
-        <% @insights[:most_common_entities].each do |entity| %>
-          <li><h4><span class="<%= entity[:most_common_sentiment] %> capitalize"><%= entity[:subject] %></span></h4></li>
+    <ul class="most-common-entities-ul" id="positive-entities">
+      <% @insights[:positive_entities].each do |entity| %>
+      <li><h4><span><%= entity[:subject] %></span></h4></li>
+          <ul>
+            <li>References: <%= entity[:count_total] %></li>
+          </ul>
+      <% end %>
+    </ul>
+
+    <h3>Subjects You Reference Negatively: </h3>
+      <ul class="most-common-entities-ul" id="negative-entities">
+        <% @insights[:negative_entities].each do |entity| %>
+          <li><h4><span><%= entity[:subject] %></span></h4></li>
             <ul>
-              <li>Association: <%= entity[:most_common_sentiment] %></li>
-              <li>Appearances: <%= entity[:count_total] %></li>
+              <li>References: <%= entity[:count_total] %></li>
             </ul>
         <% end %>
       </ul>

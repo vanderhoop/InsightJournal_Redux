@@ -375,21 +375,20 @@ footer {
 /*================================*/
 /* Insights
 /*================================*/
-.Positive, .Negative, .Neutral {
+
+#negative-entities span, #positive-entities span {
   padding: 0.35em 0.55em;
   border-radius: 3.5px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-.Positive {
-  background-color: rgb(223, 240, 216);
-}
-
-.Negative {
+#negative-entities span {
   background-color: rgba(200, 77, 72, .8);
 }
 
-.Neutral {
-  background-color: rgba(252, 219, 154, .6);
+#positive-entities span {
+  background-color: rgb(223, 240, 216);
 }
 
 /* Word-Count Box at top of Insights Page */
@@ -408,7 +407,7 @@ footer {
  margin: 1.5em;
 }
 
-#most-common-entities-ul h4 {
+.most-common-entities-ul h4 {
   display:inline-block;
 }
 

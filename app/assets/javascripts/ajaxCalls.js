@@ -9,11 +9,16 @@ var filters = {};
 function filterValues(){
   console.log('filterValues event firing');
   filters.timeOfDay = $('#time_of_day').val();
+  // future filters
+  // filters.season = $('#season').val();
+  // filters.season = $('#season').val();
   return filters;
 }
 
 function repopulateFields(){
   var data = filterValues();
+  // sets GET request URL from where I set it dynamically
+  // in the DOM to account for different users
   var url = $('#filter-btn').attr('href');
   console.log("repopFields firing")
   $.ajax({
@@ -23,7 +28,8 @@ function repopulateFields(){
     data: data
   }).done(function(new_values_hash) {
     console.log("done function is firing");
-    // debugger
+    debugger
+    // empties Subjects List to prepare for rebuilding
     App.subjectsUL.html('');
     App.avgMoodSpan.html(new_values_hash.avg_mood);
     App.avgWordCountSpan.html(new_values_hash.avg_word_count);
@@ -37,7 +43,20 @@ function repopulateFields(){
       $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
       childUL.appendTo(newListItem);
       App.subjectsUL.append(newListItem);
-    });
+    }); // _.each
 
-  });
+  }); // done
+} // repopulateFields
+
+function rebuildEntityList(elementToAppendTo, array_of_entities){
+  // empties designated list of content for rebuild
+  elementToAppendTo.html('');
+  _.each(array_of_entities, function(e, i , l){
+      console.log(e)
+      var newListItem = $('<li>').html('<h4>' + e.subject + '</h4>');
+      var childUL = $('<ul>');
+      $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
+      childUL.appendTo(newListItem);
+      App.subjectsUL.append(newListItem);
+    }); // _.each
 }

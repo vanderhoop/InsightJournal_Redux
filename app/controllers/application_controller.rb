@@ -65,24 +65,34 @@ class ApplicationController < ActionController::Base
       entity_storage_array = []
       # iterate through the entities by string_representation
       entities_by_string_rep.each do |entity|
-        # entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count") }
         entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count"), most_common_sentiment: entity[1].plucky("sentiment_type").mode.capitalize, entity_type: entity[1].plucky("e_type").mode, entries: entity[1].plucky("entry_id") }
       end
 
       # TODO I pushed all relevant entities into the :most_common_entities array. That's over kill.
-
       entity_storage_array.sort_by! do |h|
         h[:count_total]
       end
 
-      entity_storage_array = entity_storage_array.to(7) if entity_storage_array.length > 7
+      # entity_storage_array = entity_storage_array.to(7) if entity_storage_array.length > 7
 
-      insights_hash[:most_common_entities] = entity_storage_array.reverse
+      insights_hash[:most_common_entities] = entity_storage_array.reverse!
+
+      # below I iterate through all relevant entities and push those that have a positive association into the positive_subjects key's value
+      insights_hash[:positive_entities] = []
+      entity_storage_array.each do |entity|
+        insights_hash[:positive_entities] << entity if entity[:most_common_sentiment] == "Positive"
+      end
+
+      insights_hash[:negative_entities] = []
+      entity_storage_array.each do |entity|
+        insights_hash[:negative_entities] << entity if entity[:most_common_sentiment] == "Negative"
+      end
+
+      # binding.pry
       insights_hash[:humanity_sentiment] = nil
-      # insights_hash[:most_common_entities] = relevant_entities.plucky("string_representation").uniq
       insights_hash
     end
-  end #return insights_hash
+  end # insights_hash
 
   def filter_entries_by_time_written(array_of_entries, time_of_day)
     case time_of_day
