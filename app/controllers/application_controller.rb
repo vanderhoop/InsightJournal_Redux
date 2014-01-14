@@ -38,6 +38,11 @@ class ApplicationController < ActionController::Base
   #  tense_mode = tense_orientations.mode
   # end
 
+  def return_most_common_writing_time
+    travis = current_user.entries.morning
+    binding.pry
+  end
+
   def return_relevant_entities(array_of_entries)
     all_relevant_entities = []
     array_of_entries.each do |entry|
@@ -54,11 +59,11 @@ class ApplicationController < ActionController::Base
       insights_hash[:avg_mood] = "N/A"
       insights_hash[:avg_word_count] = "N/A"
       insights_hash[:tense_mode] = "N/A"
-      return insights_hash
     else
       insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(1).to_s + " out of 10"
       insights_hash[:avg_word_count] = ents.average("word_count").truncate(2)
       insights_hash[:tense_mode] = get_tense_mode(ents)
+      insights_hash[:most_common_writing_time] = return_most_common_writing_time
       relevant_entities = return_relevant_entities(ents)
       entities_by_string_rep = relevant_entities.group_by(&:string_representation)
 
@@ -76,7 +81,6 @@ class ApplicationController < ActionController::Base
       # entity_storage_array = entity_storage_array.to(7) if entity_storage_array.length > 7
 
       insights_hash[:most_common_entities] = entity_storage_array.reverse!
-
       # below I iterate through all relevant entities and push those that have a positive association into the positive_subjects key's value
       insights_hash[:positive_entities] = []
       entity_storage_array.each do |entity|

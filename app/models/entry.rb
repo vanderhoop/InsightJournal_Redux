@@ -34,8 +34,8 @@ class Entry < ActiveRecord::Base
 
   # get_entities and get_relation set crucial values
   # to the Entry before it's saved to the db
-  after_initialize :set_hour_created
-  before_save :get_entities, :set_relations
+  # after_initialize :set_hour_created
+  before_save :get_entities, :set_relations, :set_hour_created
   after_update :update_entities
   before_destroy :destroy_entities
 
