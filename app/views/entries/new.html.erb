@@ -1,4 +1,5 @@
-<h3 class="title-h3"><%= Time.now.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %></h3>
+<div class="span11">
+  <h3 class="title-h3"><%= Time.now.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %></h3>
 
-<%= render partial: "entry_form" %>
-
+  <%= render partial: "entry_form" %>
+</div>
