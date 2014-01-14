@@ -346,6 +346,10 @@ footer {
   float:left;
 }
 
+#front-card li {
+  padding-left: 1.6em;
+}
+
 #front-welcome {
   width:58%;
   float:left;
@@ -398,6 +402,10 @@ footer {
 .create-entry-link {
  background-color: green;
  margin: 1.5em;
+}
+
+#most-common-entities-ul h4 {
+  display:inline-block;
 }
 
 
