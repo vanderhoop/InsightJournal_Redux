@@ -7,6 +7,7 @@ div {
 /*================================*/
 /* App-Wide */
 /*================================*/
+
 html, body {
   height: 100%;
   color: rgb(68, 68, 68);
@@ -23,7 +24,7 @@ input:-webkit-autofill {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  margin-top:0;
+  /*margin-top:0;*/
 }
 
 a:hover {
@@ -46,6 +47,25 @@ form {
 
 .thin-header {
   font-weight: 100;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 1.5em;
+  margin-left: 0;
+  padding-left: 0;
+
+}
+
+li {
+  padding-left: 2.4em;
+  text-indent: -0.7em;
+}
+
+
+li:before {
+  content: "·";
+  padding-right: 5px;
 }
 
 /*================================*/
@@ -213,7 +233,7 @@ header .input-wrapper {
   display: inline-block;
   position: relative;
   top: 0.1em;
-  right: 1.4em;
+  right: 1.3em;
 }
 
 header input[type="submit"] {
@@ -334,6 +354,14 @@ footer {
 #sign-up-wrapper {
   width: 34%;
   float: right;
+}
+
+#sign-up-wrapper h4 {
+  margin-top: 0;
+}
+
+#new-entry-button {
+  margin-left: 0.8em;
 }
 
 /*================================*/

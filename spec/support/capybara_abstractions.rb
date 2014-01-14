@@ -11,6 +11,7 @@ module CapybaraAbstractions
   def create_entry
     click_on "Write"
     fill_in "entry_text", with: "There's a whole lot of shakin' goin' on. Jim Belushi would be proud!"
+    select("8", :from => "Mood at time of writing:")
     page.find("#create-entry").click
   end
 
@@ -20,7 +21,7 @@ module CapybaraAbstractions
     click_on "Edit Entry"
     new_text = valid_edit ? "Everything about Brett Favre now makes me sick. If only he had the integrity of a Michael Jordan or an Abraham Lincoln." : "Derp!"
     fill_in "entry_text", with: new_text
-    find("option[value='6']").click
+    select("6", :from => "Mood at time of writing:")
     find("#update-entry").click
   end
 

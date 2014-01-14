@@ -14,6 +14,7 @@ feature "New Entry Creation" do
   context "when users write an entry > 10 characters" do
     before(:each) do
       fill_in "entry_text", with: "Marp de darp de darp de doo"
+      select("6", :from => "Mood at time of writing:")
     end
 
     it "persists the entry to the db" do
