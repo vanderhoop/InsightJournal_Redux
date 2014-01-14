@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
     else
       insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(1).to_s + " out of 10"
       insights_hash[:avg_word_count] = ents.average("word_count").truncate(2)
-      insights_hash[:tense_mode] = get_tense_mode(ents).capitalize
+      insights_hash[:tense_mode] = get_tense_mode(ents)
       relevant_entities = return_relevant_entities(ents)
       entities_by_string_rep = relevant_entities.group_by(&:string_representation)
 
@@ -74,6 +74,8 @@ class ApplicationController < ActionController::Base
       entity_storage_array.sort_by! do |h|
         h[:count_total]
       end
+
+      entity_storage_array = entity_storage_array.to(7) if entity_storage_array.length > 7
 
       insights_hash[:most_common_entities] = entity_storage_array.reverse
       insights_hash[:humanity_sentiment] = nil

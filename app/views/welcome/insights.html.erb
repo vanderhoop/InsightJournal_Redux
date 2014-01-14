@@ -10,15 +10,15 @@
       <h5>You've written <%= @insights[:sample_size] %> entries for a total of <%= @insights[:total_words] %> words</h5>
     </div>
     <h2 class='title-h2'>Across <span id="num-entries">all</span> entries<span id="filtered-language"></span>...</h2></t>
-    <h4>Your Average Mood Score is: <span id="avg-mood"><%= @insights[:avg_mood] %></span></h4><br>
-    <h4>Words Per Entry: <span id="avg-word-count"><%= @insights[:avg_word_count] %></span></h4><br>
-    <h4>Your writings suggest you're <span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</h4><br>
+    <p>Your Average Mood Score is: <strong><span id="avg-mood"><%= @insights[:avg_mood] %></span></p></strong><br>
+    <p>Words Per Entry: <strong><span id="avg-word-count"><%= @insights[:avg_word_count] %></span></p></strong><br>
+    <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</p></strong><br>
 
     <h3>Subjects: </h3>
 
       <ul id="most-common-entities-ul">
         <% @insights[:most_common_entities].each do |entity| %>
-          <li><h4><span class="<%= entity[:most_common_sentiment] %>"><%= entity[:subject].capitalize %></span></h4></li>
+          <li><h4><span class="<%= entity[:most_common_sentiment] %> capitalize"><%= entity[:subject] %></span></h4></li>
             <ul>
               <li>Association: <%= entity[:most_common_sentiment] %></li>
               <li>Appearances: <%= entity[:count_total] %></li>
