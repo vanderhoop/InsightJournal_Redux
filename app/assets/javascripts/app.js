@@ -6,6 +6,7 @@ $( document ).ready(function() {
   App.negativeEntitiesUL = $('#negative-entities');
   App.avgMoodSpan = $('#avg-mood');
   App.avgWordCountSpan = $('#avg-word-count');
+  App.filterLanguage = $('#filter-language');
   App.sampleSizeSpan = $('#sample-size');
   App.tenseModeSpan = $('#tense-mode');
   $('#filter-btn').on("click", repopulateFields);

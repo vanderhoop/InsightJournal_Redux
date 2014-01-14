@@ -28,22 +28,27 @@ function repopulateFields(){
     data: data
   }).done(function(new_values_hash) {
     console.log("done function is firing");
-    debugger
     // empties Subjects List to prepare for rebuilding
-    App.subjectsUL.html('');
+    // App.subjectsUL.html('');
     App.avgMoodSpan.html(new_values_hash.avg_mood);
     App.avgWordCountSpan.html(new_values_hash.avg_word_count);
     App.sampleSizeSpan.html(new_values_hash.sample_size);
     App.tenseModeSpan.html(new_values_hash.tense_mode);
-    _.each(new_values_hash.most_common_entities, function(e, i , l){
-      console.log(e)
-      var newListItem = $('<li>').html('<h4><span class=' + e.most_common_sentiment + '>'+ e.subject + '</h4>');
-      var childUL = $('<ul>');
-      $('<li>').html("Association: " + e.most_common_sentiment).appendTo(childUL);
-      $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
-      childUL.appendTo(newListItem);
-      App.subjectsUL.append(newListItem);
-    }); // _.each
+    rebuildEntityList(App.positiveEntitiesUL, new_values_hash.positive_entities);
+    rebuildEntityList(App.negativeEntitiesUL, new_values_hash.negative_entities);
+
+
+    // _.each(new_values_hash.most_common_entities, function(e, i , l){
+    //   console.log(e)
+    //   var newListItem = $('<li>').html('<h4><span class=' + e.most_common_sentiment + '>'+ e.subject + '</h4>');
+    //   var childUL = $('<ul>');
+    //   $('<li>').html("Association: " + e.most_common_sentiment).appendTo(childUL);
+    //   $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
+    //   childUL.appendTo(newListItem);
+    //   App.subjectsUL.append(newListItem);
+    // }); // _.each
+
+
 
   }); // done
 } // repopulateFields
