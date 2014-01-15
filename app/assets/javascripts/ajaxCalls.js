@@ -34,6 +34,7 @@ function repopulateFields(){
     App.avgWordCountSpan.html(new_values_hash.avg_word_count);
     App.sampleSizeSpan.html(new_values_hash.sample_size);
     App.tenseModeSpan.html(new_values_hash.tense_mode);
+    $('#num-entries').html(new_values_hash.sample_size);
     debugger
     $("#humanity-sentiment").removeClass();
     $("#humanity-sentiment").addClass(new_values_hash.humanity_sentiment);
