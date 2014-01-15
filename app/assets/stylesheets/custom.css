@@ -375,11 +375,13 @@ footer {
 /*================================*/
 /* Insights
 /*================================*/
+.insights span {
+  font-weight: bold;
+}
 
 #negative-entities span, #positive-entities span {
   padding: 0.35em 0.55em;
   border-radius: 3.5px;
-  font-weight: bold;
   text-transform: capitalize;
 }
 

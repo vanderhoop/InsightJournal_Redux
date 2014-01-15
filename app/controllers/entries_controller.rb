@@ -18,6 +18,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
     @entry.word_count = params[:entry][:text].split(' ').length
     @entry.user_id = params["user_id"].to_i
+    @entry.set_hour_created
     # before @entry.save is called, both an 'entity' and a 'relations' call
     # are made to the API. Both set instance variables of the Entry
     if @entry.save

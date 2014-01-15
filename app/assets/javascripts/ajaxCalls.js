@@ -34,6 +34,7 @@ function repopulateFields(){
     App.avgWordCountSpan.html(new_values_hash.avg_word_count);
     App.sampleSizeSpan.html(new_values_hash.sample_size);
     App.tenseModeSpan.html(new_values_hash.tense_mode);
+    $('#most-common-writing-time').remove();
     rebuildEntityList(App.positiveEntitiesUL, new_values_hash.positive_entities);
     rebuildEntityList(App.negativeEntitiesUL, new_values_hash.negative_entities);
 
@@ -60,7 +61,7 @@ function rebuildEntityList(elementToAppendTo, array_of_entities){
       console.log(e)
       var newListItem = $('<li>').html('<h4><span>' + e.subject + '</span></h4>');
       var childUL = $('<ul>');
-      $('<li>').html("Appearances: " + e.count_total).appendTo(childUL);
+      $('<li>').html("References: " + e.count_total).appendTo(childUL);
       childUL.appendTo(newListItem);
       elementToAppendTo.append(newListItem);
     }); // _.each

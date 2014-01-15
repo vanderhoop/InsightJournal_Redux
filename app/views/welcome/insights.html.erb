@@ -9,35 +9,36 @@
     <div class="green-container">
       <h5>To date, you've written <%= @insights[:sample_size] %> entries for a total of <%= @insights[:total_words] %> words</h5>
     </div>
-    <h2 class='title-h2'>Across <span id="num-entries">all</span> entries<span id="filter-language"></span>...</h2></t>
-    <p>Your Average Mood Score is: <strong><span id="avg-mood"><%= @insights[:avg_mood] %></span></p></strong><br>
-    <p>Words Per Entry: <strong><span id="avg-word-count"><%= @insights[:avg_word_count] %></span></p></strong><br>
-    <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</strong> and feel <strong><span id="humanity-sentiment">neutral</span></strong> toward humanity.</p><br>
-    <p>Your language is most introspective in the <span id=></span></p>
+    <div class="insights">
+      <h3 class='title-h2'>Across <span id="num-entries">all</span> entries<span id="filter-language"></span>...</h2></t>
+      <p>Your Average Mood Score is: <strong><span id="avg-mood"><%= @insights[:avg_mood] %></span></p></strong><br>
+      <p>Words Per Entry: <strong><span id="avg-word-count"><%= @insights[:avg_word_count] %></span></p></strong><br>
+      <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</strong> and feel <strong><span id="humanity-sentiment">neutral</span></strong> toward humanity.</p>
+      <p id="most-common-writing-time"><br>You are most introspective in the <span><%= @insights[:most_common_writing_time] %></span>.</p>
 
-    <h3>Subjects You Reference Positively: </h3>
+      <h3>Positive Subjects: </h3>
 
-    <ul class="most-common-entities-ul" id="positive-entities">
-      <% @insights[:positive_entities].each do |entity| %>
-      <li><h4><span><%= entity[:subject] %></span></h4>
-          <ul>
-            <li>References: <%= entity[:count_total] %></li>
-          </ul>
-      </li>
-      <% end %>
-    </ul>
-
-    <h3>Subjects You Reference Negatively: </h3>
-      <ul class="most-common-entities-ul" id="negative-entities">
-        <% @insights[:negative_entities].each do |entity| %>
-          <li><h4><span><%= entity[:subject] %></span></h4>
+      <ul class="most-common-entities-ul" id="positive-entities">
+        <% @insights[:positive_entities].each do |entity| %>
+        <li><h4><span><%= entity[:subject] %></span></h4>
             <ul>
               <li>References: <%= entity[:count_total] %></li>
             </ul>
-          </li>
+        </li>
         <% end %>
       </ul>
 
+      <h3>Negative Subjects: </h3>
+        <ul class="most-common-entities-ul" id="negative-entities">
+          <% @insights[:negative_entities].each do |entity| %>
+            <li><h4><span><%= entity[:subject] %></span></h4>
+              <ul>
+                <li>References: <%= entity[:count_total] %></li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+    </div>
     <h2 class="title-h2">Filters</h2>
 
     <%= label_tag :time_of_day, "Entries writtin in the: " %>

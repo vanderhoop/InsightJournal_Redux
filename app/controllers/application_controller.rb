@@ -38,9 +38,19 @@ class ApplicationController < ActionController::Base
   #  tense_mode = tense_orientations.mode
   # end
 
+  def largest_hash_key(hash)
+    array_of_key_and_value = hash.max_by{|k,v| v}
+    key = array_of_key_and_value[0]
+  end
+
   def return_most_common_writing_time
-    travis = current_user.entries.morning
-    binding.pry
+    comparison_hash = {}
+    comparison_hash["morning"] =  current_user.entries.morning.sum("word_count")
+    comparison_hash["afternoon"] =  current_user.entries.afternoon.sum("word_count")
+    comparison_hash["evening"] =  current_user.entries.night.sum("word_count")
+    # This isn't a scientifically accurate way of getting most common writing time,
+    # sum the word count across all morning entries instead
+    most_common_writing_time = largest_hash_key(comparison_hash)
   end
 
   def return_relevant_entities(array_of_entries)
@@ -59,6 +69,7 @@ class ApplicationController < ActionController::Base
       insights_hash[:avg_mood] = "N/A"
       insights_hash[:avg_word_count] = "N/A"
       insights_hash[:tense_mode] = "N/A"
+      insights_hash
     else
       insights_hash[:avg_mood] = ents.average("user_mood_input").truncate(1).to_s + " out of 10"
       insights_hash[:avg_word_count] = ents.average("word_count").truncate(2)
