@@ -282,7 +282,7 @@ header input[type="text"], header input[type="password"] {
 /* Forms */
 /*================================*/
 textarea {
-  height: 41em;
+  height: 44em;
   width: 98%;
 }
 
@@ -379,6 +379,15 @@ footer {
   font-weight: bold;
 }
 
+.title-and-filter {
+  display: inline-block;
+  width:100%;
+}
+
+#filter-wrapper {
+  margin-top: 1.3em;
+}
+
 #negative-entities span, #positive-entities span {
   padding: 0.35em 0.55em;
   border-radius: 3.5px;
@@ -391,6 +400,12 @@ footer {
 
 #positive-entities span {
   background-color: rgb(223, 240, 216);
+}
+
+.neutral {
+  background-color: rgba(252, 219, 154, .6);
+  padding: 0.35em 0.55em;
+  border-radius: 3.5px;
 }
 
 /* Word-Count Box at top of Insights Page */
