@@ -76,6 +76,17 @@ class ApplicationController < ActionController::Base
       insights_hash[:tense_mode] = get_tense_mode(ents)
       insights_hash[:most_common_writing_time] = return_most_common_writing_time
       relevant_entities = return_relevant_entities(ents)
+
+      person_entities = relevant_entities.select { |entity| entity[:e_type] == "Person" }
+      # I want to count the numer of negative, positive, and neutral
+      # associations and take the one that appears the most.
+
+      comparison_hash = {}
+      comparison_hash["positive"] = person_entities.select { |person| person[:sentiment_type] == "positive" }.length
+      comparison_hash["negative"] = person_entities.select { |person| person[:sentiment_type] == "negative" }.length
+      comparison_hash["neutral"] = person_entities.select { |person| person[:sentiment_type] == "neutral" }.length
+      insights_hash[:humanity_sentiment] = largest_hash_key(comparison_hash)
+
       entities_by_string_rep = relevant_entities.group_by(&:string_representation)
 
       entity_storage_array = []
@@ -104,7 +115,6 @@ class ApplicationController < ActionController::Base
       end
 
       # binding.pry
-      insights_hash[:humanity_sentiment] = nil
       insights_hash
     end
   end # insights_hash

@@ -24,7 +24,7 @@
       </div>
       <p>Your Average Mood Score is: <strong><span id="avg-mood"><%= @insights[:avg_mood] %></span></p></strong><br>
       <p>Words Per Entry: <strong><span id="avg-word-count"><%= @insights[:avg_word_count] %></span></p></strong><br>
-      <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</strong> and feel <strong><span id="humanity-sentiment">neutral</span></strong> toward humanity.</p>
+      <p>Your writings suggest you're <strong><span id="tense-mode"><%= @insights[:tense_mode].downcase %></span>-oriented</strong> and have<strong><span id="humanity-sentiment" class="<%= @insights[:humanity_sentiment] %>"><%= @insights[:humanity_sentiment] %></span></strong>feelings toward humanity.</p>
       <p id="most-common-writing-time"><br>You are most introspective in the <span><%= @insights[:most_common_writing_time] %></span>.</p>
 
       <h3>Positive Subjects: </h3>
