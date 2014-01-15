@@ -1,2 +1,8 @@
 <h1>Archive</h1>
 
+<ul>
+  <% for i in 0..(@entries.length-1) %>
+    <li> <%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
+  <% end %>
+</ul>
+
