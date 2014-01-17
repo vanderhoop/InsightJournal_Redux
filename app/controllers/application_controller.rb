@@ -1,16 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :user_instance
-  before_filter :quotes
 
   require 'alchemy'
-
-  def quotes
-    @sampled_quote = {
-          quote: "In order to understand the world, one has to turn away from it on occasion.",
-          author: "Albert Camus"
-        }
-  end
 
   def user_instance
     @user = current_user
