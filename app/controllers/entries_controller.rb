@@ -1,7 +1,11 @@
 require 'alchemy'
-
+require 'entry_utils'
 class EntriesController < ApplicationController
   before_filter :user_signed_in?
+
+  # I included entry utils because this controller relies on the
+  # get_relations method, which previously lived in the application controller
+  include EntryUtils
 
   def index
     @entries = current_user.entries
