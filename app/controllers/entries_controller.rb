@@ -1,21 +1,20 @@
 require 'alchemy'
 require 'entry_utils'
+
 class EntriesController < ApplicationController
   before_filter :user_signed_in?
 
-  # I included entry utils because this controller relies on the
+  # I include EntryUtils because the Entries controller relies on the
   # get_relations method, which previously lived in the application controller
   include EntryUtils
 
   def index
     @entries = current_user.entries
-    # TODO add link to user dashboard that takes users to a view of all of their entries.
   end
 
   def show
     @entry = Entry.find(params[:id])
     @day_created = @entry.created_at.strftime("%B %d, %Y")
-    # TODO fix bug that ask Users to confirm deletion of an entry twice.
   end
 
   def create
@@ -35,10 +34,10 @@ class EntriesController < ApplicationController
       flash[:error] = @entry.errors.full_messages.to_sentence
       render :action => :new
     end
+
   end # create
 
   def new
-    # TODO I want to make the default selection of the User_Mood_Input select dropdown say "Select Mood" and pass along a value of nil.
   end
 
   def edit

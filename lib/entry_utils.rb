@@ -12,7 +12,7 @@ module EntryUtils
   end
 
   def get_tense_mode(entries)
-   # retrieves tense_orientation values and removes any nil values
+   # retrieves all tense_orientations, throws them in an array and removes all nil values
    tense_orientations = entries.pluck("tense_orientation").compact
    tense_mode = tense_orientations.mode
   end
@@ -23,12 +23,11 @@ module EntryUtils
   end
 
   def return_most_common_writing_time
-    comparison_hash = {}
-    comparison_hash["morning"] =  current_user.entries.morning.sum("word_count")
-    comparison_hash["afternoon"] =  current_user.entries.afternoon.sum("word_count")
-    comparison_hash["evening"] =  current_user.entries.night.sum("word_count")
-    # This isn't a scientifically accurate way of getting most common writing time,
-    # sum the word count across all morning entries instead
+    comparison_hash = {
+      "morning" => current_user.entries.morning.sum("word_count"),
+      "afternoon" => current_user.entries.afternoon.sum("word_count"),
+      "evening" => current_user.entries.night.sum("word_count")
+    }
     most_common_writing_time = largest_hash_key(comparison_hash)
   end
 
@@ -41,9 +40,10 @@ module EntryUtils
   end
 
   def return_insights_hash(ents)
-    insights_hash = {}
-    insights_hash[:sample_size] = ents.size
-    insights_hash[:total_words] = current_user.entries.sum("word_count")
+    insights_hash = {
+      :sample_size => ents.size,
+      :total_words => current_user.entries.sum("word_count")
+    }
     if ents.size == 0
       insights_hash[:avg_mood] = "N/A"
       insights_hash[:avg_word_count] = "N/A"
@@ -57,13 +57,16 @@ module EntryUtils
       relevant_entities = return_relevant_entities(ents)
 
       person_entities = relevant_entities.select { |entity| entity[:e_type] == "Person" }
+
       # I want to count the numer of negative, positive, and neutral
       # associations and take the one that appears the most.
+      comparison_hash = {
+        "positive" => person_entities.select { |person| person[:sentiment_type] == "positive" }.length,
+        "negative" => person_entities.select { |person| person[:sentiment_type] == "negative" }.length,
+        "neutral" => person_entities.select { |person| person[:sentiment_type] == "neutral" }.length
+      }
 
-      comparison_hash = {}
-      comparison_hash["positive"] = person_entities.select { |person| person[:sentiment_type] == "positive" }.length
-      comparison_hash["negative"] = person_entities.select { |person| person[:sentiment_type] == "negative" }.length
-      comparison_hash["neutral"] = person_entities.select { |person| person[:sentiment_type] == "neutral" }.length
+      # largest_hash_key tells me which of the sentiments appears most often
       insights_hash[:humanity_sentiment] = largest_hash_key(comparison_hash)
 
       entities_by_string_rep = relevant_entities.group_by(&:string_representation)
@@ -79,21 +82,9 @@ module EntryUtils
         h[:count_total]
       end
 
-      # entity_storage_array = entity_storage_array.to(7) if entity_storage_array.length > 7
-
       insights_hash[:most_common_entities] = entity_storage_array.reverse!
-      # below I iterate through all relevant entities and push those that have a positive association into the positive_subjects key's value
-      insights_hash[:positive_entities] = []
-      entity_storage_array.each do |entity|
-        insights_hash[:positive_entities] << entity if entity[:most_common_sentiment] == "Positive"
-      end
-
-      insights_hash[:negative_entities] = []
-      entity_storage_array.each do |entity|
-        insights_hash[:negative_entities] << entity if entity[:most_common_sentiment] == "Negative"
-      end
-
-      # binding.pry
+      insights_hash[:positive_entities] = entity_storage_array.select { |entity| entity[:most_common_sentiment] == "Positive" }
+      insights_hash[:negative_entities] = entity_storage_array.select { |entity| entity[:most_common_sentiment] == "Negative" }
       insights_hash
     end
   end # insights_hash
