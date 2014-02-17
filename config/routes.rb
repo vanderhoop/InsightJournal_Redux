@@ -1,3 +1,19 @@
+InsightJournalRedux::Application.routes.draw do
+
+  devise_for :users
+  devise_scope :user do
+    post "/users/sign_out" => "devise/sessions#destroy"
+  end
+
+  root :to => "welcome#index"
+  get "/users/:id/insights" => "welcome#insights", :as => "insights"
+  get "/users/:id/new-insights" => "welcome#new_insights", :as => "insights_json"
+
+  resources :users do
+    resources :entries
+  end
+
+end
 # == Route Map (Updated 2013-12-19 11:22)
 #
 #         new_user_session GET    /users/sign_in(.:format)                   devise/sessions#new
@@ -32,20 +48,3 @@
 #                          PUT    /users/:id(.:format)                       users#update
 #                          DELETE /users/:id(.:format)                       users#destroy
 #
-
-InsightJournalRedux::Application.routes.draw do
-
-  devise_for :users
-  devise_scope :user do
-    post '/users/sign_out' => 'devise/sessions#destroy'
-  end
-
-  root :to => "welcome#index"
-  get '/users/:id/insights' => 'welcome#insights'
-  get '/users/:id/new-insights' => 'welcome#new_insights'
-
-  resources :users do
-    resources :entries
-  end
-
-end

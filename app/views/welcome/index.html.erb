@@ -1,7 +1,6 @@
 <div class="span12">
   <% if user_signed_in? %>
 
-    <% url = "users/#{@current_user.id}/entries/new" %>
 
     <% if @entries.length > 0 %>
 
@@ -11,8 +10,7 @@
             <li> <%= link_to @entries[i][:text].truncate(65, :separator => ' '), url_for([@user, @entries[i]]) %></li>
           <% end %>
         </ul>
-        <%= link_to "Archive", "/users/#{current_user.id}/entries", :class => "square-button grey" %>
-        <%= link_to "New Entry", url, :class => "square-button green", :id => "new-entry-button" %>
+        <%= link_to "Archive", user_entries_path(@user), :class => "square-button grey" %>
 
     <% end %>
 
@@ -20,7 +18,7 @@
       <div class="span9">
         <h3>Welcome to InsightJournal!</h3>
         <p id="intro-p">The journal is one of life's most powerful tools. The goal of InsightJournal is to increase that power by uncovering common themes and patterns in a user's entries over time and against environmental variables like weather, location, and time of writing.</p>
-        <%= link_to "Get Journaling", url, :class => "square-button green" %>
+        <%= link_to "Get Journaling", new_user_entry_path(@user), :class => "square-button green" %>
       </div>
     <% end %>
 
@@ -29,7 +27,7 @@
       <div id="front-welcome">
         <h3>The journaling tool that grows to know you.</h3>
         <ul>
-          <li>Leverage powerful text-analysis tools to uncover hidden sentiment in your entries</li>
+          <li>Leverage powerful text-analysis software to uncover hidden sentiment in your entries</li>
           <li>Discover links between your mood and the people and places that appear in your writing</li>
           <li>Track writing patterns and proficiency</li>
         </ul>

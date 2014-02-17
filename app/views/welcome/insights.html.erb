@@ -2,7 +2,7 @@
   <div class="span8">
     <h3>You've reached the Insights page...</h3>
       <p>This is normally where we let you in on all the cool little secrets you've been keeping even from yourself, but you have to write an entry before we can make our particular brand of magic happen!</p>
-    <%= link_to "Get Journaling!", "/users/#{current_user.id}/entries/new", :class => "square-button green" %>
+    <%= link_to "Get Journaling!", new_user_entry_path(@user), :class => "square-button green" %>
   </div>
 <% else %>
 

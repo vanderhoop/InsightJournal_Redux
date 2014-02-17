@@ -24,8 +24,8 @@
         <div>
           <% if user_signed_in? %>
             <%= link_to "Log Out", destroy_user_session_path, { :class => "pull-right", :method => "post", :id => "logout-btn" } %>
-            <%= link_to "Insights", "/users/#{current_user.id}/insights", :method => "get", :class => "pull-right" %>
-            <%= link_to "Write", "/users/#{current_user.id}/entries/new", :class => "pull-right" %>
+            <%= link_to "Insights", insights_path(@user), :method => "get", :class => "pull-right" %>
+            <%= link_to "Write", new_user_entry_path(@user), :class => "pull-right" %>
           <% else %>
             <%= form_for("user", :html => {:class => "pull-right", :id => "nav-sign-in"}, :url => user_session_path) do |f| %>
             <div class="input-wrapper" id="email-div">
