@@ -73,9 +73,9 @@ module EntryUtils
         {
           subject: entity[0],
           count_total: entity[1].map { |e| e[:count] }.reduce(:+),
-          most_common_sentiment: entity[1].plucky("sentiment_type").mode.capitalize,
-          entity_type: entity[1].plucky("e_type").mode,
-          entries: entity[1].plucky("entry_id")
+          most_common_sentiment: entity[1].map { |e| e["sentiment_type"] }.mode.capitalize,
+          entity_type: entity[1].map { |e| e["e_type"] }.mode,
+          entries: entity[1].map { |e| e["entry_id"] }
         }
       end
 

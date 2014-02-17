@@ -11,13 +11,13 @@ class Array
     end
   end
 
-  def plucky(column_name)
-    new_array = []
-    self.select do |entry|
-      new_array << entry[column_name]
-    end
-    new_array
-  end
+  # def plucky(column_name)
+  #   new_array = []
+  #   self.select do |entry|
+  #     new_array << entry[column_name]
+  #   end
+  #   new_array
+  # end
 end
 
 # Initialize the rails application
