@@ -69,7 +69,7 @@ class Entry < ActiveRecord::Base
     @instance_relations.each do |relation|
       @tenses << relation["action"]["verb"]["tense"]
     end
-    self.tense_orientation = @tenses.mode
+    self.tense_orientation = most_common_value(@tenses)
   end # get_relations
 
   def destroy_entities

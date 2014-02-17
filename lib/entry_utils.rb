@@ -7,13 +7,13 @@ module EntryUtils
     tenses = relations.map do |relation|
       relation["action"]["verb"]["tense"]
     end
-    tenses.mode
+    most_common_value(tenses)
   end
 
   def get_tense_mode(entries)
    # collects all tense_orientations, throws them in an array
    tense_orientations = entries.pluck("tense_orientation").compact
-   tense_mode = tense_orientations.mode
+   tense_mode = most_common_value(tense_orientations)
   end
 
   def largest_hash_key(hash)
@@ -60,7 +60,7 @@ module EntryUtils
       comparison_hash = {
         "positive" => person_entities.select { |person| person[:sentiment_type] == "positive" }.length,
         "negative" => person_entities.select { |person| person[:sentiment_type] == "negative" }.length,
-        "neutral" => person_entities.select { |person| person[:sentiment_type] == "neutral" }.length
+        "neutral"  => person_entities.select { |person| person[:sentiment_type] == "neutral"  }.length
       }
 
       # largest_hash_key tells me which of the sentiments appears most often
@@ -73,8 +73,8 @@ module EntryUtils
         {
           subject: entity[0],
           count_total: entity[1].map { |e| e[:count] }.reduce(:+),
-          most_common_sentiment: entity[1].map { |e| e["sentiment_type"] }.mode.capitalize,
-          entity_type: entity[1].map { |e| e["e_type"] }.mode,
+          most_common_sentiment: most_common_value(entity[1].map { |e| e["sentiment_type"] }).capitalize,
+          entity_type: most_common_value(entity[1].map { |e| e["e_type"] }),
           entries: entity[1].map { |e| e["entry_id"] }
         }
       end
