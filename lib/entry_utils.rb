@@ -98,13 +98,13 @@ module EntryUtils
   def filter_entries_by_time_written(array_of_entries, time_of_day)
     case time_of_day
     when "morning"
-      return array_of_entries.morning
+      array_of_entries.morning
     when "afternoon"
-      return array_of_entries.afternoon
+      array_of_entries.afternoon
     when "night"
-      return array_of_entries.night
+      array_of_entries.night
     else
-      return array_of_entries
+      array_of_entries
     end
   end # filter_entries_by_time_written
 
