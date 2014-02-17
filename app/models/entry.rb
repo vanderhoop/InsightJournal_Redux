@@ -66,17 +66,14 @@ class Entry < ActiveRecord::Base
   def set_relations
     alchemy_api = Alchemy.new()
     @instance_relations = alchemy_api.relations('text', self.text)["relations"]
-    @tenses = []
-    @instance_relations.each do |relation|
-      @tenses << relation["action"]["verb"]["tense"]
+    @tenses = @instance_relations.map do |relation|
+      relation["action"]["verb"]["tense"]
     end
     self.tense_orientation = most_common_value(@tenses)
   end # get_relations
 
   def destroy_entities
-    self.entities.each do |entity|
-      entity.destroy
-    end
+    self.entities.each { |entity| entity.destroy }
   end # destroy_entities
 
   def create_entities(entities_array)

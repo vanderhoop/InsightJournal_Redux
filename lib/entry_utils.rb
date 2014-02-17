@@ -2,9 +2,7 @@ module EntryUtils
   require 'alchemy'
 
   def most_common_value(arr)
-    value_appearances = arr.group_by do |e|
-                          e
-                        end
+    value_appearances = arr.group_by { |e| e }
     return "N/A" if value_appearances.values.max_by(&:size).nil?
     value_appearances.values.max_by(&:size).first
   end
