@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   respond_to :json #sets all actions to respond to .json requests
-  require 'entry_utils'
   include EntryUtils
+
   def index
     @entries = user_signed_in? && current_user.entries.size > 0 ? Entry.where(user_id: current_user.id).last(5).reverse : []
   end

@@ -1,6 +1,3 @@
-require 'alchemy'
-require 'entry_utils'
-
 class EntriesController < ApplicationController
   before_filter :user_signed_in?
 
