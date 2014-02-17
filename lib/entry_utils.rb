@@ -4,21 +4,20 @@ module EntryUtils
   def get_relations(text)
     alchemy_api = Alchemy.new()
     relations = alchemy_api.relations('text', text)["relations"]
-    tenses = []
-    relations.each do |relation|
-      tenses << relation["action"]["verb"]["tense"]
+    tenses = relations.map do |relation|
+      relation["action"]["verb"]["tense"]
     end
     tenses.mode
   end
 
   def get_tense_mode(entries)
-   # retrieves all tense_orientations, throws them in an array and removes all nil values
+   # collects all tense_orientations, throws them in an array
    tense_orientations = entries.pluck("tense_orientation").compact
    tense_mode = tense_orientations.mode
   end
 
   def largest_hash_key(hash)
-    array_of_key_and_value = hash.max_by{|k,v| v}
+    array_of_key_and_value = hash.max_by{ |k,v| v }
     key = array_of_key_and_value[0]
   end
 
@@ -32,10 +31,7 @@ module EntryUtils
   end
 
   def return_relevant_entities(array_of_entries)
-    all_relevant_entities = []
-    array_of_entries.each do |entry|
-      all_relevant_entities << entry.entities
-    end
+    all_relevant_entities = array_of_entries.map { |entry| entry.entities }
     all_relevant_entities.flatten!
   end
 
@@ -44,6 +40,7 @@ module EntryUtils
       :sample_size => ents.size,
       :total_words => current_user.entries.sum("word_count")
     }
+
     if ents.size == 0
       insights_hash[:avg_mood] = "N/A"
       insights_hash[:avg_word_count] = "N/A"
@@ -71,16 +68,19 @@ module EntryUtils
 
       entities_by_string_rep = relevant_entities.group_by(&:string_representation)
 
-      entity_storage_array = []
       # iterate through the entities by string_representation
-      entities_by_string_rep.each do |entity|
-        entity_storage_array << { subject: entity[0], count_total: entity[1].sum_entity_column("count"), most_common_sentiment: entity[1].plucky("sentiment_type").mode.capitalize, entity_type: entity[1].plucky("e_type").mode, entries: entity[1].plucky("entry_id") }
+      entity_storage_array = entities_by_string_rep.map do |entity|
+        {
+          subject: entity[0],
+          count_total: entity[1].map { |e| e[:count] }.reduce(:+),
+          most_common_sentiment: entity[1].plucky("sentiment_type").mode.capitalize,
+          entity_type: entity[1].plucky("e_type").mode,
+          entries: entity[1].plucky("entry_id")
+        }
       end
 
       # TODO I pushed all relevant entities into the :most_common_entities array. That's over kill.
-      entity_storage_array.sort_by! do |h|
-        h[:count_total]
-      end
+      entity_storage_array.sort_by! { |h| h[:count_total] }
 
       insights_hash[:most_common_entities] = entity_storage_array.reverse!
       insights_hash[:positive_entities] = entity_storage_array.select { |entity| entity[:most_common_sentiment] == "Positive" }

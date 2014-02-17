@@ -49,7 +49,7 @@ describe "The User Dashboard" do
         @entry = Entry.new
         @entry.text = "I'm in love with (nearly) all things relating to the Green Bay Packers"
         @entry.user_mood_input = 8
-        @entry.word_count = @entry.text.get_word_count
+        @entry.word_count = @entry.text.split(' ').length
         @user.entries << @entry
       end
 

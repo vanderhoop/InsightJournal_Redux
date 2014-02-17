@@ -11,22 +11,6 @@ class Array
     end
   end
 
-  # def average(integer_column)
-  #   sum_num = 0
-  #   self.each do |entry|
-  #     sum_num += entry[integer_column]
-  #   end
-  #   return sum_num/self.size
-  # end #average
-
-  def sum_entity_column(column_name)
-    sum = 0
-    self.each do |entity|
-      sum += entity[column_name]
-    end
-    sum
-  end
-
   def plucky(column_name)
     new_array = []
     self.select do |entry|
@@ -34,14 +18,6 @@ class Array
     end
     new_array
   end
-end
-
-class String
-
-def get_word_count
-  self.split(' ').length
-end
-
 end
 
 # Initialize the rails application
