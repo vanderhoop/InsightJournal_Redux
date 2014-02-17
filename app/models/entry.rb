@@ -22,6 +22,7 @@
 require 'alchemy'
 
 class Entry < ActiveRecord::Base
+  include EntryUtils
   attr_accessible :user_id, :text, :user_mood_input, :lat, :long, :temperture, :humidity, :word_count, :most_common_adjective, :most_common_adverb, :tense_orientation, :created_at, :updated_at, :hour_created
   attr_reader :instance_entities, :instance_relations, :tenses, :most_used_tense
 

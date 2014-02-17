@@ -1,6 +1,14 @@
 module EntryUtils
   require 'alchemy'
 
+  def most_common_value(arr)
+    value_appearances = arr.group_by do |e|
+                          e
+                        end
+    return "N/A" if value_appearances.values.max_by(&:size).nil?
+    value_appearances.values.max_by(&:size).first
+  end
+
   def get_relations(text)
     alchemy_api = Alchemy.new()
     relations = alchemy_api.relations('text', text)["relations"]
