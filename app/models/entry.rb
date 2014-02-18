@@ -20,6 +20,7 @@
 #  hour_created          :integer
 #
 require 'alchemy'
+require 'entry_utils'
 
 class Entry < ActiveRecord::Base
   include EntryUtils
