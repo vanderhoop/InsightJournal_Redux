@@ -18,7 +18,9 @@
 #  updated_at            :datetime         not null
 #  tense_orientation     :string(255)
 #  hour_created          :integer
+#  ip_address            :string(255)
 #
+
 require 'alchemy'
 require 'entry_utils'
 

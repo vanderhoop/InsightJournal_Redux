@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "annotate"
+  gem "annotate", '~> 2.6.1'
   gem "quiet_assets"
   gem "binding_of_caller"
   gem "meta_request"

@@ -26,10 +26,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
+  # Whitelists appropriate attributes for user model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :id
-  # attr_accessible :title, :body
 
   has_many :entries
   has_many :entities, :through => :entries
+  after_save :new_user_notification
+
+  private
+
+  def new_user_notification
+    MyMailer.new_user(self).deliver
+  end
 end
