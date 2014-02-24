@@ -33,9 +33,15 @@
         null,
         1,
         null,
+        1,
+        1,
+        1,
         null,
         1,
+        null,
         1,
+        60,
+        null,
         null
       ],
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/app/controllers/application_controller.rb": [
@@ -276,6 +282,9 @@
         null,
         null,
         null,
+        null,
+        null,
+        1,
         1,
         null,
         1,
@@ -384,6 +393,18 @@
         null,
         null
       ],
+      "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/app/mailers/my_mailer.rb": [
+        1,
+        1,
+        null,
+        1,
+        60,
+        60,
+        60,
+        null,
+        null,
+        null
+      ],
       "/Users/vanderhoop/ga_WDI/projects/InsightJournal_Redux/app/models/entity.rb": [
         null,
         null,
@@ -410,6 +431,6 @@
         null
       ]
     },
-    "timestamp": 1392655717
+    "timestamp": 1393199108
   }
 }
