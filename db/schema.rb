@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217201318) do
+ActiveRecord::Schema.define(:version => 20140128154232) do
 
   create_table "entities", :force => true do |t|
     t.integer  "entry_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20131217201318) do
     t.datetime "updated_at",            :null => false
     t.string   "tense_orientation"
     t.integer  "hour_created"
+    t.string   "ip_address"
   end
 
   create_table "users", :force => true do |t|

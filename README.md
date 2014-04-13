@@ -3,7 +3,7 @@
 ###InsightJournal_Redux
 ---
 
-InsightJournal is an online journaling tool that provides users with instant content and sentiment analysis of their entries, alerting users to trends in their writing. It's awesome.
+InsightJournal is an online journaling tool that provides users with instant content and sentiment analysis of their entries, alerting users to trends in their writing.
 
 ###The Story Behind 'Redux'
 ---
