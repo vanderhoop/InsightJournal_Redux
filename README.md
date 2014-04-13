@@ -19,9 +19,6 @@ so that I can act on those insights.
 
 ###Technologies Used
 ---
-![Treat Logo](http://www.louismullie.com/treat/treat-logo.jpg)![Devise Logo](https://raw.github.com/plataformatec/devise/master/devise.png)
-
-- YahooWeatherMan
-- LocalTunnel
 - AlchemyAPI
+- Devise
 - GeoCoder
