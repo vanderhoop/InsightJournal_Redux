@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140128154232) do
+ActiveRecord::Schema.define(:version => 20140526124240) do
 
   create_table "entities", :force => true do |t|
     t.integer  "entry_id"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20140128154232) do
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
+
+  add_index "entities", ["entry_id"], :name => "index_entities_on_entry_id"
 
   create_table "entries", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20140128154232) do
     t.integer  "hour_created"
     t.string   "ip_address"
   end
+
+  add_index "entries", ["user_id"], :name => "index_entries_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
